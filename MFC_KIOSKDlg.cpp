@@ -102,6 +102,7 @@ ON_BN_CLICKED(IDC_BUTTON_DOWN, &CMFCKIOSKDlg::OnClickedButtonDown)
 ON_BN_CLICKED(IDC_BUTTON_KOREAN, &CMFCKIOSKDlg::OnClickedButtonKorean)
 ON_BN_CLICKED(IDC_BUTTON_ENGLISH, &CMFCKIOSKDlg::OnClickedButtonEnglish)
 ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
+ON_STN_CLICKED(IDC_TEXT1, &CMFCKIOSKDlg::OnStnClickedText1)
 END_MESSAGE_MAP()
 
 
@@ -866,8 +867,8 @@ void CMFCKIOSKDlg::ClickedCraft()
 	ClearTextFields();
 	m_buttonCraft = true;
 	if (m_korean) {
-		m_Text1.SetWindowTextW(_T("쿠키프라페"));
-		m_Text2.SetWindowTextW(_T("녹차프라페"));
+		m_Text1.SetWindowTextW(_T("녹차프라페"));
+		m_Text2.SetWindowTextW(_T("쿠키프라페"));
 		m_Text3.SetWindowTextW(_T("민트프라페"));
 		m_Text4.SetWindowTextW(_T("요거트스무디"));
 		m_Text5.SetWindowTextW(_T("유니콘프라페"));
@@ -880,8 +881,8 @@ void CMFCKIOSKDlg::ClickedCraft()
 
 	}
 	else if (m_english) {
-		m_Text1.SetWindowTextW(_T("Cookie Frappe"));
-		m_Text2.SetWindowTextW(_T("Green tea Frappe"));
+		m_Text1.SetWindowTextW(_T("Green tea Frappe"));
+		m_Text2.SetWindowTextW(_T("Cookie Frappe"));
 		m_Text3.SetWindowTextW(_T("Mint Frappe"));
 		m_Text4.SetWindowTextW(_T("Yoghurt Smoothie"));
 		m_Text5.SetWindowTextW(_T("Unicorn Frappe"));
@@ -893,8 +894,8 @@ void CMFCKIOSKDlg::ClickedCraft()
 		m_Price5.SetWindowTextW(_T("4,800₩"));
 	}
 	else if (m_chinese) {
-		m_Text1.SetWindowTextW(_T("饼干冰沙"));
-		m_Text2.SetWindowTextW(_T("绿茶冰沙"));
+		m_Text1.SetWindowTextW(_T("绿茶冰沙"));
+		m_Text2.SetWindowTextW(_T("饼干冰沙"));
 		m_Text3.SetWindowTextW(_T("薄荷冰沙"));
 		m_Text4.SetWindowTextW(_T("酸奶冰沙"));
 		m_Text5.SetWindowTextW(_T("独角兽冰沙"));
@@ -1276,4 +1277,10 @@ void CMFCKIOSKDlg::ClearTextFields()
 		SetDlgItemText(IDC_PRICE7, _T(""));
 		SetDlgItemText(IDC_PRICE8, _T(""));
 		SetDlgItemText(IDC_PRICE9, _T(""));
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedText1()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }

@@ -105,7 +105,6 @@
 #define IDC_TEXT_ALLSUM                 1060
 #define IDC_BUTTON_KOREAN               1061
 #define IDC_BUTTON_ENGLISH              1062
-#define IDC_BUTTON3                     1063
 #define IDC_BUTTON_CHINESE              1063
 
 // Next default values for new objects
