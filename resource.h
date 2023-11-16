@@ -10,6 +10,39 @@
 #define IDB_BITMAP1                     130
 #define IDB_BITMAP2                     133
 #define IDB_BITMAP3                     134
+#define IDB_BITMAP_B1                   135
+#define IDB_BITMAP_B2                   136
+#define IDB_BITMAP_B3                   137
+#define IDB_BITMAP_B4                   138
+#define IDB_BITMAP_B5                   139
+#define IDB_BITMAP_B6                   140
+#define IDB_BITMAP_B7                   141
+#define IDB_BITMAP_B8                   142
+#define IDB_BITMAP_B9                   143
+#define IDB_BITMAP_B10                  144
+#define IDB_BITMAP_C1                   145
+#define IDB_BITMAP_C2                   146
+#define IDB_BITMAP_C3                   147
+#define IDB_BITMAP_C4                   148
+#define IDB_BITMAP_C5                   149
+#define IDB_BITMAP_C6                   150
+#define IDB_BITMAP_C7                   151
+#define IDB_BITMAP_C8                   152
+#define IDB_BITMAP_C9                   153
+#define IDB_BITMAP_C10                  154
+#define IDB_BITMAP_C11                  155
+#define IDB_BITMAP_CR1                  156
+#define IDB_BITMAP_CR2                  157
+#define IDB_BITMAP_CR3                  158
+#define IDB_BITMAP_CR4                  159
+#define IDB_BITMAP_CR5                  160
+#define IDB_BITMAP_T1                   162
+#define IDB_BITMAP_T3                   164
+#define IDB_BITMAP_T4                   165
+#define IDB_BITMAP_T5                   166
+#define IDB_BITMAP_T6                   167
+#define IDB_BITMAP_EMPTY                168
+#define IDB_BITMAP_T2                   169
 #define IDC_BUTTON_CRAFT                1001
 #define IDC_BUTTON_TEA                  1002
 #define IDC_BUTTON_BREAD                1003
@@ -70,14 +103,18 @@
 #define IDC_EDIT7                       1058
 #define IDC_EDIT8                       1059
 #define IDC_TEXT_ALLSUM                 1060
+#define IDC_BUTTON_KOREAN               1061
+#define IDC_BUTTON_ENGLISH              1062
+#define IDC_BUTTON3                     1063
+#define IDC_BUTTON_CHINESE              1063
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        135
+#define _APS_NEXT_RESOURCE_VALUE        170
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1061
+#define _APS_NEXT_CONTROL_VALUE         1062
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

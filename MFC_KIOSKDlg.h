@@ -35,7 +35,7 @@ public:
 	CBitmap m_myBackground;
 	// 배경 이미지 멤버변수
 
-	afx_msg void OnBnClickedButton2();
+//	afx_msg void OnBnClickedButton2();
 	
 	void m_setButtonPositiion(int buttonX, int buttonY, int nID);
 	afx_msg void OnStnClickedPicturebox3();
@@ -65,4 +65,56 @@ public:
 	void m_setFont_ordersum(int fontsize, int FW);
 	void m_setFont_allsum(int fontsize, int FW);
 
+	afx_msg void OnClickedButtonCoffee();
+	afx_msg void OnClickedButtonCraft();
+	afx_msg void OnClickedButtonTea();
+	afx_msg void OnClickedButtonBread();
+	afx_msg void OnClickedButtonUp();
+	afx_msg void OnClickedButtonDown();
+	void ClickedCoffeeUp();
+	void ClickedCoffeeDown();
+	void ClickedCraft();
+	void ClickedTea();
+	void ClickedBreadUp();
+	void ClickedBreadDown();
+	CStatic m_Text1;
+	CStatic m_Text2;
+	CStatic m_Text3;
+	CStatic m_Text4;
+	CStatic m_Text5;
+	CStatic m_Text6;
+	CStatic m_Text7;
+	CStatic m_Text8;
+	CStatic m_Text9;
+	CStatic m_Price1;
+	CStatic m_Price2;
+	CStatic m_Price3;
+	CStatic m_Price4;
+	CStatic m_Price5;
+	CStatic m_Price6;
+	CStatic m_Price7;
+	CStatic m_Price8;
+	CStatic m_Price9;
+	bool m_buttonCoffee;
+	bool m_buttonBread;
+	bool m_buttonTea;
+	bool m_buttonCraft;
+	bool m_buttonBreadDown;
+	bool m_buttonCoffeeDown;
+	bool m_korean;
+	bool m_english;
+	bool m_chinese;
+	afx_msg void OnClickedButtonKorean();
+	afx_msg void OnClickedButtonEnglish();
+	afx_msg void OnClickedButtonChinese();
+	void ClearTextFields();
+	CStatic m_pictureControl1;
+	CStatic m_pictureControl2;
+	CStatic m_pictureControl3;
+	CStatic m_pictureControl4;
+	CStatic m_pictureControl5;
+	CStatic m_pictureControl6;
+	CStatic m_pictureControl7;
+	CStatic m_pictureControl8;
+	CStatic m_pictureControl9;
 };
