@@ -86,6 +86,8 @@ void CMFCKIOSKDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_PICTUREBOX7, m_pictureControl7);
 	DDX_Control(pDX, IDC_PICTUREBOX8, m_pictureControl8);
 	DDX_Control(pDX, IDC_PICTUREBOX9, m_pictureControl9);
+	//  DDX_Control(pDX, IDC_BUTTON_UP, m_buttonUp);
+	//  DDX_Control(pDX, IDC_BUTTON_DOWN, m_buttonDown);
 }
 
 BEGIN_MESSAGE_MAP(CMFCKIOSKDlg, CDialogEx)
@@ -102,7 +104,8 @@ ON_BN_CLICKED(IDC_BUTTON_DOWN, &CMFCKIOSKDlg::OnClickedButtonDown)
 ON_BN_CLICKED(IDC_BUTTON_KOREAN, &CMFCKIOSKDlg::OnClickedButtonKorean)
 ON_BN_CLICKED(IDC_BUTTON_ENGLISH, &CMFCKIOSKDlg::OnClickedButtonEnglish)
 ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
-ON_STN_CLICKED(IDC_TEXT1, &CMFCKIOSKDlg::OnStnClickedText1)
+//ON_STN_CLICKED(IDC_TEXT1, &CMFCKIOSKDlg::OnStnClickedText1)
+ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -235,6 +238,10 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setButtonPositiion(1582, 610, 1059);
 	//모든 주문 전체 가격 총합 텍스트 이동 로직입니다.
 	m_setButtonPositiion(1540, 730, 1060);
+	//언어에 대한 동적 이동 로직입니다.
+	m_setButtonPositiion(1570, 20, IDC_BUTTON_KOREAN);
+	m_setButtonPositiion(1690, 20, IDC_BUTTON_ENGLISH);
+	m_setButtonPositiion(1800, 20, IDC_BUTTON_CHINESE);
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -264,6 +271,16 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 
 	OnClickedButtonKorean();   //초기화면 한국어
 	OnClickedButtonCoffee();     //초기화면 커피메뉴
+
+	//언어 버튼 투명화
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_KOREAN)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_ENGLISH)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_CHINESE)->GetSafeHwnd(), _T(""), _T(""));
+	//위, 아래 버튼 투명화
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_UP)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_DOWN)->GetSafeHwnd(), _T(""), _T(""));
+
+
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -1280,7 +1297,36 @@ void CMFCKIOSKDlg::ClearTextFields()
 }
 
 
-void CMFCKIOSKDlg::OnStnClickedText1()
+
+HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	//언어 버튼 투명화
+	HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
+	int nRet = pWnd->GetDlgCtrlID();
+	if (nRet == IDC_BUTTON_KOREAN)  
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_ENGLISH)  
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_CHINESE)  
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_UP)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_DOWN)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	return hbr;
 }

@@ -117,5 +117,5 @@ public:
 	CStatic m_pictureControl7;
 	CStatic m_pictureControl8;
 	CStatic m_pictureControl9;
-	afx_msg void OnStnClickedText1();
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

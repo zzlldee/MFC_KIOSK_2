@@ -167,5 +167,11 @@
     <Image Include="res\T_bitmap2.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\UP.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\DOWN.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>
