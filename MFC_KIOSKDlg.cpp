@@ -279,8 +279,14 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	//위, 아래 버튼 투명화
 	SetWindowTheme(GetDlgItem(IDC_BUTTON_UP)->GetSafeHwnd(), _T(""), _T(""));
 	SetWindowTheme(GetDlgItem(IDC_BUTTON_DOWN)->GetSafeHwnd(), _T(""), _T(""));
-
-
+	//메뉴 버튼 투명화
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_COFFEE)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_CRAFT)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_TEA)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_BREAD)->GetSafeHwnd(), _T(""), _T(""));
+	//매장, 포장 버튼 투명화
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_HERE)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_TOGO)->GetSafeHwnd(), _T(""), _T(""));
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -1324,6 +1330,36 @@ HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
 	}
 	if (nRet == IDC_BUTTON_DOWN)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_COFFEE)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_CRAFT)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_TEA)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_BREAD)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_TOGO)
+	{
+		pDC->SetBkMode(TRANSPARENT);
+		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
+	}
+	if (nRet == IDC_BUTTON_HERE)
 	{
 		pDC->SetBkMode(TRANSPARENT);
 		hbr = (HBRUSH)GetStockObject(NULL_BRUSH);
