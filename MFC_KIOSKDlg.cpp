@@ -799,7 +799,7 @@ void CMFCKIOSKDlg::ClickedCoffeeUp()
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(NULL, TRUE);
+	InvalidateRect(&r, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -856,7 +856,7 @@ void CMFCKIOSKDlg::ClickedCoffeeDown()
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(NULL, TRUE);
+	InvalidateRect(&r, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -931,7 +931,7 @@ void CMFCKIOSKDlg::ClickedCraft()
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(NULL, TRUE);
+	InvalidateRect(&r, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -1011,7 +1011,7 @@ void CMFCKIOSKDlg::ClickedTea()
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(NULL, TRUE);
+	InvalidateRect(&r, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -1110,7 +1110,7 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(NULL, TRUE);
+	InvalidateRect(&r, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -1158,7 +1158,7 @@ void CMFCKIOSKDlg::ClickedBreadDown()
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(NULL, TRUE);
+	InvalidateRect(&r, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
