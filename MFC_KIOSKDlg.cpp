@@ -88,6 +88,30 @@ void CMFCKIOSKDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_PICTUREBOX9, m_pictureControl9);
 	//  DDX_Control(pDX, IDC_BUTTON_UP, m_buttonUp);
 	//  DDX_Control(pDX, IDC_BUTTON_DOWN, m_buttonDown);
+	DDX_Control(pDX, IDC_TEXT_ORDER1, m_textOrder1);
+	DDX_Control(pDX, IDC_TEXT_ORDER1_SUM, m_textOrderSum1);
+	DDX_Control(pDX, IDC_TEXT_ORDER2_SUM, m_textOrderSum2);
+	DDX_Control(pDX, IDC_TEXT_ORDER3_SUM, m_textOrderSum3);
+	DDX_Control(pDX, IDC_TEXT_ORDER4_SUM, m_textOrderSum4);
+	DDX_Control(pDX, IDC_TEXT_ORDER5_SUM, m_textOrderSum5);
+	DDX_Control(pDX, IDC_TEXT_ORDER6_SUM, m_textOrderSum6);
+	DDX_Control(pDX, IDC_TEXT_ORDER7_SUM, m_textOrderSum7);
+	DDX_Control(pDX, IDC_TEXT_ORDER8_SUM, m_textOrderSum8);
+	DDX_Control(pDX, IDC_TEXT_ORDER2, m_textOrder2);
+	DDX_Control(pDX, IDC_TEXT_ORDER3, m_textOrder3);
+	DDX_Control(pDX, IDC_TEXT_ORDER4, m_textOrder4);
+	DDX_Control(pDX, IDC_TEXT_ORDER5, m_textOrder5);
+	DDX_Control(pDX, IDC_TEXT_ORDER6, m_textOrder6);
+	DDX_Control(pDX, IDC_TEXT_ORDER7, m_textOrder7);
+	DDX_Control(pDX, IDC_TEXT_ORDER8, m_textOrder8);
+	DDX_Control(pDX, IDC_EDIT1, m_edit1);
+	DDX_Control(pDX, IDC_EDIT2, m_edit2);
+	DDX_Control(pDX, IDC_EDIT3, m_edit3);
+	DDX_Control(pDX, IDC_EDIT4, m_edit4);
+	DDX_Control(pDX, IDC_EDIT5, m_edit5);
+	DDX_Control(pDX, IDC_EDIT6, m_edit6);
+	DDX_Control(pDX, IDC_EDIT7, m_edit7);
+	DDX_Control(pDX, IDC_EDIT8, m_edit8);
 }
 
 BEGIN_MESSAGE_MAP(CMFCKIOSKDlg, CDialogEx)
@@ -106,6 +130,8 @@ ON_BN_CLICKED(IDC_BUTTON_ENGLISH, &CMFCKIOSKDlg::OnClickedButtonEnglish)
 ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
 //ON_STN_CLICKED(IDC_TEXT1, &CMFCKIOSKDlg::OnStnClickedText1)
 ON_WM_CTLCOLOR()
+//ON_BN_CLICKED(IDC_BUTTON1, &CMFCKIOSKDlg::OnClickedButton1)
+//ON_STN_CLICKED(IDC_PICTUREBOX2, &CMFCKIOSKDlg::OnStnClickedPicturebox2)
 END_MESSAGE_MAP()
 
 
@@ -273,7 +299,7 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	OnClickedButtonCoffee();     //초기화면 커피메뉴
 
 	//언어 버튼 투명화
-	SetWindowTheme(GetDlgItem(IDC_BUTTON_KOREAN)->GetSafeHwnd(), _T(""), _T(""));
+	/*SetWindowTheme(GetDlgItem(IDC_BUTTON_KOREAN)->GetSafeHwnd(), _T(""), _T(""));
 	SetWindowTheme(GetDlgItem(IDC_BUTTON_ENGLISH)->GetSafeHwnd(), _T(""), _T(""));
 	SetWindowTheme(GetDlgItem(IDC_BUTTON_CHINESE)->GetSafeHwnd(), _T(""), _T(""));
 	//위, 아래 버튼 투명화
@@ -286,7 +312,8 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	SetWindowTheme(GetDlgItem(IDC_BUTTON_BREAD)->GetSafeHwnd(), _T(""), _T(""));
 	//매장, 포장 버튼 투명화
 	SetWindowTheme(GetDlgItem(IDC_BUTTON_HERE)->GetSafeHwnd(), _T(""), _T(""));
-	SetWindowTheme(GetDlgItem(IDC_BUTTON_TOGO)->GetSafeHwnd(), _T(""), _T(""));
+	SetWindowTheme(GetDlgItem(IDC_BUTTON_TOGO)->GetSafeHwnd(), _T(""), _T(""));*/
+
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -734,72 +761,72 @@ void CMFCKIOSKDlg::ClickedCoffeeUp()
 	ClearTextFields();
 	m_buttonCoffee = true;
 	if (m_korean) {
-		m_Text1.SetWindowTextW(_T("아메리카노(ice)"));
-		m_Text2.SetWindowTextW(_T("아메리카노(hot)"));
-		m_Text3.SetWindowTextW(_T("카페라떼(ice)"));
-		m_Text4.SetWindowTextW(_T("카페라떼(hot)"));
-		m_Text5.SetWindowTextW(_T("카라멜마끼아또(ice)"));
-		m_Text6.SetWindowTextW(_T("카라멜마끼아또(hot)"));
-		m_Text7.SetWindowTextW(_T("콜드브루"));
-		m_Text8.SetWindowTextW(_T("바닐라라떼(ice)"));
-		m_Text9.SetWindowTextW(_T("바닐라라떼(hot)"));
+		m_Text1.SetWindowTextA(_T("아메리카노(ice)"));
+		m_Text2.SetWindowTextA(_T("아메리카노(hot)"));
+		m_Text3.SetWindowTextA(_T("카페라떼(ice)"));
+		m_Text4.SetWindowTextA(_T("카페라떼(hot)"));
+		m_Text5.SetWindowTextA(_T("카라멜마끼아또(ice)"));
+		m_Text6.SetWindowTextA(_T("카라멜마끼아또(hot)"));
+		m_Text7.SetWindowTextA(_T("콜드브루"));
+		m_Text8.SetWindowTextA(_T("바닐라라떼(ice)"));
+		m_Text9.SetWindowTextA(_T("바닐라라떼(hot)"));
 
-		m_Price1.SetWindowTextW(_T("1,500원"));
-		m_Price2.SetWindowTextW(_T("2,000원"));
-		m_Price3.SetWindowTextW(_T("2,900원"));
-		m_Price4.SetWindowTextW(_T("2,900원"));
-		m_Price5.SetWindowTextW(_T("3,700원"));
-		m_Price6.SetWindowTextW(_T("3,700원"));
-		m_Price7.SetWindowTextW(_T("3,500원"));
-		m_Price8.SetWindowTextW(_T("3,400원"));
-		m_Price9.SetWindowTextW(_T("3,400원"));
+		m_Price1.SetWindowTextA(_T("1,500원"));
+		m_Price2.SetWindowTextA(_T("2,000원"));
+		m_Price3.SetWindowTextA(_T("2,900원"));
+		m_Price4.SetWindowTextA(_T("2,900원"));
+		m_Price5.SetWindowTextA(_T("3,700원"));
+		m_Price6.SetWindowTextA(_T("3,700원"));
+		m_Price7.SetWindowTextA(_T("3,500원"));
+		m_Price8.SetWindowTextA(_T("3,400원"));
+		m_Price9.SetWindowTextA(_T("3,400원"));
 
 	}
 	else if (m_english) {
-		m_Text1.SetWindowTextW(_T("Americano(ice)"));
-		m_Text2.SetWindowTextW(_T("Americano(hot)"));
-		m_Text3.SetWindowTextW(_T("Latte(ice)"));
-		m_Text4.SetWindowTextW(_T("Latte(hot)"));
-		m_Text5.SetWindowTextW(_T("Caramel macchiato(ice)"));
-		m_Text6.SetWindowTextW(_T("Caramel macchiato(hot)"));
-		m_Text7.SetWindowTextW(_T("Cold brew"));
-		m_Text8.SetWindowTextW(_T("Vanilla latte(ice)"));
-		m_Text9.SetWindowTextW(_T("Vanilla latte(hot)"));
+		m_Text1.SetWindowTextA(_T("Americano(ice)"));
+		m_Text2.SetWindowTextA(_T("Americano(hot)"));
+		m_Text3.SetWindowTextA(_T("Latte(ice)"));
+		m_Text4.SetWindowTextA(_T("Latte(hot)"));
+		m_Text5.SetWindowTextA(_T("Caramel macchiato(ice)"));
+		m_Text6.SetWindowTextA(_T("Caramel macchiato(hot)"));
+		m_Text7.SetWindowTextA(_T("Cold brew"));
+		m_Text8.SetWindowTextA(_T("Vanilla latte(ice)"));
+		m_Text9.SetWindowTextA(_T("Vanilla latte(hot)"));
 
-		m_Price1.SetWindowTextW(_T("1,500₩"));
-		m_Price2.SetWindowTextW(_T("2,000₩"));
-		m_Price3.SetWindowTextW(_T("2,900₩"));
-		m_Price4.SetWindowTextW(_T("2,900₩"));
-		m_Price5.SetWindowTextW(_T("3,700₩"));
-		m_Price6.SetWindowTextW(_T("3,700₩"));
-		m_Price7.SetWindowTextW(_T("3,500₩"));
-		m_Price8.SetWindowTextW(_T("3,400₩"));
-		m_Price9.SetWindowTextW(_T("3,400₩"));
+		m_Price1.SetWindowTextA(_T("1,500₩"));
+		m_Price2.SetWindowTextA(_T("2,000₩"));
+		m_Price3.SetWindowTextA(_T("2,900₩"));
+		m_Price4.SetWindowTextA(_T("2,900₩"));
+		m_Price5.SetWindowTextA(_T("3,700₩"));
+		m_Price6.SetWindowTextA(_T("3,700₩"));
+		m_Price7.SetWindowTextA(_T("3,500₩"));
+		m_Price8.SetWindowTextA(_T("3,400₩"));
+		m_Price9.SetWindowTextA(_T("3,400₩"));
 	}
 	else if (m_chinese) {
-		m_Text1.SetWindowTextW(_T("美式咖啡(冰)"));
-		m_Text2.SetWindowTextW(_T("美式咖啡(热)"));
-		m_Text3.SetWindowTextW(_T("拿铁咖啡(冰)"));
-		m_Text4.SetWindowTextW(_T("拿铁咖啡(热)"));
-		m_Text5.SetWindowTextW(_T("焦糖玛奇朵（冰）"));
-		m_Text6.SetWindowTextW(_T("焦糖玛奇朵（热）"));
-		m_Text7.SetWindowTextW(_T("冷萃咖啡"));
-		m_Text8.SetWindowTextW(_T("香草拿铁(冰)"));
-		m_Text9.SetWindowTextW(_T("香草拿铁(热)"));
+		m_Text1.SetWindowTextA(_T("美式咖啡(冰)"));
+		m_Text2.SetWindowTextA(_T("美式咖啡(热)"));
+		m_Text3.SetWindowTextA(_T("拿铁咖啡(冰)"));
+		m_Text4.SetWindowTextA(_T("拿铁咖啡(热)"));
+		m_Text5.SetWindowTextA(_T("焦糖玛奇朵（冰）"));
+		m_Text6.SetWindowTextA(_T("焦糖玛奇朵（热）"));
+		m_Text7.SetWindowTextA(_T("冷萃咖啡"));
+		m_Text8.SetWindowTextA(_T("香草拿铁(冰)"));
+		m_Text9.SetWindowTextA(_T("香草拿铁(热)"));
 
-		m_Price1.SetWindowTextW(_T("1,500₩"));
-		m_Price2.SetWindowTextW(_T("2,000₩"));
-		m_Price3.SetWindowTextW(_T("2,900₩"));
-		m_Price4.SetWindowTextW(_T("2,900₩"));
-		m_Price5.SetWindowTextW(_T("3,700₩"));
-		m_Price6.SetWindowTextW(_T("3,700₩"));
-		m_Price7.SetWindowTextW(_T("3,500₩"));
-		m_Price8.SetWindowTextW(_T("3,400₩"));
-		m_Price9.SetWindowTextW(_T("3,400₩"));
+		m_Price1.SetWindowTextA(_T("1,500₩"));
+		m_Price2.SetWindowTextA(_T("2,000₩"));
+		m_Price3.SetWindowTextA(_T("2,900₩"));
+		m_Price4.SetWindowTextA(_T("2,900₩"));
+		m_Price5.SetWindowTextA(_T("3,700₩"));
+		m_Price6.SetWindowTextA(_T("3,700₩"));
+		m_Price7.SetWindowTextA(_T("3,500₩"));
+		m_Price8.SetWindowTextA(_T("3,400₩"));
+		m_Price9.SetWindowTextA(_T("3,400₩"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(&r, TRUE);
+	InvalidateRect(&r1, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -834,29 +861,29 @@ void CMFCKIOSKDlg::ClickedCoffeeDown()
 	ClearTextFields();
 	m_buttonCoffee = true;
 	if (m_korean) {
-		m_Text1.SetWindowTextW(_T("에스프레소"));
-		m_Text2.SetWindowTextW(_T("카페모카"));
+		m_Text1.SetWindowTextA(_T("에스프레소"));
+		m_Text2.SetWindowTextA(_T("카페모카"));
 
-		m_Price1.SetWindowTextW(_T("1,500원"));
-		m_Price2.SetWindowTextW(_T("3,700원"));
+		m_Price1.SetWindowTextA(_T("1,500원"));
+		m_Price2.SetWindowTextA(_T("3,700원"));
 	}
 	else if (m_english) {
-		m_Text1.SetWindowTextW(_T("Espresso"));
-		m_Text2.SetWindowTextW(_T("Cafe Mocha"));
+		m_Text1.SetWindowTextA(_T("Espresso"));
+		m_Text2.SetWindowTextA(_T("Cafe Mocha"));
 
-		m_Price1.SetWindowTextW(_T("1,500₩"));
-		m_Price2.SetWindowTextW(_T("3,700₩"));
+		m_Price1.SetWindowTextA(_T("1,500₩"));
+		m_Price2.SetWindowTextA(_T("3,700₩"));
 	}
 	else if (m_chinese) {
-		m_Text1.SetWindowTextW(_T("浓缩咖啡"));
-		m_Text2.SetWindowTextW(_T("摩卡咖啡厅"));
+		m_Text1.SetWindowTextA(_T("浓缩咖啡"));
+		m_Text2.SetWindowTextA(_T("摩卡咖啡厅"));
 
-		m_Price1.SetWindowTextW(_T("1,500₩"));
-		m_Price2.SetWindowTextW(_T("3,700₩"));
+		m_Price1.SetWindowTextA(_T("1,500₩"));
+		m_Price2.SetWindowTextA(_T("3,700₩"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(&r, TRUE);
+	InvalidateRect(&r1, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -890,48 +917,48 @@ void CMFCKIOSKDlg::ClickedCraft()
 	ClearTextFields();
 	m_buttonCraft = true;
 	if (m_korean) {
-		m_Text1.SetWindowTextW(_T("녹차프라페"));
-		m_Text2.SetWindowTextW(_T("쿠키프라페"));
-		m_Text3.SetWindowTextW(_T("민트프라페"));
-		m_Text4.SetWindowTextW(_T("요거트스무디"));
-		m_Text5.SetWindowTextW(_T("유니콘프라페"));
-
-		m_Price1.SetWindowTextW(_T("3,900원"));
-		m_Price2.SetWindowTextW(_T("3,900원"));
-		m_Price3.SetWindowTextW(_T("3,900원"));
-		m_Price4.SetWindowTextW(_T("3,900원"));
-		m_Price5.SetWindowTextW(_T("4,800원"));
+		m_Text1.SetWindowTextA(_T("녹차프라페"));
+		m_Text2.SetWindowTextA(_T("쿠키프라페"));
+		m_Text3.SetWindowTextA(_T("민트프라페"));
+		m_Text4.SetWindowTextA(_T("요거트스무디"));
+		m_Text5.SetWindowTextA(_T("유니콘프라페"));
+		
+		m_Price1.SetWindowTextA(_T("3,900원"));
+		m_Price2.SetWindowTextA(_T("3,900원"));
+		m_Price3.SetWindowTextA(_T("3,900원"));
+		m_Price4.SetWindowTextA(_T("3,900원"));
+		m_Price5.SetWindowTextA(_T("4,800원"));
 
 	}
 	else if (m_english) {
-		m_Text1.SetWindowTextW(_T("Green tea Frappe"));
-		m_Text2.SetWindowTextW(_T("Cookie Frappe"));
-		m_Text3.SetWindowTextW(_T("Mint Frappe"));
-		m_Text4.SetWindowTextW(_T("Yoghurt Smoothie"));
-		m_Text5.SetWindowTextW(_T("Unicorn Frappe"));
+		m_Text1.SetWindowTextA(_T("Green tea Frappe"));
+		m_Text2.SetWindowTextA(_T("Cookie Frappe"));
+		m_Text3.SetWindowTextA(_T("Mint Frappe"));
+		m_Text4.SetWindowTextA(_T("Yoghurt Smoothie"));
+		m_Text5.SetWindowTextA(_T("Unicorn Frappe"));
 
-		m_Price1.SetWindowTextW(_T("3,900₩"));
-		m_Price2.SetWindowTextW(_T("3,900₩"));
-		m_Price3.SetWindowTextW(_T("3,900₩"));
-		m_Price4.SetWindowTextW(_T("3,900₩"));
-		m_Price5.SetWindowTextW(_T("4,800₩"));
+		m_Price1.SetWindowTextA(_T("3,900₩"));
+		m_Price2.SetWindowTextA(_T("3,900₩"));
+		m_Price3.SetWindowTextA(_T("3,900₩"));
+		m_Price4.SetWindowTextA(_T("3,900₩"));
+		m_Price5.SetWindowTextA(_T("4,800₩"));
 	}
 	else if (m_chinese) {
-		m_Text1.SetWindowTextW(_T("绿茶冰沙"));
-		m_Text2.SetWindowTextW(_T("饼干冰沙"));
-		m_Text3.SetWindowTextW(_T("薄荷冰沙"));
-		m_Text4.SetWindowTextW(_T("酸奶冰沙"));
-		m_Text5.SetWindowTextW(_T("独角兽冰沙"));
+		m_Text1.SetWindowTextA(_T("绿茶冰沙"));
+		m_Text2.SetWindowTextA(_T("饼干冰沙"));
+		m_Text3.SetWindowTextA(_T("薄荷冰沙"));
+		m_Text4.SetWindowTextA(_T("酸奶冰沙"));
+		m_Text5.SetWindowTextA(_T("独角兽冰沙"));
 
-		m_Price1.SetWindowTextW(_T("3,900₩"));
-		m_Price2.SetWindowTextW(_T("3,900₩"));
-		m_Price3.SetWindowTextW(_T("3,900₩"));
-		m_Price4.SetWindowTextW(_T("3,900₩"));
-		m_Price5.SetWindowTextW(_T("4,800₩"));
+		m_Price1.SetWindowTextA(_T("3,900₩"));
+		m_Price2.SetWindowTextA(_T("3,900₩"));
+		m_Price3.SetWindowTextA(_T("3,900₩"));
+		m_Price4.SetWindowTextA(_T("3,900₩"));
+		m_Price5.SetWindowTextA(_T("4,800₩"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(&r, TRUE);
+	InvalidateRect(&r1, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -965,53 +992,53 @@ void CMFCKIOSKDlg::ClickedTea()
 	ClearTextFields();
 	m_buttonTea = true;
 	if (m_korean) {
-		m_Text1.SetWindowTextW(_T("유자차"));
-		m_Text2.SetWindowTextW(_T("페퍼민트"));
-		m_Text3.SetWindowTextW(_T("캐모마일"));
-		m_Text4.SetWindowTextW(_T("얼그레이"));
-		m_Text5.SetWindowTextW(_T("녹차"));
-		m_Text6.SetWindowTextW(_T("사과유자차"));
+		m_Text1.SetWindowTextA(_T("유자차"));
+		m_Text2.SetWindowTextA(_T("페퍼민트"));
+		m_Text3.SetWindowTextA(_T("캐모마일"));
+		m_Text4.SetWindowTextA(_T("얼그레이"));
+		m_Text5.SetWindowTextA(_T("녹차"));
+		m_Text6.SetWindowTextA(_T("사과유자차"));
 
-		m_Price1.SetWindowTextW(_T("3,000원"));
-		m_Price2.SetWindowTextW(_T("2,500원"));
-		m_Price3.SetWindowTextW(_T("2,500원"));
-		m_Price4.SetWindowTextW(_T("2,500원"));
-		m_Price5.SetWindowTextW(_T("2,500원"));
-		m_Price6.SetWindowTextW(_T("3,500원"));
+		m_Price1.SetWindowTextA(_T("3,000원"));
+		m_Price2.SetWindowTextA(_T("2,500원"));
+		m_Price3.SetWindowTextA(_T("2,500원"));
+		m_Price4.SetWindowTextA(_T("2,500원"));
+		m_Price5.SetWindowTextA(_T("2,500원"));
+		m_Price6.SetWindowTextA(_T("3,500원"));
 	}
 	else if (m_english) {
-		m_Text1.SetWindowTextW(_T("Citron Tea"));
-		m_Text2.SetWindowTextW(_T("Peppermint"));
-		m_Text3.SetWindowTextW(_T("Chamomile"));
-		m_Text4.SetWindowTextW(_T("Earl Grey"));
-		m_Text5.SetWindowTextW(_T("Green Tea"));
-		m_Text6.SetWindowTextW(_T("Apple citron Tea"));
+		m_Text1.SetWindowTextA(_T("Citron Tea"));
+		m_Text2.SetWindowTextA(_T("Peppermint"));
+		m_Text3.SetWindowTextA(_T("Chamomile"));
+		m_Text4.SetWindowTextA(_T("Earl Grey"));
+		m_Text5.SetWindowTextA(_T("Green Tea"));
+		m_Text6.SetWindowTextA(_T("Apple citron Tea"));
 
-		m_Price1.SetWindowTextW(_T("3,000₩"));
-		m_Price2.SetWindowTextW(_T("2,500₩"));
-		m_Price3.SetWindowTextW(_T("2,500₩"));
-		m_Price4.SetWindowTextW(_T("2,500₩"));
-		m_Price5.SetWindowTextW(_T("2,500₩"));
-		m_Price6.SetWindowTextW(_T("3,500₩"));
+		m_Price1.SetWindowTextA(_T("3,000₩"));
+		m_Price2.SetWindowTextA(_T("2,500₩"));
+		m_Price3.SetWindowTextA(_T("2,500₩"));
+		m_Price4.SetWindowTextA(_T("2,500₩"));
+		m_Price5.SetWindowTextA(_T("2,500₩"));
+		m_Price6.SetWindowTextA(_T("3,500₩"));
 	}
 	else if (m_chinese) {
-		m_Text1.SetWindowTextW(_T("柚子茶"));
-		m_Text2.SetWindowTextW(_T("薄荷洋甘菊茶"));
-		m_Text3.SetWindowTextW(_T("洋甘菊茶"));
-		m_Text4.SetWindowTextW(_T("伯爵茶"));
-		m_Text5.SetWindowTextW(_T("绿茶"));
-		m_Text6.SetWindowTextW(_T("苹果柚子茶"));
+		m_Text1.SetWindowTextA(_T("柚子茶"));
+		m_Text2.SetWindowTextA(_T("薄荷洋甘菊茶"));
+		m_Text3.SetWindowTextA(_T("洋甘菊茶"));
+		m_Text4.SetWindowTextA(_T("伯爵茶"));
+		m_Text5.SetWindowTextA(_T("绿茶"));
+		m_Text6.SetWindowTextA(_T("苹果柚子茶"));
 
-		m_Price1.SetWindowTextW(_T("3,000₩"));
-		m_Price2.SetWindowTextW(_T("2,500₩"));
-		m_Price3.SetWindowTextW(_T("2,500₩"));
-		m_Price4.SetWindowTextW(_T("2,500₩"));
-		m_Price5.SetWindowTextW(_T("2,500₩"));
-		m_Price6.SetWindowTextW(_T("3,500₩"));
+		m_Price1.SetWindowTextA(_T("3,000₩"));
+		m_Price2.SetWindowTextA(_T("2,500₩"));
+		m_Price3.SetWindowTextA(_T("2,500₩"));
+		m_Price4.SetWindowTextA(_T("2,500₩"));
+		m_Price5.SetWindowTextA(_T("2,500₩"));
+		m_Price6.SetWindowTextA(_T("3,500₩"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(&r, TRUE);
+	InvalidateRect(&r1, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -1046,71 +1073,71 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 	ClearTextFields();
 	m_buttonBread = true;
 	if (m_korean) {
-		m_Text1.SetWindowTextW(_T("아이스크림 크로플"));
-		m_Text2.SetWindowTextW(_T("크루아상"));
-		m_Text3.SetWindowTextW(_T("마들렌"));
-		m_Text4.SetWindowTextW(_T("스콘"));
-		m_Text5.SetWindowTextW(_T("마카롱"));
-		m_Text6.SetWindowTextW(_T("샌드위치"));
-		m_Text7.SetWindowTextW(_T("아이스크림 슈"));
-		m_Text8.SetWindowTextW(_T("롤케익"));
-		m_Text9.SetWindowTextW(_T("초코칩쿠키"));
+		m_Text1.SetWindowTextA(_T("아이스크림 크로플"));
+		m_Text2.SetWindowTextA(_T("크루아상"));
+		m_Text3.SetWindowTextA(_T("마들렌"));
+		m_Text4.SetWindowTextA(_T("스콘"));
+		m_Text5.SetWindowTextA(_T("마카롱"));
+		m_Text6.SetWindowTextA(_T("샌드위치"));
+		m_Text7.SetWindowTextA(_T("아이스크림 슈"));
+		m_Text8.SetWindowTextA(_T("롤케익"));
+		m_Text9.SetWindowTextA(_T("초코칩쿠키"));
 
-		m_Price1.SetWindowTextW(_T("6,500원"));
-		m_Price2.SetWindowTextW(_T("2,800원"));
-		m_Price3.SetWindowTextW(_T("3,000원"));
-		m_Price4.SetWindowTextW(_T("3,000원"));
-		m_Price5.SetWindowTextW(_T("2,700원"));
-		m_Price6.SetWindowTextW(_T("3,000원"));
-		m_Price7.SetWindowTextW(_T("4,800원"));
-		m_Price8.SetWindowTextW(_T("8,000원"));
-		m_Price9.SetWindowTextW(_T("3,600원"));
+		m_Price1.SetWindowTextA(_T("6,500원"));
+		m_Price2.SetWindowTextA(_T("2,800원"));
+		m_Price3.SetWindowTextA(_T("3,000원"));
+		m_Price4.SetWindowTextA(_T("3,000원"));
+		m_Price5.SetWindowTextA(_T("2,700원"));
+		m_Price6.SetWindowTextA(_T("3,000원"));
+		m_Price7.SetWindowTextA(_T("4,800원"));
+		m_Price8.SetWindowTextA(_T("8,000원"));
+		m_Price9.SetWindowTextA(_T("3,600원"));
 	}
 	else if (m_english) {
-		m_Text1.SetWindowTextW(_T("Ice cream Croffles"));
-		m_Text2.SetWindowTextW(_T("Croissants"));
-		m_Text3.SetWindowTextW(_T("Madeleine"));
-		m_Text4.SetWindowTextW(_T("Scone"));
-		m_Text5.SetWindowTextW(_T("Macaron"));
-		m_Text6.SetWindowTextW(_T("Sandwich"));
-		m_Text7.SetWindowTextW(_T("Ice cream Puff"));
-		m_Text8.SetWindowTextW(_T("Roll cake"));
-		m_Text9.SetWindowTextW(_T("Chocolate chip Cookies"));
+		m_Text1.SetWindowTextA(_T("Ice cream Croffles"));
+		m_Text2.SetWindowTextA(_T("Croissants"));
+		m_Text3.SetWindowTextA(_T("Madeleine"));
+		m_Text4.SetWindowTextA(_T("Scone"));
+		m_Text5.SetWindowTextA(_T("Macaron"));
+		m_Text6.SetWindowTextA(_T("Sandwich"));
+		m_Text7.SetWindowTextA(_T("Ice cream Puff"));
+		m_Text8.SetWindowTextA(_T("Roll cake"));
+		m_Text9.SetWindowTextA(_T("Chocolate chip Cookies"));
 
-		m_Price1.SetWindowTextW(_T("6,500₩"));
-		m_Price2.SetWindowTextW(_T("2,800₩"));
-		m_Price3.SetWindowTextW(_T("3,000₩"));
-		m_Price4.SetWindowTextW(_T("3,000₩"));
-		m_Price5.SetWindowTextW(_T("2,700₩"));
-		m_Price6.SetWindowTextW(_T("3,000₩"));
-		m_Price7.SetWindowTextW(_T("4,800₩"));
-		m_Price8.SetWindowTextW(_T("8,000₩"));
-		m_Price9.SetWindowTextW(_T("3,600₩"));
+		m_Price1.SetWindowTextA(_T("6,500₩"));
+		m_Price2.SetWindowTextA(_T("2,800₩"));
+		m_Price3.SetWindowTextA(_T("3,000₩"));
+		m_Price4.SetWindowTextA(_T("3,000₩"));
+		m_Price5.SetWindowTextA(_T("2,700₩"));
+		m_Price6.SetWindowTextA(_T("3,000₩"));
+		m_Price7.SetWindowTextA(_T("4,800₩"));
+		m_Price8.SetWindowTextA(_T("8,000₩"));
+		m_Price9.SetWindowTextA(_T("3,600₩"));
 	}
 	else if (m_chinese) {
-		m_Text1.SetWindowTextW(_T("冰淇淋Croffle"));
-		m_Text2.SetWindowTextW(_T("牛角面包"));
-		m_Text3.SetWindowTextW(_T("玛德琳"));
-		m_Text4.SetWindowTextW(_T("烤饼"));
-		m_Text5.SetWindowTextW(_T("马卡龙"));
-		m_Text6.SetWindowTextW(_T("三明治"));
-		m_Text7.SetWindowTextW(_T("冰淇淋泡芙"));
-		m_Text8.SetWindowTextW(_T("蛋糕卷"));
-		m_Text9.SetWindowTextW(_T("巧克力饼干"));
+		m_Text1.SetWindowTextA(_T("冰淇淋Croffle"));
+		m_Text2.SetWindowTextA(_T("牛角面包"));
+		m_Text3.SetWindowTextA(_T("玛德琳"));
+		m_Text4.SetWindowTextA(_T("烤饼"));
+		m_Text5.SetWindowTextA(_T("马卡龙"));
+		m_Text6.SetWindowTextA(_T("三明治"));
+		m_Text7.SetWindowTextA(_T("冰淇淋泡芙"));
+		m_Text8.SetWindowTextA(_T("蛋糕卷"));
+		m_Text9.SetWindowTextA(_T("巧克力饼干"));
 
-		m_Price1.SetWindowTextW(_T("6,500₩"));
-		m_Price2.SetWindowTextW(_T("2,800₩"));
-		m_Price3.SetWindowTextW(_T("3,000₩"));
-		m_Price4.SetWindowTextW(_T("3,000₩"));
-		m_Price5.SetWindowTextW(_T("2,700₩"));
-		m_Price6.SetWindowTextW(_T("3,000₩"));
-		m_Price7.SetWindowTextW(_T("4,800₩"));
-		m_Price8.SetWindowTextW(_T("8,000₩"));
-		m_Price9.SetWindowTextW(_T("3,600₩"));
+		m_Price1.SetWindowTextA(_T("6,500₩"));
+		m_Price2.SetWindowTextA(_T("2,800₩"));
+		m_Price3.SetWindowTextA(_T("3,000₩"));
+		m_Price4.SetWindowTextA(_T("3,000₩"));
+		m_Price5.SetWindowTextA(_T("2,700₩"));
+		m_Price6.SetWindowTextA(_T("3,000₩"));
+		m_Price7.SetWindowTextA(_T("4,800₩"));
+		m_Price8.SetWindowTextA(_T("8,000₩"));
+		m_Price9.SetWindowTextA(_T("3,600₩"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(&r, TRUE);
+	InvalidateRect(&r1, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -1145,20 +1172,20 @@ void CMFCKIOSKDlg::ClickedBreadDown()
 	ClearTextFields();
 	m_buttonBread = true;
 	if (m_korean) {
-		m_Text1.SetWindowTextW(_T("약과"));
-		m_Price1.SetWindowTextW(_T("2,000원"));
+		m_Text1.SetWindowTextA(_T("약과"));
+		m_Price1.SetWindowTextA(_T("2,000원"));
 	}
 	else if (m_english) {
-		m_Text1.SetWindowTextW(_T("Yakgwa"));
-		m_Price1.SetWindowTextW(_T("2,000₩"));
+		m_Text1.SetWindowTextA(_T("Yakgwa"));
+		m_Price1.SetWindowTextA(_T("2,000₩"));
 	}
 	else if (m_chinese) {
-		m_Text1.SetWindowTextW(_T("藥果"));
-		m_Price1.SetWindowTextW(_T("2,000₩"));
+		m_Text1.SetWindowTextA(_T("藥果"));
+		m_Price1.SetWindowTextA(_T("2,000₩"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
-	InvalidateRect(&r, TRUE);
+	InvalidateRect(&r1, TRUE);
 	UpdateWindow();
 
 	//bitmap 이미지 넣기
@@ -1366,3 +1393,4 @@ HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	}
 	return hbr;
 }
+
