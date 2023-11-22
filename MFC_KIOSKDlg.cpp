@@ -422,12 +422,7 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_price(int nID)
 		//pEdit->SetFont(&m_font);
 
 		pEdit->SetFont(&m_font_price);
-
 	}
-
-
-
-
 }
 void CMFCKIOSKDlg::m_setFont_for_m_font_edit(int nID)
 {
@@ -1049,13 +1044,14 @@ void CMFCKIOSKDlg::ClickedTeaUp()
 		m_Price5.SetWindowTextA(_T("2,500WON"));
 		m_Price6.SetWindowTextA(_T("3,500WON"));
 	}
-	else if (m_chinese) {                                   //중국어
+	else if (m_chinese) {      //중국어
+
 		m_Text1.SetWindowTextA(_T("柚子茶"));
 		m_Text2.SetWindowTextA(_T("薄荷洋甘菊茶"));
 		m_Text3.SetWindowTextA(_T("洋甘菊茶"));
 		m_Text4.SetWindowTextA(_T("伯爵茶"));
-		m_Text5.SetWindowTextA(_T("绿茶"));
-		m_Text6.SetWindowTextA(_T("苹果柚子茶"));
+		m_Text5.SetWindowTextA(_T("綠茶"));
+		m_Text6.SetWindowTextA(_T("沙果柚子茶"));
 
 		m_Price1.SetWindowTextA(_T("3,000WON"));
 		m_Price2.SetWindowTextA(_T("2,500WON"));
@@ -1151,15 +1147,15 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 		m_Price9.SetWindowTextA(_T("3,600WON"));
 	}
 	else if (m_chinese) {                                   //중국어
-		m_Text1.SetWindowTextA(_T("冰淇淋Croffle"));
+		m_Text1.SetWindowTextA(_T("氷菓淋 Croffle"));
 		m_Text2.SetWindowTextA(_T("牛角面包"));
-		m_Text3.SetWindowTextA(_T("玛德琳"));
-		m_Text4.SetWindowTextA(_T("烤饼"));
-		m_Text5.SetWindowTextA(_T("马卡龙"));
+		m_Text3.SetWindowTextA(_T("瑪德蓮蛋"));
+		m_Text4.SetWindowTextA(_T("司康"));
+		m_Text5.SetWindowTextA(_T("蛋白杏仁"));
 		m_Text6.SetWindowTextA(_T("三明治"));
-		m_Text7.SetWindowTextA(_T("冰淇淋泡芙"));
-		m_Text8.SetWindowTextA(_T("蛋糕卷"));
-		m_Text9.SetWindowTextA(_T("巧克力饼干"));
+		m_Text7.SetWindowTextA(_T("氷淇淋泡芙"));
+		m_Text8.SetWindowTextA(_T("瑞士卷"));
+		m_Text9.SetWindowTextA(_T("巧克力餠干"));
 
 		m_Price1.SetWindowTextA(_T("6,500WON"));
 		m_Price2.SetWindowTextA(_T("2,800WON"));
