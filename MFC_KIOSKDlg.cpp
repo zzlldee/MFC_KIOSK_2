@@ -802,11 +802,11 @@ void CMFCKIOSKDlg::ClickedCoffeeUp()
 		m_Text2.SetWindowTextA(_T("Americano(hot)"));
 		m_Text3.SetWindowTextA(_T("Latte(ice)"));
 		m_Text4.SetWindowTextA(_T("Latte(hot)"));
-		m_Text5.SetWindowTextA(_T("Caramel macchiato(ice)"));
-		m_Text6.SetWindowTextA(_T("Caramel macchiato(hot)"));
-		m_Text7.SetWindowTextA(_T("Cold brew"));
-		m_Text8.SetWindowTextA(_T("Vanilla latte(ice)"));
-		m_Text9.SetWindowTextA(_T("Vanilla latte(hot)"));
+		m_Text5.SetWindowTextA(_T("Caramel Macchiato(ice)"));
+		m_Text6.SetWindowTextA(_T("Caramel Macchiato(hot)"));
+		m_Text7.SetWindowTextA(_T("Cold Brew"));
+		m_Text8.SetWindowTextA(_T("Vanilla Latte(ice)"));
+		m_Text9.SetWindowTextA(_T("Vanilla Latte(hot)"));
 
 		m_Price1.SetWindowTextA(_T("1,500WON"));
 		m_Price2.SetWindowTextA(_T("2,000WON"));
@@ -819,15 +819,15 @@ void CMFCKIOSKDlg::ClickedCoffeeUp()
 		m_Price9.SetWindowTextA(_T("3,400WON"));
 	}
 	else if (m_chinese) {                                   //중국어
-		m_Text1.SetWindowTextA(_T("美式咖啡(ice)"));
-		m_Text2.SetWindowTextA(_T("美式咖啡(hot)"));
-		m_Text3.SetWindowTextA(_T("拿铁咖啡(ice)"));
-		m_Text4.SetWindowTextA(_T("拿铁咖啡(hot)"));
-		m_Text5.SetWindowTextA(_T("焦糖玛奇朵(ice)"));
-		m_Text6.SetWindowTextA(_T("焦糖玛奇朵(hot)"));
-		m_Text7.SetWindowTextA(_T("冷萃咖啡"));
-		m_Text8.SetWindowTextA(_T("香草拿铁(ice)"));
-		m_Text9.SetWindowTextA(_T("香草拿铁(hot)"));
+		m_Text1.SetWindowTextA(_T("美式水兒(ice)"));
+		m_Text2.SetWindowTextA(_T("美式水兒(hot)"));
+		m_Text3.SetWindowTextA(_T("拿鐵水兒(ice)"));
+		m_Text4.SetWindowTextA(_T("拿鐵水兒(hot)"));
+		m_Text5.SetWindowTextA(_T("焦糖瑪奇(ice)"));
+		m_Text6.SetWindowTextA(_T("焦糖瑪奇(hot)"));
+		m_Text7.SetWindowTextA(_T("冷萃水兒"));
+		m_Text8.SetWindowTextA(_T("香草拿鐵(ice)"));
+		m_Text9.SetWindowTextA(_T("香草拿鐵(hot)"));
 
 		m_Price1.SetWindowTextA(_T("1,500WON"));
 		m_Price2.SetWindowTextA(_T("2,000WON"));
@@ -889,8 +889,8 @@ void CMFCKIOSKDlg::ClickedCoffeeDown()
 		m_Price2.SetWindowTextA(_T("3,700WON"));
 	}
 	else if (m_chinese) {                                   //중국어
-		m_Text1.SetWindowTextA(_T("浓缩咖啡"));
-		m_Text2.SetWindowTextA(_T("摩卡咖啡厅"));
+		m_Text1.SetWindowTextA(_T("意式濃縮"));
+		m_Text2.SetWindowTextA(_T("巧克力摩"));
 
 		m_Price1.SetWindowTextA(_T("1,500WON"));
 		m_Price2.SetWindowTextA(_T("3,700WON"));
@@ -958,11 +958,11 @@ void CMFCKIOSKDlg::ClickedCraftUp()
 		m_Price5.SetWindowTextA(_T("4,800WON"));
 	}
 	else if (m_chinese) {                                   //중국어
-		m_Text1.SetWindowTextA(_T("绿茶冰沙"));
-		m_Text2.SetWindowTextA(_T("饼干冰沙"));
-		m_Text3.SetWindowTextA(_T("薄荷冰沙"));
-		m_Text4.SetWindowTextA(_T("酸奶冰沙"));
-		m_Text5.SetWindowTextA(_T("独角兽冰沙"));
+		m_Text1.SetWindowTextA(_T("綠茶普拉佩"));
+		m_Text2.SetWindowTextA(_T("曲奇普拉佩"));
+		m_Text3.SetWindowTextA(_T("薄荷色普拉佩"));
+		m_Text4.SetWindowTextA(_T("乳酸菌果昔"));
+		m_Text5.SetWindowTextA(_T("獨角獸普拉佩"));
 
 		m_Price1.SetWindowTextA(_T("3,900WON"));
 		m_Price2.SetWindowTextA(_T("3,900WON"));
@@ -1133,7 +1133,7 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 		m_Text5.SetWindowTextA(_T("Macaron"));
 		m_Text6.SetWindowTextA(_T("Sandwich"));
 		m_Text7.SetWindowTextA(_T("Ice cream Puff"));
-		m_Text8.SetWindowTextA(_T("Roll cake"));
+		m_Text8.SetWindowTextA(_T("Roll Cake"));
 		m_Text9.SetWindowTextA(_T("Chocolate chip Cookies"));
 
 		m_Price1.SetWindowTextA(_T("6,500WON"));
@@ -1147,7 +1147,7 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 		m_Price9.SetWindowTextA(_T("3,600WON"));
 	}
 	else if (m_chinese) {                                   //중국어
-		m_Text1.SetWindowTextA(_T("氷菓淋 Croffle"));
+		m_Text1.SetWindowTextA(_T("氷菓淋麥子"));
 		m_Text2.SetWindowTextA(_T("牛角面包"));
 		m_Text3.SetWindowTextA(_T("瑪德蓮蛋"));
 		m_Text4.SetWindowTextA(_T("司康"));
