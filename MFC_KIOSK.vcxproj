@@ -186,6 +186,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MFC_KIOSK.h" />
     <ClInclude Include="MFC_KIOSKDlg.h" />
+    <ClInclude Include="Modal_Pay.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -193,6 +194,7 @@
   <ItemGroup>
     <ClCompile Include="MFC_KIOSK.cpp" />
     <ClCompile Include="MFC_KIOSKDlg.cpp" />
+    <ClCompile Include="Modal_Pay.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -207,6 +209,10 @@
     <None Include="res\MFCKIOSK.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111046808_02.bmp" />
+    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111046808_04.bmp" />
+    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111624591.bmp" />
+    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_112152711.bmp" />
     <Image Include="res\bitmap1.bmp" />
     <Image Include="res\bitmap2.bmp" />
     <Image Include="res\B_bitmap1.bmp" />

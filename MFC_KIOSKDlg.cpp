@@ -7,7 +7,7 @@
 #include "MFC_KIOSK.h"
 #include "MFC_KIOSKDlg.h"
 #include "afxdialogex.h"
-
+#include "Modal_Pay.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -132,6 +132,9 @@ ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
 ON_WM_CTLCOLOR()
 //ON_BN_CLICKED(IDC_BUTTON1, &CMFCKIOSKDlg::OnClickedButton1)
 //ON_STN_CLICKED(IDC_PICTUREBOX2, &CMFCKIOSKDlg::OnStnClickedPicturebox2)
+ON_STN_CLICKED(IDC_PICTUREBOX1, &CMFCKIOSKDlg::OnStnClickedPicturebox1)
+ON_BN_CLICKED(IDC_BUTTON_HERE, &CMFCKIOSKDlg::OnClickedButtonHere)
+ON_BN_CLICKED(IDC_BUTTON_TOGO, &CMFCKIOSKDlg::OnClickedButtonTogo)
 END_MESSAGE_MAP()
 
 
@@ -292,7 +295,7 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setFont_allsum(55, FW_BOLD);
 
 	/////////////////////////////////////////////////////////
-	m_buttonCoffee = m_buttonBread = m_buttonTea = m_buttonCraft = m_buttonCoffeeDown = m_buttonBreadDown = false;
+	m_buttonCoffee = m_buttonBread = m_buttonTea = m_buttonCraft = m_buttonCoffeeDown = m_buttonBreadDown = m_buttonTea=m_buttonCraft=false;
 	m_korean = m_english = m_chinese = false;
 
 	OnClickedButtonKorean();   //초기화면 한국어
@@ -732,6 +735,19 @@ void CMFCKIOSKDlg::OnClickedButtonUp()
 		ClickedBreadUp();
 		m_buttonBreadDown = false;
 	}
+	else if (m_buttonTea)
+	{
+		//위 버튼 눌렀을 때(tea)
+		//ClickedTeaUp();
+		m_buttonTeaDown = false;
+	}
+
+	else if (m_buttonCraft)
+	{
+		//위 버튼 눌렀을 때(craft)
+		//ClickedCraftUp();
+		m_buttonCraftDown = false;
+	}
 }
 
 
@@ -749,6 +765,19 @@ void CMFCKIOSKDlg::OnClickedButtonDown()
 		//아래 버튼 눌렀을 때(bread)
 		ClickedBreadDown();
 		m_buttonBreadDown = true;
+	}
+	else if (m_buttonTea)
+	{
+		//위 버튼 눌렀을 때(tea)
+		//ClickedTeaDown();
+		m_buttonTeaDown = true;
+	}
+
+	else if (m_buttonCraft)
+	{
+		//위 버튼 눌렀을 때(craft)
+		//ClickedCraftDown();
+		m_buttonCraftDown = true;
 	}
 }
 
@@ -1394,3 +1423,35 @@ HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	return hbr;
 }
 
+
+
+void CMFCKIOSKDlg::OnStnClickedPicturebox1()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnClickedButtonHere()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (m_dlgPay.GetSafeHwnd()) {
+		m_dlgPay.DestroyWindow();
+	}
+	m_dlgPay.DoModal();
+
+	InvalidateRect(NULL, TRUE);
+	UpdateWindow();
+}
+
+
+void CMFCKIOSKDlg::OnClickedButtonTogo()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (m_dlgPay.GetSafeHwnd()) {
+		m_dlgPay.DestroyWindow();
+	}
+	m_dlgPay.DoModal();
+
+	InvalidateRect(NULL, TRUE);
+	UpdateWindow();
+}

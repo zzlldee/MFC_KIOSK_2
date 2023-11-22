@@ -3,7 +3,7 @@
 //
 
 #pragma once
-
+#include "Modal_Pay.h"
 
 // CMFCKIOSKDlg 대화 상자
 class CMFCKIOSKDlg : public CDialogEx
@@ -101,6 +101,8 @@ public:
 	bool m_buttonCraft;
 	bool m_buttonBreadDown;
 	bool m_buttonCoffeeDown;
+	bool m_buttonCraftDown;
+	bool m_buttonTeaDown;
 	bool m_korean;
 	bool m_english;
 	bool m_chinese;
@@ -137,7 +139,7 @@ public:
 	CStatic m_textOrder7;
 	CStatic m_textOrder8;
 	RECT r2 = { 1262, 130, 1900, 660 };
-	void ClearOrderFields();
+	//void ClearOrderFields();
 	CEdit m_edit1;
 	CEdit m_edit2;
 	CEdit m_edit3;
@@ -147,4 +149,8 @@ public:
 	CEdit m_edit7;
 	CEdit m_edit8;
 //	afx_msg void OnStnClickedPicturebox2();
+	afx_msg void OnStnClickedPicturebox1();
+	afx_msg void OnClickedButtonHere();
+	afx_msg void OnClickedButtonTogo();
+	Modal_Pay m_dlgPay;
 };

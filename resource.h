@@ -43,6 +43,12 @@
 #define IDB_BITMAP_T6                   167
 #define IDB_BITMAP_EMPTY                168
 #define IDB_BITMAP_T2                   169
+#define IDD_DIALOG_MOFAL_PAY            172
+#define IDB_BITMAP_KAKAO                174
+#define IDB_BITMAP_PAYCO                175
+#define IDB_BITMAP_NAVER                176
+#define IDB_BITMAP7                     177
+#define IDB_BITMAP_CARD                 177
 #define IDC_BUTTON_CRAFT                1001
 #define IDC_BUTTON_TEA                  1002
 #define IDC_BUTTON_BREAD                1003
@@ -106,14 +112,19 @@
 #define IDC_BUTTON_KOREAN               1061
 #define IDC_BUTTON_ENGLISH              1062
 #define IDC_BUTTON_CHINESE              1063
+#define IDC_BUTTON_KAKAO                1065
+#define IDC_BUTTON_NAVER                1066
+#define IDC_BUTTON_CARD                 1067
+#define IDC_BUTTON_PAYCO                1068
+#define IDC_BUTTON_BACK                 1069
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        172
+#define _APS_NEXT_RESOURCE_VALUE        178
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1065
+#define _APS_NEXT_CONTROL_VALUE         1070
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
