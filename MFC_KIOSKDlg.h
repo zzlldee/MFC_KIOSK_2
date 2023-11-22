@@ -73,8 +73,8 @@ public:
 	afx_msg void OnClickedButtonDown();
 	void ClickedCoffeeUp();
 	void ClickedCoffeeDown();
-	void ClickedCraft();
-	void ClickedTea();
+	void ClickedCraftUp();
+	void ClickedTeaUp();
 	void ClickedBreadUp();
 	void ClickedBreadDown();
 	CStatic m_Text1;
@@ -120,8 +120,9 @@ public:
 	CStatic m_pictureControl8;
 	CStatic m_pictureControl9;
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
-	RECT r1 = { 129, 370, 1150, 1100 };
-	//afx_msg void OnClickedButton1();
+	//RECT r1 = (x시작, y시작, x끝, y끝 좌표}
+	RECT r1 = { 129, 370, 1150, 1100 };    //메뉴판 이미지 범위
+	RECT r2 = { 1262, 130, 1900, 660 };    //order 큐 범위(변경 필요할수 있음)
 	CStatic m_textOrder1;
 	CStatic m_textOrderSum1;
 	CStatic m_textOrderSum2;
@@ -138,8 +139,6 @@ public:
 	CStatic m_textOrder6;
 	CStatic m_textOrder7;
 	CStatic m_textOrder8;
-	RECT r2 = { 1262, 130, 1900, 660 };
-	//void ClearOrderFields();
 	CEdit m_edit1;
 	CEdit m_edit2;
 	CEdit m_edit3;
@@ -148,9 +147,9 @@ public:
 	CEdit m_edit6;
 	CEdit m_edit7;
 	CEdit m_edit8;
-//	afx_msg void OnStnClickedPicturebox2();
-//	afx_msg void OnStnClickedPicturebox1();
 	afx_msg void OnClickedButtonHere();
 	afx_msg void OnClickedButtonTogo();
 	Modal_Pay m_dlgPay;
+	void ClickedCraftDown();
+	void ClickedTeaDown();
 };

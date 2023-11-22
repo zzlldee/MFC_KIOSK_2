@@ -86,8 +86,6 @@ void CMFCKIOSKDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_PICTUREBOX7, m_pictureControl7);
 	DDX_Control(pDX, IDC_PICTUREBOX8, m_pictureControl8);
 	DDX_Control(pDX, IDC_PICTUREBOX9, m_pictureControl9);
-	//  DDX_Control(pDX, IDC_BUTTON_UP, m_buttonUp);
-	//  DDX_Control(pDX, IDC_BUTTON_DOWN, m_buttonDown);
 	DDX_Control(pDX, IDC_TEXT_ORDER1, m_textOrder1);
 	DDX_Control(pDX, IDC_TEXT_ORDER1_SUM, m_textOrderSum1);
 	DDX_Control(pDX, IDC_TEXT_ORDER2_SUM, m_textOrderSum2);
@@ -128,11 +126,7 @@ ON_BN_CLICKED(IDC_BUTTON_DOWN, &CMFCKIOSKDlg::OnClickedButtonDown)
 ON_BN_CLICKED(IDC_BUTTON_KOREAN, &CMFCKIOSKDlg::OnClickedButtonKorean)
 ON_BN_CLICKED(IDC_BUTTON_ENGLISH, &CMFCKIOSKDlg::OnClickedButtonEnglish)
 ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
-//ON_STN_CLICKED(IDC_TEXT1, &CMFCKIOSKDlg::OnStnClickedText1)
 ON_WM_CTLCOLOR()
-//ON_BN_CLICKED(IDC_BUTTON1, &CMFCKIOSKDlg::OnClickedButton1)
-//ON_STN_CLICKED(IDC_PICTUREBOX2, &CMFCKIOSKDlg::OnStnClickedPicturebox2)
-//ON_STN_CLICKED(IDC_PICTUREBOX1, &CMFCKIOSKDlg::OnStnClickedPicturebox1)
 ON_BN_CLICKED(IDC_BUTTON_HERE, &CMFCKIOSKDlg::OnClickedButtonHere)
 ON_BN_CLICKED(IDC_BUTTON_TOGO, &CMFCKIOSKDlg::OnClickedButtonTogo)
 END_MESSAGE_MAP()
@@ -295,7 +289,9 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setFont_allsum(55, FW_BOLD);
 
 	/////////////////////////////////////////////////////////
-	m_buttonCoffee = m_buttonBread = m_buttonTea = m_buttonCraft = m_buttonCoffeeDown = m_buttonBreadDown = m_buttonTea=m_buttonCraft=false;
+	//초기 설정 false
+	m_buttonCoffee = m_buttonBread = m_buttonTea = m_buttonCraft = false;
+	m_buttonCoffeeDown = m_buttonBreadDown = m_buttonTeaDown = m_buttonCraftDown = false;
 	m_korean = m_english = m_chinese = false;
 
 	OnClickedButtonKorean();   //초기화면 한국어
@@ -689,7 +685,7 @@ void CMFCKIOSKDlg::OnClickedButtonCoffee()
 	//coffee 메뉴를 클릭했을 때 메뉴판
 	m_buttonCoffee = true;
 	ClickedCoffeeUp();
-	m_buttonBread = m_buttonTea = m_buttonCraft = false;
+	m_buttonCraft = m_buttonTea = m_buttonBread = false;
 }
 
 
@@ -697,7 +693,7 @@ void CMFCKIOSKDlg::OnClickedButtonCraft()
 {
 	//craft 메뉴를 클릭했을 때 메뉴판
 	m_buttonCraft = true;
-	ClickedCraft();
+	ClickedCraftUp();
 	m_buttonCoffee = m_buttonTea = m_buttonBread = false;
 }
 
@@ -706,8 +702,8 @@ void CMFCKIOSKDlg::OnClickedButtonTea()
 {
 	//tea 메뉴를 클릭했을 때 메뉴판
 	m_buttonTea = true;
-	ClickedTea();
-	m_buttonCoffee = m_buttonBread = m_buttonCraft = false;
+	ClickedTeaUp();
+	m_buttonCoffee = m_buttonCraft = m_buttonBread  = false;
 }
 
 
@@ -716,7 +712,7 @@ void CMFCKIOSKDlg::OnClickedButtonBread()
 	//bread 메뉴를 클릭했을 때 메뉴판
 	m_buttonBread = true;
 	ClickedBreadUp();
-	m_buttonCoffee = m_buttonTea = m_buttonCraft = false;
+	m_buttonCoffee = m_buttonCraft = m_buttonTea = false;
 }
 
 
@@ -728,25 +724,23 @@ void CMFCKIOSKDlg::OnClickedButtonUp()
 		ClickedCoffeeUp();
 		m_buttonCoffeeDown = false;
 	}
-
+	else if (m_buttonCraft)
+	{
+		//위 버튼 눌렀을 때(craft)
+		ClickedCraftUp();
+		m_buttonCraftDown = false;
+	}
+	else if (m_buttonTea)
+	{
+		//위 버튼 눌렀을 때(tea)
+		ClickedTeaUp();
+		m_buttonTeaDown = false;
+	}
 	else if (m_buttonBread)
 	{
 		//위 버튼 눌렀을 때(bread)
 		ClickedBreadUp();
 		m_buttonBreadDown = false;
-	}
-	else if (m_buttonTea)
-	{
-		//위 버튼 눌렀을 때(tea)
-		//ClickedTeaUp();
-		m_buttonTeaDown = false;
-	}
-
-	else if (m_buttonCraft)
-	{
-		//위 버튼 눌렀을 때(craft)
-		//ClickedCraftUp();
-		m_buttonCraftDown = false;
 	}
 }
 
@@ -759,25 +753,23 @@ void CMFCKIOSKDlg::OnClickedButtonDown()
 		ClickedCoffeeDown();
 		m_buttonCoffeeDown = true;
 	}
-
+	else if (m_buttonCraft)
+	{
+		//아래 버튼 눌렀을 때(craft)
+		ClickedCraftDown();
+		m_buttonCraftDown = true;
+	}
+	else if (m_buttonTea)
+	{
+		//아래 버튼 눌렀을 때(tea)
+		ClickedTeaDown();
+		m_buttonTeaDown = true;
+	}
 	else if (m_buttonBread)
 	{
 		//아래 버튼 눌렀을 때(bread)
 		ClickedBreadDown();
 		m_buttonBreadDown = true;
-	}
-	else if (m_buttonTea)
-	{
-		//위 버튼 눌렀을 때(tea)
-		//ClickedTeaDown();
-		m_buttonTeaDown = true;
-	}
-
-	else if (m_buttonCraft)
-	{
-		//위 버튼 눌렀을 때(craft)
-		//ClickedCraftDown();
-		m_buttonCraftDown = true;
 	}
 }
 
@@ -785,11 +777,10 @@ void CMFCKIOSKDlg::OnClickedButtonDown()
 void CMFCKIOSKDlg::ClickedCoffeeUp()
 {
 	// 커피 메뉴를 클릭했을 때
-	//한글, 영어, 중국어 일때 
-	//UP일때
+	//UP화면
 	ClearTextFields();
 	m_buttonCoffee = true;
-	if (m_korean) {
+	if (m_korean) {                                        //한국어
 		m_Text1.SetWindowTextA(_T("아메리카노(ice)"));
 		m_Text2.SetWindowTextA(_T("아메리카노(hot)"));
 		m_Text3.SetWindowTextA(_T("카페라떼(ice)"));
@@ -811,7 +802,7 @@ void CMFCKIOSKDlg::ClickedCoffeeUp()
 		m_Price9.SetWindowTextA(_T("3,400원"));
 
 	}
-	else if (m_english) {
+	else if (m_english) {                                   //영어
 		m_Text1.SetWindowTextA(_T("Americano(ice)"));
 		m_Text2.SetWindowTextA(_T("Americano(hot)"));
 		m_Text3.SetWindowTextA(_T("Latte(ice)"));
@@ -822,36 +813,36 @@ void CMFCKIOSKDlg::ClickedCoffeeUp()
 		m_Text8.SetWindowTextA(_T("Vanilla latte(ice)"));
 		m_Text9.SetWindowTextA(_T("Vanilla latte(hot)"));
 
-		m_Price1.SetWindowTextA(_T("1,500₩"));
-		m_Price2.SetWindowTextA(_T("2,000₩"));
-		m_Price3.SetWindowTextA(_T("2,900₩"));
-		m_Price4.SetWindowTextA(_T("2,900₩"));
-		m_Price5.SetWindowTextA(_T("3,700₩"));
-		m_Price6.SetWindowTextA(_T("3,700₩"));
-		m_Price7.SetWindowTextA(_T("3,500₩"));
-		m_Price8.SetWindowTextA(_T("3,400₩"));
-		m_Price9.SetWindowTextA(_T("3,400₩"));
+		m_Price1.SetWindowTextA(_T("1,500WON"));
+		m_Price2.SetWindowTextA(_T("2,000WON"));
+		m_Price3.SetWindowTextA(_T("2,900WON"));
+		m_Price4.SetWindowTextA(_T("2,900WON"));
+		m_Price5.SetWindowTextA(_T("3,700WON"));
+		m_Price6.SetWindowTextA(_T("3,700WON"));
+		m_Price7.SetWindowTextA(_T("3,500WON"));
+		m_Price8.SetWindowTextA(_T("3,400WON"));
+		m_Price9.SetWindowTextA(_T("3,400WON"));
 	}
-	else if (m_chinese) {
-		m_Text1.SetWindowTextA(_T("美式咖啡(冰)"));
-		m_Text2.SetWindowTextA(_T("美式咖啡(热)"));
-		m_Text3.SetWindowTextA(_T("拿铁咖啡(冰)"));
-		m_Text4.SetWindowTextA(_T("拿铁咖啡(热)"));
-		m_Text5.SetWindowTextA(_T("焦糖玛奇朵（冰）"));
-		m_Text6.SetWindowTextA(_T("焦糖玛奇朵（热）"));
+	else if (m_chinese) {                                   //중국어
+		m_Text1.SetWindowTextA(_T("美式咖啡(ice)"));
+		m_Text2.SetWindowTextA(_T("美式咖啡(hot)"));
+		m_Text3.SetWindowTextA(_T("拿铁咖啡(ice)"));
+		m_Text4.SetWindowTextA(_T("拿铁咖啡(hot)"));
+		m_Text5.SetWindowTextA(_T("焦糖玛奇朵(ice)"));
+		m_Text6.SetWindowTextA(_T("焦糖玛奇朵(hot)"));
 		m_Text7.SetWindowTextA(_T("冷萃咖啡"));
-		m_Text8.SetWindowTextA(_T("香草拿铁(冰)"));
-		m_Text9.SetWindowTextA(_T("香草拿铁(热)"));
+		m_Text8.SetWindowTextA(_T("香草拿铁(ice)"));
+		m_Text9.SetWindowTextA(_T("香草拿铁(hot)"));
 
-		m_Price1.SetWindowTextA(_T("1,500₩"));
-		m_Price2.SetWindowTextA(_T("2,000₩"));
-		m_Price3.SetWindowTextA(_T("2,900₩"));
-		m_Price4.SetWindowTextA(_T("2,900₩"));
-		m_Price5.SetWindowTextA(_T("3,700₩"));
-		m_Price6.SetWindowTextA(_T("3,700₩"));
-		m_Price7.SetWindowTextA(_T("3,500₩"));
-		m_Price8.SetWindowTextA(_T("3,400₩"));
-		m_Price9.SetWindowTextA(_T("3,400₩"));
+		m_Price1.SetWindowTextA(_T("1,500WON"));
+		m_Price2.SetWindowTextA(_T("2,000WON"));
+		m_Price3.SetWindowTextA(_T("2,900WON"));
+		m_Price4.SetWindowTextA(_T("2,900WON"));
+		m_Price5.SetWindowTextA(_T("3,700WON"));
+		m_Price6.SetWindowTextA(_T("3,700WON"));
+		m_Price7.SetWindowTextA(_T("3,500WON"));
+		m_Price8.SetWindowTextA(_T("3,400WON"));
+		m_Price9.SetWindowTextA(_T("3,400WON"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
@@ -878,37 +869,36 @@ void CMFCKIOSKDlg::ClickedCoffeeUp()
 	m_pictureControl8.SetBitmap(hbit);
 	hbit = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_C9));
 	m_pictureControl9.SetBitmap(hbit);
-	m_buttonBread = m_buttonTea = m_buttonCraft = false;
+	m_buttonCraft = m_buttonTea = m_buttonBread = false;
 }
 
 
 void CMFCKIOSKDlg::ClickedCoffeeDown()
 {
-	// 커피메뉴를 클릭 했을 때
-	//한글, 영어, 중국어 일때 
-	//down일때
+	// 커피 메뉴를 클릭 했을 때
+	//DOWN화면
 	ClearTextFields();
 	m_buttonCoffee = true;
-	if (m_korean) {
+	if (m_korean) {                                         //한국어
 		m_Text1.SetWindowTextA(_T("에스프레소"));
 		m_Text2.SetWindowTextA(_T("카페모카"));
 
 		m_Price1.SetWindowTextA(_T("1,500원"));
 		m_Price2.SetWindowTextA(_T("3,700원"));
 	}
-	else if (m_english) {
+	else if (m_english) {                                   //영어
 		m_Text1.SetWindowTextA(_T("Espresso"));
 		m_Text2.SetWindowTextA(_T("Cafe Mocha"));
 
-		m_Price1.SetWindowTextA(_T("1,500₩"));
-		m_Price2.SetWindowTextA(_T("3,700₩"));
+		m_Price1.SetWindowTextA(_T("1,500WON"));
+		m_Price2.SetWindowTextA(_T("3,700WON"));
 	}
-	else if (m_chinese) {
+	else if (m_chinese) {                                   //중국어
 		m_Text1.SetWindowTextA(_T("浓缩咖啡"));
 		m_Text2.SetWindowTextA(_T("摩卡咖啡厅"));
 
-		m_Price1.SetWindowTextA(_T("1,500₩"));
-		m_Price2.SetWindowTextA(_T("3,700₩"));
+		m_Price1.SetWindowTextA(_T("1,500WON"));
+		m_Price2.SetWindowTextA(_T("3,700WON"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
@@ -935,17 +925,17 @@ void CMFCKIOSKDlg::ClickedCoffeeDown()
 	m_pictureControl8.SetBitmap(hbit);
 	hbit = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_EMPTY));
 	m_pictureControl9.SetBitmap(hbit);
-	m_buttonBread = m_buttonTea = m_buttonCraft = false;
+	m_buttonCraft = m_buttonTea = m_buttonBread = false;
 }
 
 
-void CMFCKIOSKDlg::ClickedCraft()
+void CMFCKIOSKDlg::ClickedCraftUp()
 {
-	// 크레프트 메뉴를 클릭했을 때
-	//한글, 영어, 중국어 일때
+	// 제조음료 메뉴를 클릭했을 때
+	//UP화면
 	ClearTextFields();
 	m_buttonCraft = true;
-	if (m_korean) {
+	if (m_korean) {                                        //한국어
 		m_Text1.SetWindowTextA(_T("녹차프라페"));
 		m_Text2.SetWindowTextA(_T("쿠키프라페"));
 		m_Text3.SetWindowTextA(_T("민트프라페"));
@@ -959,31 +949,31 @@ void CMFCKIOSKDlg::ClickedCraft()
 		m_Price5.SetWindowTextA(_T("4,800원"));
 
 	}
-	else if (m_english) {
+	else if (m_english) {                                   //영어
 		m_Text1.SetWindowTextA(_T("Green tea Frappe"));
 		m_Text2.SetWindowTextA(_T("Cookie Frappe"));
 		m_Text3.SetWindowTextA(_T("Mint Frappe"));
 		m_Text4.SetWindowTextA(_T("Yoghurt Smoothie"));
 		m_Text5.SetWindowTextA(_T("Unicorn Frappe"));
 
-		m_Price1.SetWindowTextA(_T("3,900₩"));
-		m_Price2.SetWindowTextA(_T("3,900₩"));
-		m_Price3.SetWindowTextA(_T("3,900₩"));
-		m_Price4.SetWindowTextA(_T("3,900₩"));
-		m_Price5.SetWindowTextA(_T("4,800₩"));
+		m_Price1.SetWindowTextA(_T("3,900WON"));
+		m_Price2.SetWindowTextA(_T("3,900WON"));
+		m_Price3.SetWindowTextA(_T("3,900WON"));
+		m_Price4.SetWindowTextA(_T("3,900WON"));
+		m_Price5.SetWindowTextA(_T("4,800WON"));
 	}
-	else if (m_chinese) {
+	else if (m_chinese) {                                   //중국어
 		m_Text1.SetWindowTextA(_T("绿茶冰沙"));
 		m_Text2.SetWindowTextA(_T("饼干冰沙"));
 		m_Text3.SetWindowTextA(_T("薄荷冰沙"));
 		m_Text4.SetWindowTextA(_T("酸奶冰沙"));
 		m_Text5.SetWindowTextA(_T("独角兽冰沙"));
 
-		m_Price1.SetWindowTextA(_T("3,900₩"));
-		m_Price2.SetWindowTextA(_T("3,900₩"));
-		m_Price3.SetWindowTextA(_T("3,900₩"));
-		m_Price4.SetWindowTextA(_T("3,900₩"));
-		m_Price5.SetWindowTextA(_T("4,800₩"));
+		m_Price1.SetWindowTextA(_T("3,900WON"));
+		m_Price2.SetWindowTextA(_T("3,900WON"));
+		m_Price3.SetWindowTextA(_T("3,900WON"));
+		m_Price4.SetWindowTextA(_T("3,900WON"));
+		m_Price5.SetWindowTextA(_T("4,800WON"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
@@ -1014,13 +1004,22 @@ void CMFCKIOSKDlg::ClickedCraft()
 }
 
 
-void CMFCKIOSKDlg::ClickedTea()
+void CMFCKIOSKDlg::ClickedCraftDown()
 {
-	// 티 메뉴를 클릭했을 때
-	//한글, 영어, 중국어 일때
+	// 제조음료 메뉴를 클릭했을 때
+	//DOWN화면
+	m_buttonCraft = true;
+	m_buttonCoffee = m_buttonTea = m_buttonBread = false;
+}
+
+
+void CMFCKIOSKDlg::ClickedTeaUp()
+{
+	// 차 메뉴를 클릭했을 때
+	//UP화면
 	ClearTextFields();
 	m_buttonTea = true;
-	if (m_korean) {
+	if (m_korean) {                                        //한국어
 		m_Text1.SetWindowTextA(_T("유자차"));
 		m_Text2.SetWindowTextA(_T("페퍼민트"));
 		m_Text3.SetWindowTextA(_T("캐모마일"));
@@ -1035,7 +1034,7 @@ void CMFCKIOSKDlg::ClickedTea()
 		m_Price5.SetWindowTextA(_T("2,500원"));
 		m_Price6.SetWindowTextA(_T("3,500원"));
 	}
-	else if (m_english) {
+	else if (m_english) {                                   //영어
 		m_Text1.SetWindowTextA(_T("Citron Tea"));
 		m_Text2.SetWindowTextA(_T("Peppermint"));
 		m_Text3.SetWindowTextA(_T("Chamomile"));
@@ -1043,14 +1042,14 @@ void CMFCKIOSKDlg::ClickedTea()
 		m_Text5.SetWindowTextA(_T("Green Tea"));
 		m_Text6.SetWindowTextA(_T("Apple citron Tea"));
 
-		m_Price1.SetWindowTextA(_T("3,000₩"));
-		m_Price2.SetWindowTextA(_T("2,500₩"));
-		m_Price3.SetWindowTextA(_T("2,500₩"));
-		m_Price4.SetWindowTextA(_T("2,500₩"));
-		m_Price5.SetWindowTextA(_T("2,500₩"));
-		m_Price6.SetWindowTextA(_T("3,500₩"));
+		m_Price1.SetWindowTextA(_T("3,000WON"));
+		m_Price2.SetWindowTextA(_T("2,500WON"));
+		m_Price3.SetWindowTextA(_T("2,500WON"));
+		m_Price4.SetWindowTextA(_T("2,500WON"));
+		m_Price5.SetWindowTextA(_T("2,500WON"));
+		m_Price6.SetWindowTextA(_T("3,500WON"));
 	}
-	else if (m_chinese) {
+	else if (m_chinese) {                                   //중국어
 		m_Text1.SetWindowTextA(_T("柚子茶"));
 		m_Text2.SetWindowTextA(_T("薄荷洋甘菊茶"));
 		m_Text3.SetWindowTextA(_T("洋甘菊茶"));
@@ -1058,12 +1057,12 @@ void CMFCKIOSKDlg::ClickedTea()
 		m_Text5.SetWindowTextA(_T("绿茶"));
 		m_Text6.SetWindowTextA(_T("苹果柚子茶"));
 
-		m_Price1.SetWindowTextA(_T("3,000₩"));
-		m_Price2.SetWindowTextA(_T("2,500₩"));
-		m_Price3.SetWindowTextA(_T("2,500₩"));
-		m_Price4.SetWindowTextA(_T("2,500₩"));
-		m_Price5.SetWindowTextA(_T("2,500₩"));
-		m_Price6.SetWindowTextA(_T("3,500₩"));
+		m_Price1.SetWindowTextA(_T("3,000WON"));
+		m_Price2.SetWindowTextA(_T("2,500WON"));
+		m_Price3.SetWindowTextA(_T("2,500WON"));
+		m_Price4.SetWindowTextA(_T("2,500WON"));
+		m_Price5.SetWindowTextA(_T("2,500WON"));
+		m_Price6.SetWindowTextA(_T("3,500WON"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
@@ -1090,18 +1089,26 @@ void CMFCKIOSKDlg::ClickedTea()
 	m_pictureControl8.SetBitmap(hbit);
 	hbit = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_EMPTY));
 	m_pictureControl9.SetBitmap(hbit);
-	m_buttonCoffee = m_buttonBread = m_buttonCraft = false;
+	m_buttonCoffee = m_buttonCraft = m_buttonBread = false;
+}
+
+
+void CMFCKIOSKDlg::ClickedTeaDown()
+{
+	// 차 메뉴를 클릭했을 때
+	//DOWN화면
+	m_buttonTea = true;
+	m_buttonCoffee = m_buttonCraft = m_buttonBread = false;
 }
 
 
 void CMFCKIOSKDlg::ClickedBreadUp()
 {
-	// 브레드를 클릭했을 때
-	//한글, 영어, 중국어 일때 
-	//UP일때
+	// 제과류 메뉴를 클릭했을 때
+    //UP화면
 	ClearTextFields();
 	m_buttonBread = true;
-	if (m_korean) {
+	if (m_korean) {                                        //한국어
 		m_Text1.SetWindowTextA(_T("아이스크림 크로플"));
 		m_Text2.SetWindowTextA(_T("크루아상"));
 		m_Text3.SetWindowTextA(_T("마들렌"));
@@ -1122,7 +1129,7 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 		m_Price8.SetWindowTextA(_T("8,000원"));
 		m_Price9.SetWindowTextA(_T("3,600원"));
 	}
-	else if (m_english) {
+	else if (m_english) {                                   //영어
 		m_Text1.SetWindowTextA(_T("Ice cream Croffles"));
 		m_Text2.SetWindowTextA(_T("Croissants"));
 		m_Text3.SetWindowTextA(_T("Madeleine"));
@@ -1133,17 +1140,17 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 		m_Text8.SetWindowTextA(_T("Roll cake"));
 		m_Text9.SetWindowTextA(_T("Chocolate chip Cookies"));
 
-		m_Price1.SetWindowTextA(_T("6,500₩"));
-		m_Price2.SetWindowTextA(_T("2,800₩"));
-		m_Price3.SetWindowTextA(_T("3,000₩"));
-		m_Price4.SetWindowTextA(_T("3,000₩"));
-		m_Price5.SetWindowTextA(_T("2,700₩"));
-		m_Price6.SetWindowTextA(_T("3,000₩"));
-		m_Price7.SetWindowTextA(_T("4,800₩"));
-		m_Price8.SetWindowTextA(_T("8,000₩"));
-		m_Price9.SetWindowTextA(_T("3,600₩"));
+		m_Price1.SetWindowTextA(_T("6,500WON"));
+		m_Price2.SetWindowTextA(_T("2,800WON"));
+		m_Price3.SetWindowTextA(_T("3,000WON"));
+		m_Price4.SetWindowTextA(_T("3,000WON"));
+		m_Price5.SetWindowTextA(_T("2,700WON"));
+		m_Price6.SetWindowTextA(_T("3,000WON"));
+		m_Price7.SetWindowTextA(_T("4,800WON"));
+		m_Price8.SetWindowTextA(_T("8,000WON"));
+		m_Price9.SetWindowTextA(_T("3,600WON"));
 	}
-	else if (m_chinese) {
+	else if (m_chinese) {                                   //중국어
 		m_Text1.SetWindowTextA(_T("冰淇淋Croffle"));
 		m_Text2.SetWindowTextA(_T("牛角面包"));
 		m_Text3.SetWindowTextA(_T("玛德琳"));
@@ -1154,15 +1161,15 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 		m_Text8.SetWindowTextA(_T("蛋糕卷"));
 		m_Text9.SetWindowTextA(_T("巧克力饼干"));
 
-		m_Price1.SetWindowTextA(_T("6,500₩"));
-		m_Price2.SetWindowTextA(_T("2,800₩"));
-		m_Price3.SetWindowTextA(_T("3,000₩"));
-		m_Price4.SetWindowTextA(_T("3,000₩"));
-		m_Price5.SetWindowTextA(_T("2,700₩"));
-		m_Price6.SetWindowTextA(_T("3,000₩"));
-		m_Price7.SetWindowTextA(_T("4,800₩"));
-		m_Price8.SetWindowTextA(_T("8,000₩"));
-		m_Price9.SetWindowTextA(_T("3,600₩"));
+		m_Price1.SetWindowTextA(_T("6,500WON"));
+		m_Price2.SetWindowTextA(_T("2,800WON"));
+		m_Price3.SetWindowTextA(_T("3,000WON"));
+		m_Price4.SetWindowTextA(_T("3,000WON"));
+		m_Price5.SetWindowTextA(_T("2,700WON"));
+		m_Price6.SetWindowTextA(_T("3,000WON"));
+		m_Price7.SetWindowTextA(_T("4,800WON"));
+		m_Price8.SetWindowTextA(_T("8,000WON"));
+		m_Price9.SetWindowTextA(_T("3,600WON"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
@@ -1189,28 +1196,27 @@ void CMFCKIOSKDlg::ClickedBreadUp()
 	m_pictureControl8.SetBitmap(hbit);
 	hbit = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_B9));
 	m_pictureControl9.SetBitmap(hbit);
-	m_buttonCoffee = m_buttonTea = m_buttonCraft = false;
+	m_buttonCoffee = m_buttonCraft = m_buttonTea = false;
 }
 
 
 void CMFCKIOSKDlg::ClickedBreadDown()
 {
-	// 브레드 메뉴를 클릭했을 때
-	//한글, 영어, 중국어 일때 
-	//down일때
+	// 제과류 메뉴를 클릭했을 때
+	//DOWN화면
 	ClearTextFields();
 	m_buttonBread = true;
-	if (m_korean) {
+	if (m_korean) {                                        //한국어
 		m_Text1.SetWindowTextA(_T("약과"));
 		m_Price1.SetWindowTextA(_T("2,000원"));
 	}
-	else if (m_english) {
+	else if (m_english) {                                   //영어
 		m_Text1.SetWindowTextA(_T("Yakgwa"));
-		m_Price1.SetWindowTextA(_T("2,000₩"));
+		m_Price1.SetWindowTextA(_T("2,000WON"));
 	}
-	else if (m_chinese) {
+	else if (m_chinese) {                                   //중국어
 		m_Text1.SetWindowTextA(_T("藥果"));
-		m_Price1.SetWindowTextA(_T("2,000₩"));
+		m_Price1.SetWindowTextA(_T("2,000WON"));
 	}
 
 	// 강제로 윈도우를 다시 그리도록 요청
@@ -1237,7 +1243,7 @@ void CMFCKIOSKDlg::ClickedBreadDown()
 	m_pictureControl8.SetBitmap(hbit);
 	hbit = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_EMPTY));
 	m_pictureControl9.SetBitmap(hbit);
-	m_buttonCoffee = m_buttonTea = m_buttonCraft = false;
+	m_buttonCoffee = m_buttonCraft = m_buttonTea = false;
 }
 
 
@@ -1256,10 +1262,22 @@ void CMFCKIOSKDlg::OnClickedButtonKorean()
 		}
 	}
 	else if (m_buttonCraft) {
-		ClickedCraft();
+		if (m_buttonCraftDown) {
+			ClickedCraftDown();
+		}
+		else
+		{
+			ClickedCraftUp();
+		}
 	}
 	else if (m_buttonTea) {
-		ClickedTea();
+		if (m_buttonTeaDown) {
+			ClickedTeaDown();
+		}
+		else
+		{
+			ClickedTeaUp();
+		}
 	}
 	else if (m_buttonBread) {
 		if (m_buttonBreadDown) {
@@ -1287,10 +1305,22 @@ void CMFCKIOSKDlg::OnClickedButtonEnglish()
 		}
 	}
 	else if (m_buttonCraft) {
-		ClickedCraft();
+		if (m_buttonCraftDown) {
+			ClickedCraftDown();
+		}
+		else
+		{
+			ClickedCraftUp();
+		}
 	}
 	else if (m_buttonTea) {
-		ClickedTea();
+		if (m_buttonTeaDown) {
+			ClickedTeaDown();
+		}
+		else
+		{
+			ClickedTeaUp();
+		}
 	}
 	else if (m_buttonBread) {
 		if (m_buttonBreadDown) {
@@ -1318,10 +1348,22 @@ void CMFCKIOSKDlg::OnClickedButtonChinese()
 		}
 	}
 	else if (m_buttonCraft) {
-		ClickedCraft();
+		if (m_buttonCraftDown) {
+			ClickedCraftDown();
+		}
+		else
+		{
+			ClickedCraftUp();
+		}
 	}
 	else if (m_buttonTea) {
-		ClickedTea();
+		if (m_buttonTeaDown) {
+			ClickedTeaDown();
+		}
+		else
+		{
+			ClickedTeaUp();
+		}
 	}
 	else if (m_buttonBread) {
 		if (m_buttonBreadDown) {
@@ -1362,7 +1404,7 @@ void CMFCKIOSKDlg::ClearTextFields()
 
 HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
-	//언어 버튼 투명화
+	//버튼 투명화 함수
 	HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
 	int nRet = pWnd->GetDlgCtrlID();
 	if (nRet == IDC_BUTTON_KOREAN)  
@@ -1424,16 +1466,9 @@ HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 }
 
 
-
-//void CMFCKIOSKDlg::OnStnClickedPicturebox1()
-//{
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-//}
-
-
 void CMFCKIOSKDlg::OnClickedButtonHere()
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	// 메장에서 버튼을 눌렀을 때
 	if (m_dlgPay.GetSafeHwnd()) {
 		m_dlgPay.DestroyWindow();
 	}
@@ -1446,7 +1481,7 @@ void CMFCKIOSKDlg::OnClickedButtonHere()
 
 void CMFCKIOSKDlg::OnClickedButtonTogo()
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	// 포장 버튼을 눌렀을 때
 	if (m_dlgPay.GetSafeHwnd()) {
 		m_dlgPay.DestroyWindow();
 	}
@@ -1455,3 +1490,7 @@ void CMFCKIOSKDlg::OnClickedButtonTogo()
 	InvalidateRect(NULL, TRUE);
 	UpdateWindow();
 }
+
+
+
+
