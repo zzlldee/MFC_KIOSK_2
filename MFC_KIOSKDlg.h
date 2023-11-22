@@ -38,7 +38,7 @@ public:
 //	afx_msg void OnBnClickedButton2();
 	
 	void m_setButtonPositiion(int buttonX, int buttonY, int nID);
-	afx_msg void OnStnClickedPicturebox3();
+	//afx_msg void OnStnClickedPicturebox3();
 	CFont m_font_menu; // 매뉴 텍스트 폰트를 저장하기 위한 멤버변수
 	CFont m_font_price; // 매뉴 텍스트 폰트를 저장하기 위한 멤버변수
 	CFont m_font_order; // 주문 텍스트 폰트를 저장하기 위한 멤버변수

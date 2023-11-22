@@ -179,18 +179,6 @@
     <Image Include="res\DOWN.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111046808_02.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111046808_04.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111624591.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_112152711.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
     <Image Include="res\kakaopay.bmp">
       <Filter>리소스 파일</Filter>
     </Image>

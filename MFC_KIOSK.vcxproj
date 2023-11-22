@@ -209,10 +209,6 @@
     <None Include="res\MFCKIOSK.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111046808_02.bmp" />
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111046808_04.bmp" />
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_111624591.bmp" />
-    <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_112152711.bmp" />
     <Image Include="res\bitmap1.bmp" />
     <Image Include="res\bitmap2.bmp" />
     <Image Include="res\B_bitmap1.bmp" />
