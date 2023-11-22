@@ -191,5 +191,8 @@
     <Image Include="res\card.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\bitmap4.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>
