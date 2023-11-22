@@ -149,7 +149,7 @@ public:
 	CEdit m_edit7;
 	CEdit m_edit8;
 //	afx_msg void OnStnClickedPicturebox2();
-	afx_msg void OnStnClickedPicturebox1();
+//	afx_msg void OnStnClickedPicturebox1();
 	afx_msg void OnClickedButtonHere();
 	afx_msg void OnClickedButtonTogo();
 	Modal_Pay m_dlgPay;

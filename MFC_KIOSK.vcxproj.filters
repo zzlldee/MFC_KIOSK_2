@@ -191,5 +191,17 @@
     <Image Include="..\..\..\..\Desktop\KakaoTalk_20231122_112152711.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\kakaopay.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\payco.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\naverpay.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\card.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

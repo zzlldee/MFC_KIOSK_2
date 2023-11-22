@@ -132,7 +132,7 @@ ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
 ON_WM_CTLCOLOR()
 //ON_BN_CLICKED(IDC_BUTTON1, &CMFCKIOSKDlg::OnClickedButton1)
 //ON_STN_CLICKED(IDC_PICTUREBOX2, &CMFCKIOSKDlg::OnStnClickedPicturebox2)
-ON_STN_CLICKED(IDC_PICTUREBOX1, &CMFCKIOSKDlg::OnStnClickedPicturebox1)
+//ON_STN_CLICKED(IDC_PICTUREBOX1, &CMFCKIOSKDlg::OnStnClickedPicturebox1)
 ON_BN_CLICKED(IDC_BUTTON_HERE, &CMFCKIOSKDlg::OnClickedButtonHere)
 ON_BN_CLICKED(IDC_BUTTON_TOGO, &CMFCKIOSKDlg::OnClickedButtonTogo)
 END_MESSAGE_MAP()
@@ -1425,10 +1425,10 @@ HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 
 
-void CMFCKIOSKDlg::OnStnClickedPicturebox1()
-{
+//void CMFCKIOSKDlg::OnStnClickedPicturebox1()
+//{
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-}
+//}
 
 
 void CMFCKIOSKDlg::OnClickedButtonHere()
