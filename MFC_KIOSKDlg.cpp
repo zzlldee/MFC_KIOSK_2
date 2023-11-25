@@ -12,6 +12,10 @@
 #define new DEBUG_NEW
 #endif
 
+// headers about database connection
+#include <afxdb.h>
+#include <odbcinst.h>
+#include <sqlext.h>
 
 // 응용 프로그램 정보에 사용되는 CAboutDlg 대화 상자입니다.
 
@@ -46,9 +50,8 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
+
 // CMFCKIOSKDlg 대화 상자
-
-
 
 CMFCKIOSKDlg::CMFCKIOSKDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MFC_KIOSK_DIALOG, pParent)
@@ -137,7 +140,18 @@ END_MESSAGE_MAP()
 BOOL CMFCKIOSKDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+	/*
+	CDatabase db;
 
+	BOOL bret = db.OpenEx(_T("DSN=kiosk_db;uid=dbadmin;PWD=dbadmin"));
+	
+	if (bret) {
+		AfxMessageBox(_T("db연결 성공!"));
+	}
+	else {
+		AfxMessageBox(_T("db연결 실패!"));
+	}
+	*/
 	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
 	// IDM_ABOUTBOX는 시스템 명령 범위에 있어야 합니다.
@@ -1486,7 +1500,3 @@ void CMFCKIOSKDlg::OnClickedButtonTogo()
 	InvalidateRect(NULL, TRUE);
 	UpdateWindow();
 }
-
-
-
-

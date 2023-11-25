@@ -152,4 +152,5 @@ public:
 	Modal_Pay m_dlgPay;
 	void ClickedCraftDown();
 	void ClickedTeaDown();
+
 };
