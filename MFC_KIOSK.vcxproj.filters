@@ -36,6 +36,12 @@
     <ClInclude Include="Modal_Pay.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="PictureEx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Modal_Loading.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFC_KIOSK.cpp">
@@ -48,6 +54,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Modal_Pay.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PictureEx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Modal_Loading.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -194,5 +206,9 @@
     <Image Include="res\bitmap4.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\loading.gif" />
+    <Text Include="res\loading.txt" />
   </ItemGroup>
 </Project>
