@@ -49,6 +49,8 @@
 #define IDB_BITMAP_PAYCO                180
 #define IDB_BITMAP4                     182
 #define IDB_BITMAP_CARD                 182
+#define IDR_GIF1                        184
+#define IDD_DIALOG_LOADING              185
 #define IDC_BUTTON_CRAFT                1001
 #define IDC_BUTTON_TEA                  1002
 #define IDC_BUTTON_BREAD                1003
@@ -117,14 +119,15 @@
 #define IDC_BUTTON_CARD                 1067
 #define IDC_BUTTON_PAYCO                1068
 #define IDC_BUTTON_BACK                 1069
+#define IDC_STATIC_LOADING              1071
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        183
+#define _APS_NEXT_RESOURCE_VALUE        187
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1070
+#define _APS_NEXT_CONTROL_VALUE         1072
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

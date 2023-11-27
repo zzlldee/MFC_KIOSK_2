@@ -190,14 +190,17 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MFC_KIOSK.h" />
     <ClInclude Include="MFC_KIOSKDlg.h" />
+    <ClInclude Include="Modal_Loading.h" />
     <ClInclude Include="Modal_Pay.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PictureEx.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFC_KIOSK.cpp" />
     <ClCompile Include="MFC_KIOSKDlg.cpp" />
+    <ClCompile Include="Modal_Loading.cpp" />
     <ClCompile Include="Modal_Pay.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -205,6 +208,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PictureEx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MFCKIOSK.rc" />
@@ -257,6 +261,10 @@
     <Image Include="res\T_bitmap6.bmp" />
     <Image Include="res\UP.bmp" />
     <Image Include="res\windows_project_mockup_1 (Community) (Copy)-1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\loading.gif" />
+    <Text Include="res\loading.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

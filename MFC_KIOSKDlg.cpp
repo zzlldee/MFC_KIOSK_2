@@ -1478,14 +1478,12 @@ HBRUSH CMFCKIOSKDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 void CMFCKIOSKDlg::OnClickedButtonHere()
 {
-	// 메장에서 버튼을 눌렀을 때
+	// 매장에서 버튼을 눌렀을 때
 	if (m_dlgPay.GetSafeHwnd()) {
 		m_dlgPay.DestroyWindow();
 	}
 	m_dlgPay.DoModal();
 
-	InvalidateRect(NULL, TRUE);
-	UpdateWindow();
 }
 
 
@@ -1497,6 +1495,4 @@ void CMFCKIOSKDlg::OnClickedButtonTogo()
 	}
 	m_dlgPay.DoModal();
 
-	InvalidateRect(NULL, TRUE);
-	UpdateWindow();
 }

@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "afxdialogex.h"
+#include "Modal_Loading.h"
 
 
 // Modal_Pay 대화 상자
@@ -29,4 +30,10 @@ public:
 	CBitmapButton m_BitmapBtn2;
 	CBitmapButton m_BitmapBtn3;
 	CBitmapButton m_BitmapBtn4;
+	afx_msg void OnBnClickedButtonKakao();
+	Modal_Loading m_dlgLoading;
+
+	afx_msg void OnBnClickedButtonNaver();
+	afx_msg void OnBnClickedButtonCard();
+	afx_msg void OnBnClickedButtonPayco();
 };
