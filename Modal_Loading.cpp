@@ -5,7 +5,6 @@
 #include "MFC_KIOSK.h"
 #include "afxdialogex.h"
 #include "Modal_Loading.h"
-#include "PictureEx.h"
 
 
 // Modal_Loading 대화 상자
