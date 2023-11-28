@@ -38,12 +38,10 @@ BOOL Modal_Loading::OnInitDialog()
         pWnd->SetWindowText(_T("결제중입니다"));
     }
 
-    m_nTimer = SetTimer(1, 3000, nullptr); // 올바른 타이머 ID를 저장
+    m_nTimer = SetTimer(1, 3000, nullptr); // 3초 후 onTimer함수 실행
 
     return TRUE;
 }
-
-
 
 
 BEGIN_MESSAGE_MAP(Modal_Loading, CDialogEx)
@@ -58,15 +56,4 @@ void Modal_Loading::OnTimer(UINT_PTR nIDEvent)
     DestroyWindow();
     //MessageBoxA("결제 완료되었습니다.", "결제 완료", MB_OK | MB_ICONINFORMATION);
     CDialogEx::OnTimer(nIDEvent);
-}
-HBRUSH Modal_Loading::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor) {
-    HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
-
-    // IDC_STATIC_PAYING 컨트롤의 배경 색상을 변경합니다.
-    if (pWnd->GetDlgCtrlID() == IDC_STATIC_PAYING) {
-        pDC->SetBkColor(RGB(255, 255, 255));
-        hbr = CreateSolidBrush(RGB(255, 255, 255));
-    }
-
-    return hbr;
 }

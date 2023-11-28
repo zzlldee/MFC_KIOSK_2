@@ -36,9 +36,7 @@ public:
 	CBitmapButton m_BitmapBtn4;
 	afx_msg void OnBnClickedButtonKakao();
 	Modal_Loading* m_dlgLoading;
-	UINT_PTR m_nTimer; // 타이머 ID
 	afx_msg void OnBnClickedButtonNaver();
 	afx_msg void OnBnClickedButtonCard();
 	afx_msg void OnBnClickedButtonPayco();
-	CPictureEx  m_GifLoading;
 };
