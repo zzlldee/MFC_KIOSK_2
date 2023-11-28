@@ -27,4 +27,6 @@ protected:
 
 public:
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	HBRUSH Modal_Loading::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+
 };

@@ -25,20 +25,24 @@ void Modal_Loading::DoDataExchange(CDataExchange* pDX)
 {
     CDialogEx::DoDataExchange(pDX);
 }
+// Modal_Loading.cpp 파일의 OnInitDialog 함수 내에 해당 코드를 추가합니다.
 
 BOOL Modal_Loading::OnInitDialog()
 {
     CDialogEx::OnInitDialog();
     CenterWindow();
-    //if (m_GifLoading.Load("IDR_GIF1")) //파일에서 로드
-    //    m_GifLoading.Draw();
-    TRACE("Timer event triggered\n");
+
+    // IDC_STATIC_PAYING 컨트롤에 "결제중입니다"라는 텍스트를 출력합니다.
+    CWnd* pWnd = GetDlgItem(IDC_STATIC_PAYING);
+    if (pWnd != nullptr) {
+        pWnd->SetWindowText(_T("결제중입니다"));
+    }
 
     m_nTimer = SetTimer(1, 3000, nullptr); // 올바른 타이머 ID를 저장
-    TRACE("Timer event triggered\n");
 
     return TRUE;
 }
+
 
 
 
@@ -54,4 +58,15 @@ void Modal_Loading::OnTimer(UINT_PTR nIDEvent)
     DestroyWindow();
     //MessageBoxA("결제 완료되었습니다.", "결제 완료", MB_OK | MB_ICONINFORMATION);
     CDialogEx::OnTimer(nIDEvent);
+}
+HBRUSH Modal_Loading::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor) {
+    HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
+
+    // IDC_STATIC_PAYING 컨트롤의 배경 색상을 변경합니다.
+    if (pWnd->GetDlgCtrlID() == IDC_STATIC_PAYING) {
+        pDC->SetBkColor(RGB(255, 255, 255));
+        hbr = CreateSolidBrush(RGB(255, 255, 255));
+    }
+
+    return hbr;
 }
