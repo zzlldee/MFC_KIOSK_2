@@ -18,12 +18,13 @@ public:
 	enum { IDD = IDD_DIALOG_LOADING };
 #endif
 private:
-	UINT_PTR m_nTimer; // 타이머 ID
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
-	BOOL Modal_Loading::OnInitDialog();
-	void Modal_Loading::OnTimer(UINT_PTR nIDEvent);
-	DECLARE_MESSAGE_MAP();
+	BOOL OnInitDialog();
 	CPictureEx  m_GifLoading;
+	UINT_PTR m_nTimer; // 타이머 ID
+	DECLARE_MESSAGE_MAP();
 
+public:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
