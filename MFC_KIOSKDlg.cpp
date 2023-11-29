@@ -1637,8 +1637,8 @@ void CMFCKIOSKDlg::OnLButtonDown(UINT nFlags, CPoint point)
 			//DDX_Control(pDX, IDC_TEXT_ORDER15, m_orderlist_5);
 			//DDX_Control(pDX, IDC_TEXT_ORDER16, m_orderlist_6);
 			//DDX_Control(pDX, IDC_TEXT_ORDER17, m_orderlist_7);
-			////DDX_Control(pDX, IDC_TEXT_ORDER18, m_orderlist_8);
-			//bool m_buttonCoffee;
+			////DDX_Control(pDX, IDC_TEXT_ORDER18, m_orderlist_8);//
+			//bool m_buttonCoffee;//
 			//bool m_buttonBread;
 			//bool m_buttonTea;
 			//bool m_buttonCraft;
