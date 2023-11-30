@@ -153,4 +153,122 @@ public:
 	void ClickedCraftDown();
 	void ClickedTeaDown();
 
+	afx_msg void OnStnClickedTextOrder1();
+	void m_setFont_order_amount(int);
+	afx_msg void OnStnClickedTextOrder14();
+	afx_msg void OnBnClickedButton1();
+	afx_msg void OnStnClickedTextOrder13();
+	afx_msg void OnStnClickedTextOrder3Sum();
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnStnClickedTextOrder18();
+	afx_msg void OnStnClickedTextOrder12();
+	CStatic m_orderlist_1;
+	CStatic m_orderlist_2;
+	CStatic m_orderlist_3;
+	CStatic m_orderlist_4;
+	CStatic m_orderlist_5;
+	CStatic m_orderlist_6;
+	CStatic m_orderlist_7;
+	CStatic m_orderlist_8;
+	CStatic m_orderlist14;
+	CStatic m_orderlist14_2;
+	afx_msg void OnStnClickedTextOrder19();
+	
+	void Add_List(int);
+
+	//주문 리스트 구조체 ( 앱 내부용 )
+	struct OrderList {
+		int mName = 0; //매뉴명 
+		int mQty = 0; // 수량 
+		int mSum = 0; // 가격 총합
+
+	};
+
+	//주문 리스트 구조체 배열 선언
+	//구조체 초기화
+	struct OrderList m_OrderList[8]; // 주문 리스트 구조체 배열 선언
+	//
+
+	
+	//주문 리스트 구조체 삽입 함수 
+	int InsertOrder(int);
+
+	//매뉴 이름 enum
+		enum Menu {
+		아메리카노_아이스 = 1,
+		아메리카노_핫 = 2,
+		카페라떼_아이스 = 3,
+		카페라떼_핫 = 4,
+		카라멜마끼아또_아이스 = 5,
+		카라멜마끼아또_핫 = 6,
+		콜드브루 = 7,
+		바닐라라떼_아이스 = 8,
+		바닐라라떼_핫 = 9,
+		에스프레소 = 10,
+		카페모카 = 11,
+		녹차프라페 = 12,
+		쿠키프라페 = 13,
+		민트프라페 = 14,
+		요거트스무디 = 15,
+		유니콘프라페 = 16,
+		유자차 = 17,
+		페퍼민트 = 18,
+		캐모마일 = 19,
+		얼그레이 = 20,
+		녹차 = 21,
+		사과유자차 = 22,
+		아이스크림크로플 = 23,
+		크루아상 = 24,
+		마들렌 = 25,
+		스콘 = 26,
+		마카롱 = 27,
+		샌드위치 = 28,
+		아이스크림슈 = 29,
+		롤케익 = 30,
+		초코칩쿠키 = 31,
+		약과 = 32,
+	};
+
+
+		bool isInitial(struct OrderList);
+		int getPrice(int item_number);
+		int deleteOrder(int p_order);
+		int initOrder_one(int);
+		int initOrder_all();
+		int showOrderList();
+		char* getName(int name);
+		afx_msg void OnEnChangeEdit1();
+		afx_msg void OnBnClickedCanc1();
+		afx_msg void OnBnClickedCanc2();
+		afx_msg void OnBnClickedCanc3();
+		afx_msg void OnBnClickedCanc4();
+		afx_msg void OnBnClickedCanc5();
+		afx_msg void OnBnClickedCanc6();
+		afx_msg void OnBnClickedCanc7();
+		afx_msg void OnBnClickedCanc8();
+		void refreshOrder();
+		void setTextInit(int nID);
+		afx_msg void OnStnClickedTextOrder2Sum();
+		afx_msg void OnStnClickedTextOrder8Sum();
+		afx_msg void OnStnClickedletf1();
+		afx_msg void OnStnClickedletf2();
+		afx_msg void OnStnClickedletf3();
+		afx_msg void OnStnClickedletf4();
+		afx_msg void OnStnClickedletf5();
+		afx_msg void OnStnClickedletf6();
+		afx_msg void OnStnClickedletf7();
+		afx_msg void OnStnClickedletf8();
+		afx_msg void OnStnClickedright1();
+		afx_msg void OnStnClickedright2();
+		afx_msg void OnStnClickedright3();
+		afx_msg void OnStnClickedright4();
+		afx_msg void OnStnClickedright5();
+		afx_msg void OnStnClickedright6();
+		afx_msg void OnStnClickedright7();
+		afx_msg void OnStnClickedright8();
+		int addOrder(int POS);
+		int minOrder(int POS);
+		CStatic m_ALLSUM;
+		int sumPrice;
+		bool m_isBreadDown = false;
 };
