@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  MFC_KIOSK.cpp
+  MFC_KIOSKDlg.cpp
+  Modal_Loading.cpp
+  Modal_Pay.cpp
+  PictureEx.cpp
+C:\Users\SeungKwon\source\repos\zzlldee\MFC_KIOSK_2 - 복사본 - 복사본 (2)\PictureEx.cpp(530,25): warning C4244: '=': 'ULONGLONG'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\SeungKwon\source\repos\zzlldee\MFC_KIOSK_2 - 복사본 - 복사본 (2)\PictureEx.cpp(1106,25): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  MFC_KIOSK.vcxproj -> C:\Users\SeungKwon\source\repos\zzlldee\MFC_KIOSK_2 - 복사본 - 복사본 (2)\x64\Debug\MFC_KIOSK.exe
