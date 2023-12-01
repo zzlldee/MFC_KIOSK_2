@@ -99,13 +99,7 @@ void CMFCKIOSKDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_TEXT_ORDER6_SUM, m_textOrderSum6);
 	DDX_Control(pDX, IDC_TEXT_ORDER7_SUM, m_textOrderSum7);
 	DDX_Control(pDX, IDC_TEXT_ORDER8_SUM, m_textOrderSum8);
-	DDX_Control(pDX, IDC_TEXT_ORDER2, m_textOrder2);
-	DDX_Control(pDX, IDC_TEXT_ORDER3, m_textOrder3);
-	DDX_Control(pDX, IDC_TEXT_ORDER4, m_textOrder4);
-	DDX_Control(pDX, IDC_TEXT_ORDER5, m_textOrder5);
-	DDX_Control(pDX, IDC_TEXT_ORDER6, m_textOrder6);
-	DDX_Control(pDX, IDC_TEXT_ORDER7, m_textOrder7);
-	DDX_Control(pDX, IDC_TEXT_ORDER8, m_textOrder8);
+
 	DDX_Control(pDX, IDC_EDIT1, m_edit1);
 	DDX_Control(pDX, IDC_EDIT2, m_edit2);
 	DDX_Control(pDX, IDC_EDIT3, m_edit3);
@@ -260,15 +254,15 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setButtonPositiion( 1569, 803, 1006); // 포장 버튼
 
 	//매뉴 이미지 박스에 대한 동적 이동 로직입니다.
-	m_setButtonPositiion(68, 170, 1007); //매뉴 이미지 박스1
-	m_setButtonPositiion(418, 170, 1008); // 2
-	m_setButtonPositiion(768, 170, 1009);
-	m_setButtonPositiion(68, 450, 1010);
-	m_setButtonPositiion(418, 450, 1011);
-	m_setButtonPositiion(768, 450, 1012);
-	m_setButtonPositiion(68, 750, 1013);
-	m_setButtonPositiion(418, 750, 1014);
-	m_setButtonPositiion(768, 750, 1015); //9
+	m_setButtonPositiion(108, 170, 1007); //매뉴 이미지 박스1
+	m_setButtonPositiion(468, 170, 1008); // 2
+	m_setButtonPositiion(808, 170, 1009);
+	m_setButtonPositiion(108, 450, 1010);
+	m_setButtonPositiion(458, 450, 1011);
+	m_setButtonPositiion(808, 450, 1012);
+	m_setButtonPositiion(108, 750, 1013);
+	m_setButtonPositiion(468, 750, 1014);
+	m_setButtonPositiion(808, 750, 1015); //9
 
 	//매뉴 이름 텍스트와 가격 텍스트에 대한 동적 이동 로직입니다.
 	m_setButtonPositiion(129, 370, 1016); //매뉴 이름 텍스트 1
@@ -300,14 +294,14 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setButtonPositiion(1155, 925 , 1027);
 
 	//주문 텍스트에 대한 동적 이동 로직입니다.
-	m_setButtonPositiion(1262, 130, 1028);
-	m_setButtonPositiion(1262, 190, 1043);
-	m_setButtonPositiion(1262, 260, 1044);
-	m_setButtonPositiion(1262, 330, 1045);
-	m_setButtonPositiion(1262, 400, 1046);
-	m_setButtonPositiion(1262, 470, 1047);
-	m_setButtonPositiion(1262, 540, 1048);
-	m_setButtonPositiion(1262, 610, 1049);
+	m_setButtonPositiion(1242, 130, 1064);
+	m_setButtonPositiion(1242, 190, 1047);
+	m_setButtonPositiion(1242, 260, 1043);
+	m_setButtonPositiion(1242, 330, 1044);
+	m_setButtonPositiion(1242, 400, 1045);
+	m_setButtonPositiion(1242, 470, 1046);
+	m_setButtonPositiion(1242, 540, 1048);
+	m_setButtonPositiion(1242, 610, 1049);
 	
 	//주문 가격 총합 텍스트에 대한 동적 이동 로직입니다.
 	m_setButtonPositiion(1600, 130, 1029);
@@ -385,6 +379,7 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setFont_order(31, FW_BOLD);
 	m_setFont_ordersum(31, FW_BOLD);
 	m_setFont_allsum(55, FW_BOLD);
+	//m_setFont_order_amount(40, FW_HEAVY);
 
 	/////////////////////////////////////////////////////////
 	//초기 설정 false
@@ -554,6 +549,23 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_order(int nID)
 
 
 }
+void CMFCKIOSKDlg::m_setFont_order_amount(int nID)
+{
+	// TODO: 여기에 구현 코드 추가.
+	// 글꼴 적용
+	CEdit* pEdit = (CEdit*)GetDlgItem(nID);
+	if (pEdit != nullptr)
+	{
+		//pEdit->SetFont(&m_font);
+
+		pEdit->SetFont(&m_font_order_amount);
+
+	}
+
+}
+
+
+
 
 void CMFCKIOSKDlg::m_setFont_for_m_font_ordersum(int nID)
 {
@@ -614,6 +626,7 @@ void CMFCKIOSKDlg::m_setFont_menu(int fontsize, int FW)
 		DEFAULT_QUALITY,           // 출력 품질
 		DEFAULT_PITCH | FF_SWISS,  // 피치 및 패밀리
 		_T("Arial"));              // 글꼴 이름
+
 	m_setFont_for_m_font_menu(IDC_TEXT1);
 	m_setFont_for_m_font_menu(IDC_TEXT2);
 	m_setFont_for_m_font_menu(IDC_TEXT3);
@@ -678,7 +691,7 @@ void CMFCKIOSKDlg::m_setFont_order(int fontsize, int FW)
 		DEFAULT_QUALITY,           // 출력 품질
 		DEFAULT_PITCH | FF_SWISS,  // 피치 및 패밀리
 		_T("Arial"));              // 글꼴 이름
-	m_setFont_for_m_font_order(IDC_TEXT_ORDER1);
+	m_setFont_for_m_font_order(IDC_TEXT_ORDER19);
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER2);
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER3);
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER4);
@@ -688,6 +701,35 @@ void CMFCKIOSKDlg::m_setFont_order(int fontsize, int FW)
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER8);
 
 }
+void CMFCKIOSKDlg::m_setFont_order_amount(int fontsize, int FW)
+{
+	// TODO: 여기에 구현 코드 추가.
+	m_font_order.CreateFont(
+		fontsize,                        // 높이
+		0,                         // 폭
+		0,                         // 기울기 각도
+		0,                         // 기울기 각도
+		FW,                 // 글꼴 두께
+		FALSE,                     // 이탤릭
+		FALSE,                     // 밑줄
+		0,                         // 취소선
+		ANSI_CHARSET,              // 문자셋
+		OUT_DEFAULT_PRECIS,        // 출력 정밀도
+		CLIP_DEFAULT_PRECIS,       // 클리핑 정밀도
+		DEFAULT_QUALITY,           // 출력 품질
+		DEFAULT_PITCH | FF_SWISS,  // 피치 및 패밀리
+		_T("Arial"));              // 글꼴 이름
+	m_setFont_order_amount(1072);
+	m_setFont_order_amount(1073);
+	m_setFont_order_amount(1074);
+	m_setFont_order_amount(1075);
+	m_setFont_order_amount(1077);
+	m_setFont_order_amount(1078);
+	m_setFont_order_amount(1079);
+	m_setFont_order_amount(1080);
+
+}
+
 
 void CMFCKIOSKDlg::m_setFont_editbox(int fontsize, int FW)
 {
@@ -1581,6 +1623,11 @@ void CMFCKIOSKDlg::OnClickedButtonTogo()
 	}
 	m_dlgPay.DoModal();
 
+
+
+}
+=========
+=======
 }
 
 
@@ -2530,6 +2577,8 @@ void CMFCKIOSKDlg::OnStnClickedletf4()
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
 
+=======
+
 
 void CMFCKIOSKDlg::OnStnClickedletf5()
 {
@@ -2650,3 +2699,4 @@ int CMFCKIOSKDlg::minOrder(int POS) //매뉴 수량 -1 버튼 처리
 	}
 	return 0;
 }
+

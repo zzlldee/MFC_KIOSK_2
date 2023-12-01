@@ -45,6 +45,7 @@ public:
 	CFont m_font_editbox; //에디트박스 텍스트 폰트를 저장 
 	CFont m_font_ordersum; // 가격 총합 텍스트 폰트를 저장
 	CFont m_font_allsum;
+	CFont m_font_order_amount; // 주문 수량 조절 텍스트 폰트를 저장하기 위한 멤버변수
 
 	void m_setFont_for_m_font_menu(int nID); // 매뉴 텍스트 폰트를 변경하기 위한 멤버함수
 	void m_setFont_for_m_font_price(int nID); //매뉴 가격 텍스트 폰트를 변경하기 위한 멤버함수
@@ -64,6 +65,7 @@ public:
 	void m_setFont_order(int fontsize, int FW);
 	void m_setFont_ordersum(int fontsize, int FW);
 	void m_setFont_allsum(int fontsize, int FW);
+	void m_setFont_order_amount(int fontsize, int FW);
 
 	afx_msg void OnClickedButtonCoffee();
 	afx_msg void OnClickedButtonCraft();
@@ -147,6 +149,9 @@ public:
 	CEdit m_edit6;
 	CEdit m_edit7;
 	CEdit m_edit8;
+	
+
+
 	afx_msg void OnClickedButtonHere();
 	afx_msg void OnClickedButtonTogo();
 	Modal_Pay m_dlgPay;

@@ -79,6 +79,7 @@
 #define IDC_BUTTON_UP                   1026
 #define IDC_BUTTON_DOWN                 1027
 #define IDC_TEXT_ORDER1                 1028
+#define IDC_TEXT_ORDER14                1028
 #define IDC_TEXT_ORDER1_SUM             1029
 #define IDC_TEXT_ORDER2_SUM             1030
 #define IDC_TEXT_ORDER3_SUM             1031
@@ -94,12 +95,19 @@
 #define IDC_PRICE9                      1041
 #define IDC_TEXT_ORDER6_SUM             1042
 #define IDC_TEXT_ORDER2                 1043
+#define IDC_TEXT_ORDER13                1043
 #define IDC_TEXT_ORDER3                 1044
+#define IDC_TEXT_ORDER14_2              1044
 #define IDC_TEXT_ORDER4                 1045
+#define IDC_TEXT_ORDER15                1045
 #define IDC_TEXT_ORDER5                 1046
+#define IDC_TEXT_ORDER16                1046
 #define IDC_TEXT_ORDER6                 1047
+#define IDC_TEXT_ORDER12                1047
 #define IDC_TEXT_ORDER7                 1048
+#define IDC_TEXT_ORDER17                1048
 #define IDC_TEXT_ORDER8                 1049
+#define IDC_TEXT_ORDER18                1049
 #define IDC_TEXT_ORDER7_SUM             1050
 #define IDC_TEXT_ORDER8_SUM             1051
 #define IDC_EDIT1                       1052
@@ -114,22 +122,54 @@
 #define IDC_BUTTON_KOREAN               1061
 #define IDC_BUTTON_ENGLISH              1062
 #define IDC_BUTTON_CHINESE              1063
+#define IDC_TEXT_ORDER19                1064
 #define IDC_BUTTON_KAKAO                1065
 #define IDC_BUTTON_NAVER                1066
 #define IDC_BUTTON_CARD                 1067
 #define IDC_BUTTON_PAYCO                1068
 #define IDC_BUTTON_BACK                 1069
 #define IDC_STATIC_LOADING              1071
+
+#define IDC_letf1                       1074
+#define IDC_right1                      1075
+#define IDC_CANC1                       1076
+#define IDC_letf2                       1081
+#define IDC_letf3                       1082
+#define IDC_letf4                       1083
+#define IDC_letf5                       1085
+#define IDC_letf6                       1086
+#define IDC_letf7                       1087
+#define IDC_letf8                       1088
+#define IDC_right2                      1089
+#define IDC_right3                      1090
+#define IDC_right4                      1091
+#define IDC_right5                      1092
+#define IDC_right6                      1093
+#define IDC_right7                      1094
+#define IDC_right8                      1096
+#define IDC_CANC2                       1099
+#define IDC_CANC3                       1100
+#define IDC_CANC4                       1101
+#define IDC_CANC5                       1103
+#define IDC_CANC6                       1104
+#define IDC_CANC7                       1105
+#define IDC_CANC8                       1106
+=======
 #define IDC_ANIMATE1                    1072
 #define IDC_STATIC_PAYING               1073
+
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        187
+#define _APS_NEXT_RESOURCE_VALUE        183
 #define _APS_NEXT_COMMAND_VALUE         32771
+
+#define _APS_NEXT_CONTROL_VALUE         1077
+=======
 #define _APS_NEXT_CONTROL_VALUE         1074
+
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
