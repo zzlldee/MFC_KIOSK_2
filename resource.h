@@ -129,6 +129,7 @@
 #define IDC_BUTTON_PAYCO                1068
 #define IDC_BUTTON_BACK                 1069
 #define IDC_STATIC_LOADING              1071
+
 #define IDC_letf1                       1074
 #define IDC_right1                      1075
 #define IDC_CANC1                       1076
@@ -153,6 +154,10 @@
 #define IDC_CANC6                       1104
 #define IDC_CANC7                       1105
 #define IDC_CANC8                       1106
+=======
+#define IDC_ANIMATE1                    1072
+#define IDC_STATIC_PAYING               1073
+
 
 // Next default values for new objects
 // 
@@ -160,7 +165,11 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        183
 #define _APS_NEXT_COMMAND_VALUE         32771
+
 #define _APS_NEXT_CONTROL_VALUE         1077
+=======
+#define _APS_NEXT_CONTROL_VALUE         1074
+
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

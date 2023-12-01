@@ -1623,9 +1623,11 @@ void CMFCKIOSKDlg::OnClickedButtonTogo()
 	}
 	m_dlgPay.DoModal();
 
-<<<<<<<<< Temporary merge branch 1
+
+
 }
 =========
+=======
 }
 
 
@@ -2574,4 +2576,127 @@ void CMFCKIOSKDlg::OnStnClickedletf4()
 
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
->>>>>>>>> Temporary merge branch 2
+
+=======
+
+
+void CMFCKIOSKDlg::OnStnClickedletf5()
+{
+	minOrder(5);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf6()
+{
+	minOrder(6);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf7()
+{
+	minOrder(7);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf8()
+{
+	minOrder(8);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright1()
+{
+	addOrder(1);
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright2()
+{
+	addOrder(2);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright3()
+{
+	addOrder(3);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright4()
+{
+	addOrder(4);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright5()
+{
+	addOrder(5);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright6()
+{
+	addOrder(6);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright7()
+{
+	addOrder(7);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright8()
+{
+	addOrder(8);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+int CMFCKIOSKDlg::addOrder(int POS) //매뉴 수량 + 1 버튼 처리
+{
+	if (isInitial(m_OrderList[POS - 1]))
+		return 0;
+	else {
+		m_OrderList[POS - 1].mQty++;
+		m_OrderList[POS - 1].mSum = getPrice(m_OrderList[POS - 1].mName) * m_OrderList[POS - 1].mQty; // 구조체 멤버 sum 업데이트
+
+		showOrderList();
+	}
+	return 0;
+}
+
+
+int CMFCKIOSKDlg::minOrder(int POS) //매뉴 수량 -1 버튼 처리
+{
+	if (isInitial(m_OrderList[POS - 1]) || m_OrderList[POS -1].mQty == 1)
+		return 0;
+	else {
+		m_OrderList[POS - 1].mQty--;
+		m_OrderList[POS - 1].mSum = getPrice(m_OrderList[POS -1].mName) * m_OrderList[POS - 1].mQty; // 구조체 멤버 sum 업데이트
+		showOrderList();
+	}
+	return 0;
+}
+

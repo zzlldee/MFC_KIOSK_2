@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "afxdialogex.h"
-#include "PictureEx.h"
 
 
 // Modal_Loading 대화 상자
@@ -18,12 +17,12 @@ public:
 	enum { IDD = IDD_DIALOG_LOADING };
 #endif
 private:
-	UINT_PTR m_nTimer; // 타이머 ID
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
-	BOOL Modal_Loading::OnInitDialog();
-	void Modal_Loading::OnTimer(UINT_PTR nIDEvent);
+	BOOL OnInitDialog();
+	UINT_PTR m_nTimer; // 타이머 ID
 	DECLARE_MESSAGE_MAP();
-	CPictureEx  m_GifLoading;
 
+public:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 };
