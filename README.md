@@ -44,12 +44,10 @@
 
 	};
 
-	//주문 리스트 구조체 배열 선언
-	//구조체 초기화
+//주문 리스트 구조체 배열 선언
  //주문 1번부터 8번까지.
-	struct OrderList m_OrderList[8]; // 주문 리스트 구조체 배열 선언.
+struct OrderList m_OrderList[8]; // 주문 리스트 구조체 배열 선언.
  
-	//
 
 
  int CMFCKIOSKDlg::initOrder_all() //구조체 전체 초기화
