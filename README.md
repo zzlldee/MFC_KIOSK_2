@@ -58,14 +58,15 @@ struct OrderList m_OrderList[8]; // 주문 리스트 구조체 배열 선언.
 
 
 
+//
+//""""""""""""""""""""""""""""""""""""""""""
+//파라미터로 매뉴 이름에 해당하는 정수값을 받아 스트링을 리턴하는 함수.
+//예시)
+//getName(m_OrderList[0]);
+//
 
-""""""""""""""""""""""""""""""""""""""""""
-파라미터로 매뉴 이름에 해당하는 정수값을 받아 스트링을 리턴하는 함수.
-예시)
-getName(m_OrderList[0]);
-"                                      "
-""""""""""""""""""""""""""""""""""""""""
- char* CMFCKIOSKDlg::getName(int name) { 
+
+char* CMFCKIOSKDlg::getName(int name) { 
 		switch (name) {
 		case 아메리카노_아이스: return "아메리카노_아이스";
 		case 아메리카노_핫: return "아메리카노_핫";
