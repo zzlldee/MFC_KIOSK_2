@@ -55,11 +55,6 @@ struct OrderList m_OrderList[8]; // 주문 리스트 구조체 배열 선언.
  int CMFCKIOSKDlg::initOrder_one(int listPosition) //구조체 하나만 초기화. 
 
 
-
-
-
-//
-//""""""""""""""""""""""""""""""""""""""""""
 //파라미터로 매뉴 이름에 해당하는 정수값을 받아 스트링을 리턴하는 함수.
 //예시)
 //getName(m_OrderList[0]);
