@@ -13,10 +13,7 @@
 #define new DEBUG_NEW
 #endif
 
-// headers about database connection
-#include <afxdb.h>
-#include <odbcinst.h>
-#include <sqlext.h>
+
 
 // 응용 프로그램 정보에 사용되는 CAboutDlg 대화 상자입니다.
 
@@ -49,7 +46,6 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
-
 
 
 // CMFCKIOSKDlg 대화 상자
@@ -129,74 +125,124 @@ BEGIN_MESSAGE_MAP(CMFCKIOSKDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 
-ON_BN_CLICKED(IDC_BUTTON_COFFEE, &CMFCKIOSKDlg::OnClickedButtonCoffee)
-ON_BN_CLICKED(IDC_BUTTON_CRAFT, &CMFCKIOSKDlg::OnClickedButtonCraft)
-ON_BN_CLICKED(IDC_BUTTON_TEA, &CMFCKIOSKDlg::OnClickedButtonTea)
-ON_BN_CLICKED(IDC_BUTTON_BREAD, &CMFCKIOSKDlg::OnClickedButtonBread)
-ON_BN_CLICKED(IDC_BUTTON_UP, &CMFCKIOSKDlg::OnClickedButtonUp)
-ON_BN_CLICKED(IDC_BUTTON_DOWN, &CMFCKIOSKDlg::OnClickedButtonDown)
-ON_BN_CLICKED(IDC_BUTTON_KOREAN, &CMFCKIOSKDlg::OnClickedButtonKorean)
-ON_BN_CLICKED(IDC_BUTTON_ENGLISH, &CMFCKIOSKDlg::OnClickedButtonEnglish)
-ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
-ON_WM_CTLCOLOR()
-ON_BN_CLICKED(IDC_BUTTON_HERE, &CMFCKIOSKDlg::OnClickedButtonHere)
-ON_BN_CLICKED(IDC_BUTTON_TOGO, &CMFCKIOSKDlg::OnClickedButtonTogo)
+	ON_BN_CLICKED(IDC_BUTTON_COFFEE, &CMFCKIOSKDlg::OnClickedButtonCoffee)
+	ON_BN_CLICKED(IDC_BUTTON_CRAFT, &CMFCKIOSKDlg::OnClickedButtonCraft)
+	ON_BN_CLICKED(IDC_BUTTON_TEA, &CMFCKIOSKDlg::OnClickedButtonTea)
+	ON_BN_CLICKED(IDC_BUTTON_BREAD, &CMFCKIOSKDlg::OnClickedButtonBread)
+	ON_BN_CLICKED(IDC_BUTTON_UP, &CMFCKIOSKDlg::OnClickedButtonUp)
+	ON_BN_CLICKED(IDC_BUTTON_DOWN, &CMFCKIOSKDlg::OnClickedButtonDown)
+	ON_BN_CLICKED(IDC_BUTTON_KOREAN, &CMFCKIOSKDlg::OnClickedButtonKorean)
+	ON_BN_CLICKED(IDC_BUTTON_ENGLISH, &CMFCKIOSKDlg::OnClickedButtonEnglish)
+	ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
+	ON_WM_CTLCOLOR()
+	ON_BN_CLICKED(IDC_BUTTON_HERE, &CMFCKIOSKDlg::OnClickedButtonHere)
+	ON_BN_CLICKED(IDC_BUTTON_TOGO, &CMFCKIOSKDlg::OnClickedButtonTogo)
 
 
 
-ON_STN_CLICKED(IDC_TEXT_ORDER13, &CMFCKIOSKDlg::OnStnClickedTextOrder13)
-ON_STN_CLICKED(IDC_TEXT_ORDER3_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder3Sum)
-ON_WM_LBUTTONDOWN()
-ON_STN_CLICKED(IDC_TEXT_ORDER18, &CMFCKIOSKDlg::OnStnClickedTextOrder18)
-ON_STN_CLICKED(IDC_TEXT_ORDER12, &CMFCKIOSKDlg::OnStnClickedTextOrder12)
-ON_STN_CLICKED(IDC_TEXT_ORDER19, &CMFCKIOSKDlg::OnStnClickedTextOrder19)
-ON_EN_CHANGE(IDC_EDIT1, &CMFCKIOSKDlg::OnEnChangeEdit1)
-ON_BN_CLICKED(IDC_CANC1, &CMFCKIOSKDlg::OnBnClickedCanc1)
-ON_BN_CLICKED(IDC_CANC2, &CMFCKIOSKDlg::OnBnClickedCanc2)
-ON_BN_CLICKED(IDC_CANC3, &CMFCKIOSKDlg::OnBnClickedCanc3)
-ON_BN_CLICKED(IDC_CANC4, &CMFCKIOSKDlg::OnBnClickedCanc4)
-ON_BN_CLICKED(IDC_CANC5, &CMFCKIOSKDlg::OnBnClickedCanc5)
-ON_BN_CLICKED(IDC_CANC6, &CMFCKIOSKDlg::OnBnClickedCanc6)
-ON_BN_CLICKED(IDC_CANC7, &CMFCKIOSKDlg::OnBnClickedCanc7)
-ON_BN_CLICKED(IDC_CANC8, &CMFCKIOSKDlg::OnBnClickedCanc8)
-ON_STN_CLICKED(IDC_TEXT_ORDER2_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder2Sum)
-ON_STN_CLICKED(IDC_TEXT_ORDER8_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder8Sum)
-ON_STN_CLICKED(IDC_letf1, &CMFCKIOSKDlg::OnStnClickedletf1)
-ON_STN_CLICKED(IDC_letf2, &CMFCKIOSKDlg::OnStnClickedletf2)
-ON_STN_CLICKED(IDC_letf3, &CMFCKIOSKDlg::OnStnClickedletf3)
-ON_STN_CLICKED(IDC_letf4, &CMFCKIOSKDlg::OnStnClickedletf4)
-ON_STN_CLICKED(IDC_letf5, &CMFCKIOSKDlg::OnStnClickedletf5)
-ON_STN_CLICKED(IDC_letf6, &CMFCKIOSKDlg::OnStnClickedletf6)
-ON_STN_CLICKED(IDC_letf7, &CMFCKIOSKDlg::OnStnClickedletf7)
-ON_STN_CLICKED(IDC_letf8, &CMFCKIOSKDlg::OnStnClickedletf8)
-ON_STN_CLICKED(IDC_right1, &CMFCKIOSKDlg::OnStnClickedright1)
-ON_STN_CLICKED(IDC_right2, &CMFCKIOSKDlg::OnStnClickedright2)
-ON_STN_CLICKED(IDC_right3, &CMFCKIOSKDlg::OnStnClickedright3)
-ON_STN_CLICKED(IDC_right4, &CMFCKIOSKDlg::OnStnClickedright4)
-ON_STN_CLICKED(IDC_right5, &CMFCKIOSKDlg::OnStnClickedright5)
-ON_STN_CLICKED(IDC_right6, &CMFCKIOSKDlg::OnStnClickedright6)
-ON_STN_CLICKED(IDC_right7, &CMFCKIOSKDlg::OnStnClickedright7)
-ON_STN_CLICKED(IDC_right8, &CMFCKIOSKDlg::OnStnClickedright8)
+	ON_STN_CLICKED(IDC_TEXT_ORDER13, &CMFCKIOSKDlg::OnStnClickedTextOrder13)
+	ON_STN_CLICKED(IDC_TEXT_ORDER3_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder3Sum)
+	ON_WM_LBUTTONDOWN()
+	ON_STN_CLICKED(IDC_TEXT_ORDER18, &CMFCKIOSKDlg::OnStnClickedTextOrder18)
+	ON_STN_CLICKED(IDC_TEXT_ORDER12, &CMFCKIOSKDlg::OnStnClickedTextOrder12)
+	ON_STN_CLICKED(IDC_TEXT_ORDER19, &CMFCKIOSKDlg::OnStnClickedTextOrder19)
+	ON_EN_CHANGE(IDC_EDIT1, &CMFCKIOSKDlg::OnEnChangeEdit1)
+	ON_BN_CLICKED(IDC_CANC1, &CMFCKIOSKDlg::OnBnClickedCanc1)
+	ON_BN_CLICKED(IDC_CANC2, &CMFCKIOSKDlg::OnBnClickedCanc2)
+	ON_BN_CLICKED(IDC_CANC3, &CMFCKIOSKDlg::OnBnClickedCanc3)
+	ON_BN_CLICKED(IDC_CANC4, &CMFCKIOSKDlg::OnBnClickedCanc4)
+	ON_BN_CLICKED(IDC_CANC5, &CMFCKIOSKDlg::OnBnClickedCanc5)
+	ON_BN_CLICKED(IDC_CANC6, &CMFCKIOSKDlg::OnBnClickedCanc6)
+	ON_BN_CLICKED(IDC_CANC7, &CMFCKIOSKDlg::OnBnClickedCanc7)
+	ON_BN_CLICKED(IDC_CANC8, &CMFCKIOSKDlg::OnBnClickedCanc8)
+	ON_STN_CLICKED(IDC_TEXT_ORDER2_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder2Sum)
+	ON_STN_CLICKED(IDC_TEXT_ORDER8_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder8Sum)
+	ON_STN_CLICKED(IDC_letf1, &CMFCKIOSKDlg::OnStnClickedletf1)
+	ON_STN_CLICKED(IDC_letf2, &CMFCKIOSKDlg::OnStnClickedletf2)
+	ON_STN_CLICKED(IDC_letf3, &CMFCKIOSKDlg::OnStnClickedletf3)
+	ON_STN_CLICKED(IDC_letf4, &CMFCKIOSKDlg::OnStnClickedletf4)
+	ON_STN_CLICKED(IDC_letf5, &CMFCKIOSKDlg::OnStnClickedletf5)
+	ON_STN_CLICKED(IDC_letf6, &CMFCKIOSKDlg::OnStnClickedletf6)
+	ON_STN_CLICKED(IDC_letf7, &CMFCKIOSKDlg::OnStnClickedletf7)
+	ON_STN_CLICKED(IDC_letf8, &CMFCKIOSKDlg::OnStnClickedletf8)
+	ON_STN_CLICKED(IDC_right1, &CMFCKIOSKDlg::OnStnClickedright1)
+	ON_STN_CLICKED(IDC_right2, &CMFCKIOSKDlg::OnStnClickedright2)
+	ON_STN_CLICKED(IDC_right3, &CMFCKIOSKDlg::OnStnClickedright3)
+	ON_STN_CLICKED(IDC_right4, &CMFCKIOSKDlg::OnStnClickedright4)
+	ON_STN_CLICKED(IDC_right5, &CMFCKIOSKDlg::OnStnClickedright5)
+	ON_STN_CLICKED(IDC_right6, &CMFCKIOSKDlg::OnStnClickedright6)
+	ON_STN_CLICKED(IDC_right7, &CMFCKIOSKDlg::OnStnClickedright7)
+	ON_STN_CLICKED(IDC_right8, &CMFCKIOSKDlg::OnStnClickedright8)
 END_MESSAGE_MAP()
 
+typedef struct {
+	CString pname;
+	int p;
+	int q;
+}Product;
+
+Product Array_Stock[32];
 
 // CMFCKIOSKDlg 메시지 처리기
-
 BOOL CMFCKIOSKDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-	/*
+	/*** database
 	CDatabase db;
+	CRecordset rs(&db);
 
-	BOOL bret = db.OpenEx(_T("DSN=kiosk_db;uid=dbadmin;PWD=dbadmin"));
+	CTime t = CTime::GetCurrentTime(); 
+	CString ymd;
+	ymd.Format(_T("%d_%d_%d"), t.GetYear(), t.GetMonth(), t.GetDay());
+
+	BOOL bret = db.OpenEx(_T("DSN=kiosk_db;"));
+
+	if (bret) // 연결 성공시
+	{
+		CString dbname = _T("db_");
+		dbname.Insert(3, ymd);
+		CString initdb = _T("CREATE DATABASE IF NOT EXISTS ;");
+		initdb.Insert(30, dbname);
+		//AfxMessageBox(dbname);
+		db.ExecuteSQL(initdb);
+		
+		CString usedb = _T("USE ;");
+		usedb.Insert(4, dbname);
+		//AfxMessageBox(usedb);
+		db.ExecuteSQL(usedb);
+		
+		
+		create table 시
+		변수명 자료형 속성,
+		으로 지정
+		
+		CString t0col = _T("pcode INT, p int, q int");
+		CString maket0 = _T("CREATE TABLE IF NOT EXISTS t0_stock();");
+		maket0.Insert(36, t0col);
+		//AfxMessageBox(maket0);
+		
+		CString t1col = _T("dt DATETIME, tno int, type bool, pcode int, p int, q int");
+		CString maket1 = _T("CREATE TABLE IF NOT EXISTS t1_trans_1();");
+		maket1.Insert(38, t1col);
+		//AfxMessageBox(maket1);
+		
+		CString t2col = _T("dt DATETIME, tno int, type bool, sum int");
+		CString maket2 = _T("CREATE TABLE IF NOT EXISTS t2_trans_2();");
+		maket2.Insert(38, t2col);
+		//AfxMessageBox(maket2);
+
+		db.ExecuteSQL(maket0);
+		db.ExecuteSQL(maket1);
+		db.ExecuteSQL(maket2);
+
+		AfxMessageBox(_T("db inited"));
+	}
+	else
+	{
+		AfxMessageBox(_T("db error"));
+	}
+	***/
 	
-	if (bret) {
-		AfxMessageBox(_T("db연결 성공!"));
-	}
-	else {
-		AfxMessageBox(_T("db연결 실패!"));
-	}
-	*/
 	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
 	// IDM_ABOUTBOX는 시스템 명령 범위에 있어야 합니다.
@@ -223,15 +269,10 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
-	
-	
-	
 
 	LONG style = GetWindowLong(this->m_hWnd, GWL_STYLE);
 	style &= ~(WS_MAXIMIZEBOX); // 최대화 버튼 제거
 	SetWindowLong(this->m_hWnd, GWL_STYLE, style);
-
-
 
 	// 다이얼로그 크기 고정
 	SetWindowPos(NULL, 0, 0, 1920, 1080, SWP_NOMOVE | SWP_NOZORDER); // 해상도 1920 1080 고정
@@ -595,10 +636,6 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_allsum(int nID)
 		pEdit->SetFont(&m_font_allsum);
 
 	}
-
-
-
-
 }
 
 
@@ -1698,7 +1735,7 @@ void CMFCKIOSKDlg::OnLButtonDown(UINT nFlags, CPoint point)
 			if (myRect2.PtInRect(point))
 			{
 				// 2번 매뉴를 클릭했을 때 
-				AfxMessageBox(_T("클릭 확인2!!!!!!!!!!!."));
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
 				Add_List(2);
 
 			}

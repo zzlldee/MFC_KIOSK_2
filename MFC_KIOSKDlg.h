@@ -5,12 +5,18 @@
 #pragma once
 #include "Modal_Pay.h"
 
+// headers about database connection
+#include <afxdb.h>
+#include <odbcinst.h>
+#include <sqlext.h>
+
 // CMFCKIOSKDlg 대화 상자
 class CMFCKIOSKDlg : public CDialogEx
 {
 	// 생성입니다.
 public:
 	CMFCKIOSKDlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
+
 
 	// 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
@@ -54,7 +60,7 @@ public:
 	void m_setFont_for_m_font_edit(int nID); //
 	void m_setFont_for_m_font_allsum(int nID); //
 
-	void m_setFont2(CFont font, int nID); //사용하지 않는 함수!!!!!!!!
+	//void m_setFont2(CFont font, int nID); //사용하지 않는 함수!!!!!!!!
 
 
 
@@ -183,97 +189,94 @@ public:
 
 	//주문 리스트 구조체 ( 앱 내부용 )
 	struct OrderList {
-		int mName = 0; //매뉴명 
-		int mQty = 0; // 수량 
-		int mSum = 0; // 가격 총합
-
+	int mName = 0; //매뉴명 
+	int mQty = 0; // 수량 
+	int mSum = 0; // 가격 총합
 	};
 
 	//주문 리스트 구조체 배열 선언
 	//구조체 초기화
 	struct OrderList m_OrderList[8]; // 주문 리스트 구조체 배열 선언
-	//
 
-	
 	//주문 리스트 구조체 삽입 함수 
 	int InsertOrder(int);
 
 	//매뉴 이름 enum
-		enum Menu {
-		아메리카노_아이스 = 1,
-		아메리카노_핫 = 2,
-		카페라떼_아이스 = 3,
-		카페라떼_핫 = 4,
-		카라멜마끼아또_아이스 = 5,
-		카라멜마끼아또_핫 = 6,
-		콜드브루 = 7,
-		바닐라라떼_아이스 = 8,
-		바닐라라떼_핫 = 9,
-		에스프레소 = 10,
-		카페모카 = 11,
-		녹차프라페 = 12,
-		쿠키프라페 = 13,
-		민트프라페 = 14,
-		요거트스무디 = 15,
-		유니콘프라페 = 16,
-		유자차 = 17,
-		페퍼민트 = 18,
-		캐모마일 = 19,
-		얼그레이 = 20,
-		녹차 = 21,
-		사과유자차 = 22,
-		아이스크림크로플 = 23,
-		크루아상 = 24,
-		마들렌 = 25,
-		스콘 = 26,
-		마카롱 = 27,
-		샌드위치 = 28,
-		아이스크림슈 = 29,
-		롤케익 = 30,
-		초코칩쿠키 = 31,
-		약과 = 32,
+	enum Menu{
+	아메리카노_아이스 = 1,
+	아메리카노_핫,
+	카페라떼_아이스,
+	카페라떼_핫,
+	카라멜마끼아또_아이스,
+	카라멜마끼아또_핫,
+	콜드브루,
+	바닐라라떼_아이스,
+	바닐라라떼_핫,
+	에스프레소,
+	카페모카,
+	녹차프라페,
+	쿠키프라페,
+	민트프라페,
+	요거트스무디,
+	유니콘프라페,
+	유자차,
+	페퍼민트,
+	캐모마일,
+	얼그레이,
+	녹차,
+	사과유자차,
+	아이스크림크로플,
+	크루아상,
+	마들렌,
+	스콘,
+	마카롱,
+	샌드위치,
+	아이스크림슈,
+	롤케익,
+	초코칩쿠키,
+	약과,
 	};
 
 
-		bool isInitial(struct OrderList);
-		int getPrice(int item_number);
-		int deleteOrder(int p_order);
-		int initOrder_one(int);
-		int initOrder_all();
-		int showOrderList();
-		char* getName(int name);
-		afx_msg void OnEnChangeEdit1();
-		afx_msg void OnBnClickedCanc1();
-		afx_msg void OnBnClickedCanc2();
-		afx_msg void OnBnClickedCanc3();
-		afx_msg void OnBnClickedCanc4();
-		afx_msg void OnBnClickedCanc5();
-		afx_msg void OnBnClickedCanc6();
-		afx_msg void OnBnClickedCanc7();
-		afx_msg void OnBnClickedCanc8();
-		void refreshOrder();
-		void setTextInit(int nID);
-		afx_msg void OnStnClickedTextOrder2Sum();
-		afx_msg void OnStnClickedTextOrder8Sum();
-		afx_msg void OnStnClickedletf1();
-		afx_msg void OnStnClickedletf2();
-		afx_msg void OnStnClickedletf3();
-		afx_msg void OnStnClickedletf4();
-		afx_msg void OnStnClickedletf5();
-		afx_msg void OnStnClickedletf6();
-		afx_msg void OnStnClickedletf7();
-		afx_msg void OnStnClickedletf8();
-		afx_msg void OnStnClickedright1();
-		afx_msg void OnStnClickedright2();
-		afx_msg void OnStnClickedright3();
-		afx_msg void OnStnClickedright4();
-		afx_msg void OnStnClickedright5();
-		afx_msg void OnStnClickedright6();
-		afx_msg void OnStnClickedright7();
-		afx_msg void OnStnClickedright8();
-		int addOrder(int POS);
-		int minOrder(int POS);
-		CStatic m_ALLSUM;
-		int sumPrice;
-		bool m_isBreadDown = false;
+	bool isInitial(struct OrderList);
+	int getPrice(int item_number);
+	int deleteOrder(int p_order);
+	int initOrder_one(int);
+	int initOrder_all();
+	int showOrderList();
+	char* getName(int name);
+	afx_msg void OnEnChangeEdit1();
+	afx_msg void OnBnClickedCanc1();
+	afx_msg void OnBnClickedCanc2();
+	afx_msg void OnBnClickedCanc3();
+	afx_msg void OnBnClickedCanc4();
+	afx_msg void OnBnClickedCanc5();
+	afx_msg void OnBnClickedCanc6();
+	afx_msg void OnBnClickedCanc7();
+	afx_msg void OnBnClickedCanc8();
+	void refreshOrder();
+	void setTextInit(int nID);
+	afx_msg void OnStnClickedTextOrder2Sum();
+	afx_msg void OnStnClickedTextOrder8Sum();
+	afx_msg void OnStnClickedletf1();
+	afx_msg void OnStnClickedletf2();
+	afx_msg void OnStnClickedletf3();
+	afx_msg void OnStnClickedletf4();
+	afx_msg void OnStnClickedletf5();
+	afx_msg void OnStnClickedletf6();
+	afx_msg void OnStnClickedletf7();
+	afx_msg void OnStnClickedletf8();
+	afx_msg void OnStnClickedright1();
+	afx_msg void OnStnClickedright2();
+	afx_msg void OnStnClickedright3();
+	afx_msg void OnStnClickedright4();
+	afx_msg void OnStnClickedright5();
+	afx_msg void OnStnClickedright6();
+	afx_msg void OnStnClickedright7();
+	afx_msg void OnStnClickedright8();
+	int addOrder(int POS);
+	int minOrder(int POS);
+	CStatic m_ALLSUM;
+	int sumPrice;
+	bool m_isBreadDown = false;
 };
