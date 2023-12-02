@@ -181,6 +181,8 @@ typedef struct {
 	int q;
 }Product;
 
+
+
 Product Array_Stock[32];
 
 void initdb(void) {
@@ -241,7 +243,6 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 
 	//initdb();
 	
-	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
 	// IDM_ABOUTBOX는 시스템 명령 범위에 있어야 합니다.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
@@ -526,9 +527,6 @@ void CMFCKIOSKDlg::m_setButtonPositiion(int buttonX, int buttonY, int nID)
 	/****************************************************************************************************/
 }
 
-
-
-
 void CMFCKIOSKDlg::m_setFont_for_m_font_menu(int nID)
 {
 	// TODO: 여기에 구현 코드 추가.
@@ -539,10 +537,7 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_menu(int nID)
 		//pEdit->SetFont(&m_font);
 
 		pEdit->SetFont(&m_font_menu);
-		
 	}
-
-	
 }
 
 void CMFCKIOSKDlg::m_setFont_for_m_font_price(int nID)
@@ -581,11 +576,7 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_order(int nID)
 		//pEdit->SetFont(&m_font);
 
 		pEdit->SetFont(&m_font_order);
-
 	}
-
-
-
 
 }
 void CMFCKIOSKDlg::m_setFont_order_amount(int nID)
@@ -604,8 +595,6 @@ void CMFCKIOSKDlg::m_setFont_order_amount(int nID)
 }
 
 
-
-
 void CMFCKIOSKDlg::m_setFont_for_m_font_ordersum(int nID)
 {
 	//매뉴 가격 텍스트 폰트를 변경하기 위한 멤버함수
@@ -615,12 +604,7 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_ordersum(int nID)
 		//pEdit->SetFont(&m_font);
 
 		pEdit->SetFont(&m_font_ordersum);
-
 	}
-
-
-
-
 }
 
 void CMFCKIOSKDlg::m_setFont_for_m_font_allsum(int nID)
@@ -635,10 +619,6 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_allsum(int nID)
 
 	}
 }
-
-
-
-
 
 
 
@@ -701,9 +681,6 @@ void CMFCKIOSKDlg::m_setFont_price(int fontsize, int FW)
 	m_setFont_for_m_font_price(IDC_PRICE7);
 	m_setFont_for_m_font_price(IDC_PRICE8);
 	m_setFont_for_m_font_price(IDC_PRICE9);
-
-
-
 
 }
 
