@@ -183,15 +183,11 @@ typedef struct {
 
 Product Array_Stock[32];
 
-// CMFCKIOSKDlg 메시지 처리기
-BOOL CMFCKIOSKDlg::OnInitDialog()
-{
-	CDialogEx::OnInitDialog();
-	/*** database
+void initdb(void) {
 	CDatabase db;
 	CRecordset rs(&db);
 
-	CTime t = CTime::GetCurrentTime(); 
+	CTime t = CTime::GetCurrentTime();
 	CString ymd;
 	ymd.Format(_T("%d_%d_%d"), t.GetYear(), t.GetMonth(), t.GetDay());
 
@@ -205,27 +201,22 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 		initdb.Insert(30, dbname);
 		//AfxMessageBox(dbname);
 		db.ExecuteSQL(initdb);
-		
+
 		CString usedb = _T("USE ;");
 		usedb.Insert(4, dbname);
 		//AfxMessageBox(usedb);
 		db.ExecuteSQL(usedb);
-		
-		
-		create table 시
-		변수명 자료형 속성,
-		으로 지정
-		
+
 		CString t0col = _T("pcode INT, p int, q int");
 		CString maket0 = _T("CREATE TABLE IF NOT EXISTS t0_stock();");
 		maket0.Insert(36, t0col);
 		//AfxMessageBox(maket0);
-		
+
 		CString t1col = _T("dt DATETIME, tno int, type bool, pcode int, p int, q int");
 		CString maket1 = _T("CREATE TABLE IF NOT EXISTS t1_trans_1();");
 		maket1.Insert(38, t1col);
 		//AfxMessageBox(maket1);
-		
+
 		CString t2col = _T("dt DATETIME, tno int, type bool, sum int");
 		CString maket2 = _T("CREATE TABLE IF NOT EXISTS t2_trans_2();");
 		maket2.Insert(38, t2col);
@@ -241,7 +232,14 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	{
 		AfxMessageBox(_T("db error"));
 	}
-	***/
+}
+
+// CMFCKIOSKDlg 메시지 처리기
+BOOL CMFCKIOSKDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	//initdb();
 	
 	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
