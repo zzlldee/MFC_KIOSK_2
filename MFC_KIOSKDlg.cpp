@@ -8,6 +8,7 @@
 #include "MFC_KIOSKDlg.h"
 #include "afxdialogex.h"
 #include "Modal_Pay.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -98,13 +99,7 @@ void CMFCKIOSKDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_TEXT_ORDER6_SUM, m_textOrderSum6);
 	DDX_Control(pDX, IDC_TEXT_ORDER7_SUM, m_textOrderSum7);
 	DDX_Control(pDX, IDC_TEXT_ORDER8_SUM, m_textOrderSum8);
-	DDX_Control(pDX, IDC_TEXT_ORDER2, m_textOrder2);
-	DDX_Control(pDX, IDC_TEXT_ORDER3, m_textOrder3);
-	DDX_Control(pDX, IDC_TEXT_ORDER4, m_textOrder4);
-	DDX_Control(pDX, IDC_TEXT_ORDER5, m_textOrder5);
-	DDX_Control(pDX, IDC_TEXT_ORDER6, m_textOrder6);
-	DDX_Control(pDX, IDC_TEXT_ORDER7, m_textOrder7);
-	DDX_Control(pDX, IDC_TEXT_ORDER8, m_textOrder8);
+
 	DDX_Control(pDX, IDC_EDIT1, m_edit1);
 	DDX_Control(pDX, IDC_EDIT2, m_edit2);
 	DDX_Control(pDX, IDC_EDIT3, m_edit3);
@@ -113,6 +108,20 @@ void CMFCKIOSKDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_EDIT6, m_edit6);
 	DDX_Control(pDX, IDC_EDIT7, m_edit7);
 	DDX_Control(pDX, IDC_EDIT8, m_edit8);
+
+
+
+	DDX_Control(pDX, 1064, m_orderlist_1); //IDC_TEXT_ORDER 첫번째 ( 주문 리스트 첫번째 )
+	DDX_Control(pDX, IDC_TEXT_ORDER12, m_orderlist_2);
+	DDX_Control(pDX, IDC_TEXT_ORDER13, m_orderlist_3);
+	//DDX_Control(pDX, IDC_TEXT_ORDER14, m_orderlist_4);
+	DDX_Control(pDX, 1044, m_orderlist14_2);
+	DDX_Control(pDX, IDC_TEXT_ORDER15, m_orderlist_5);
+	DDX_Control(pDX, IDC_TEXT_ORDER16, m_orderlist_6);
+	DDX_Control(pDX, IDC_TEXT_ORDER17, m_orderlist_7);
+	DDX_Control(pDX, IDC_TEXT_ORDER18, m_orderlist_8);
+
+	DDX_Control(pDX, IDC_TEXT_ALLSUM, m_ALLSUM);
 }
 
 BEGIN_MESSAGE_MAP(CMFCKIOSKDlg, CDialogEx)
@@ -132,6 +141,42 @@ ON_BN_CLICKED(IDC_BUTTON_CHINESE, &CMFCKIOSKDlg::OnClickedButtonChinese)
 ON_WM_CTLCOLOR()
 ON_BN_CLICKED(IDC_BUTTON_HERE, &CMFCKIOSKDlg::OnClickedButtonHere)
 ON_BN_CLICKED(IDC_BUTTON_TOGO, &CMFCKIOSKDlg::OnClickedButtonTogo)
+
+
+
+ON_STN_CLICKED(IDC_TEXT_ORDER13, &CMFCKIOSKDlg::OnStnClickedTextOrder13)
+ON_STN_CLICKED(IDC_TEXT_ORDER3_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder3Sum)
+ON_WM_LBUTTONDOWN()
+ON_STN_CLICKED(IDC_TEXT_ORDER18, &CMFCKIOSKDlg::OnStnClickedTextOrder18)
+ON_STN_CLICKED(IDC_TEXT_ORDER12, &CMFCKIOSKDlg::OnStnClickedTextOrder12)
+ON_STN_CLICKED(IDC_TEXT_ORDER19, &CMFCKIOSKDlg::OnStnClickedTextOrder19)
+ON_EN_CHANGE(IDC_EDIT1, &CMFCKIOSKDlg::OnEnChangeEdit1)
+ON_BN_CLICKED(IDC_CANC1, &CMFCKIOSKDlg::OnBnClickedCanc1)
+ON_BN_CLICKED(IDC_CANC2, &CMFCKIOSKDlg::OnBnClickedCanc2)
+ON_BN_CLICKED(IDC_CANC3, &CMFCKIOSKDlg::OnBnClickedCanc3)
+ON_BN_CLICKED(IDC_CANC4, &CMFCKIOSKDlg::OnBnClickedCanc4)
+ON_BN_CLICKED(IDC_CANC5, &CMFCKIOSKDlg::OnBnClickedCanc5)
+ON_BN_CLICKED(IDC_CANC6, &CMFCKIOSKDlg::OnBnClickedCanc6)
+ON_BN_CLICKED(IDC_CANC7, &CMFCKIOSKDlg::OnBnClickedCanc7)
+ON_BN_CLICKED(IDC_CANC8, &CMFCKIOSKDlg::OnBnClickedCanc8)
+ON_STN_CLICKED(IDC_TEXT_ORDER2_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder2Sum)
+ON_STN_CLICKED(IDC_TEXT_ORDER8_SUM, &CMFCKIOSKDlg::OnStnClickedTextOrder8Sum)
+ON_STN_CLICKED(IDC_letf1, &CMFCKIOSKDlg::OnStnClickedletf1)
+ON_STN_CLICKED(IDC_letf2, &CMFCKIOSKDlg::OnStnClickedletf2)
+ON_STN_CLICKED(IDC_letf3, &CMFCKIOSKDlg::OnStnClickedletf3)
+ON_STN_CLICKED(IDC_letf4, &CMFCKIOSKDlg::OnStnClickedletf4)
+ON_STN_CLICKED(IDC_letf5, &CMFCKIOSKDlg::OnStnClickedletf5)
+ON_STN_CLICKED(IDC_letf6, &CMFCKIOSKDlg::OnStnClickedletf6)
+ON_STN_CLICKED(IDC_letf7, &CMFCKIOSKDlg::OnStnClickedletf7)
+ON_STN_CLICKED(IDC_letf8, &CMFCKIOSKDlg::OnStnClickedletf8)
+ON_STN_CLICKED(IDC_right1, &CMFCKIOSKDlg::OnStnClickedright1)
+ON_STN_CLICKED(IDC_right2, &CMFCKIOSKDlg::OnStnClickedright2)
+ON_STN_CLICKED(IDC_right3, &CMFCKIOSKDlg::OnStnClickedright3)
+ON_STN_CLICKED(IDC_right4, &CMFCKIOSKDlg::OnStnClickedright4)
+ON_STN_CLICKED(IDC_right5, &CMFCKIOSKDlg::OnStnClickedright5)
+ON_STN_CLICKED(IDC_right6, &CMFCKIOSKDlg::OnStnClickedright6)
+ON_STN_CLICKED(IDC_right7, &CMFCKIOSKDlg::OnStnClickedright7)
+ON_STN_CLICKED(IDC_right8, &CMFCKIOSKDlg::OnStnClickedright8)
 END_MESSAGE_MAP()
 
 
@@ -228,6 +273,9 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 	
+	
+	
+
 	LONG style = GetWindowLong(this->m_hWnd, GWL_STYLE);
 	style &= ~(WS_MAXIMIZEBOX); // 최대화 버튼 제거
 	SetWindowLong(this->m_hWnd, GWL_STYLE, style);
@@ -255,15 +303,15 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setButtonPositiion( 1569, 803, 1006); // 포장 버튼
 
 	//매뉴 이미지 박스에 대한 동적 이동 로직입니다.
-	m_setButtonPositiion(68, 170, 1007); //매뉴 이미지 박스1
-	m_setButtonPositiion(418, 170, 1008); // 2
-	m_setButtonPositiion(768, 170, 1009);
-	m_setButtonPositiion(68, 450, 1010);
-	m_setButtonPositiion(418, 450, 1011);
-	m_setButtonPositiion(768, 450, 1012);
-	m_setButtonPositiion(68, 750, 1013);
-	m_setButtonPositiion(418, 750, 1014);
-	m_setButtonPositiion(768, 750, 1015); //9
+	m_setButtonPositiion(108, 170, 1007); //매뉴 이미지 박스1
+	m_setButtonPositiion(468, 170, 1008); // 2
+	m_setButtonPositiion(808, 170, 1009);
+	m_setButtonPositiion(108, 450, 1010);
+	m_setButtonPositiion(458, 450, 1011);
+	m_setButtonPositiion(808, 450, 1012);
+	m_setButtonPositiion(108, 750, 1013);
+	m_setButtonPositiion(468, 750, 1014);
+	m_setButtonPositiion(808, 750, 1015); //9
 
 	//매뉴 이름 텍스트와 가격 텍스트에 대한 동적 이동 로직입니다.
 	m_setButtonPositiion(129, 370, 1016); //매뉴 이름 텍스트 1
@@ -295,24 +343,24 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setButtonPositiion(1155, 925 , 1027);
 
 	//주문 텍스트에 대한 동적 이동 로직입니다.
-	m_setButtonPositiion(1262, 130, 1028);
-	m_setButtonPositiion(1262, 190, 1043);
-	m_setButtonPositiion(1262, 260, 1044);
-	m_setButtonPositiion(1262, 330, 1045);
-	m_setButtonPositiion(1262, 400, 1046);
-	m_setButtonPositiion(1262, 470, 1047);
-	m_setButtonPositiion(1262, 540, 1048);
-	m_setButtonPositiion(1262, 610, 1049);
+	m_setButtonPositiion(1242, 130, 1064);
+	m_setButtonPositiion(1242, 190, 1047);
+	m_setButtonPositiion(1242, 260, 1043);
+	m_setButtonPositiion(1242, 330, 1044);
+	m_setButtonPositiion(1242, 400, 1045);
+	m_setButtonPositiion(1242, 470, 1046);
+	m_setButtonPositiion(1242, 540, 1048);
+	m_setButtonPositiion(1242, 610, 1049);
 	
 	//주문 가격 총합 텍스트에 대한 동적 이동 로직입니다.
-	m_setButtonPositiion(1662, 130, 1029);
-	m_setButtonPositiion(1662, 190, 1030);
-	m_setButtonPositiion(1662, 260, 1031);
-	m_setButtonPositiion(1662, 330, 1032);
-	m_setButtonPositiion(1662, 400, 1033);
-	m_setButtonPositiion(1662, 470, 1042);
-	m_setButtonPositiion(1662, 540, 1050);
-	m_setButtonPositiion(1662, 610, 1051);
+	m_setButtonPositiion(1600, 130, 1029);
+	m_setButtonPositiion(1600, 190, 1030);
+	m_setButtonPositiion(1600, 260, 1031);
+	m_setButtonPositiion(1600, 330, 1032);
+	m_setButtonPositiion(1600, 400, 1033);
+	m_setButtonPositiion(1600, 470, 1042);
+	m_setButtonPositiion(1600, 540, 1050);
+	m_setButtonPositiion(1600, 610, 1051);
 	//주문 수량 에디트박스에 대한 동적 이동 로직입니다. 
 	m_setButtonPositiion(1582, 130, 1052);
 	m_setButtonPositiion(1582, 190, 1053);
@@ -322,6 +370,36 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setButtonPositiion(1582, 470, 1057);
 	m_setButtonPositiion(1582, 540, 1058);
 	m_setButtonPositiion(1582, 610, 1059);
+	//주문 수량 조절 버튼에 대한 동적 이동 로직입니다.
+	m_setButtonPositiion(1552, 140, 1074);
+	m_setButtonPositiion(1552, 200, 1081);
+	m_setButtonPositiion(1552, 270, 1082);
+	m_setButtonPositiion(1552, 340, 1083);
+	m_setButtonPositiion(1552, 410, 1085);
+	m_setButtonPositiion(1552, 480, 1086);
+	m_setButtonPositiion(1552, 550, 1087);
+	m_setButtonPositiion(1552, 620, 1088);
+
+	m_setButtonPositiion(1635, 140, 1075);
+	m_setButtonPositiion(1635, 200, 1089);
+	m_setButtonPositiion(1635, 270, 1090);
+	m_setButtonPositiion(1635, 340, 1091);
+	m_setButtonPositiion(1635, 410, 1092);
+	m_setButtonPositiion(1635, 480, 1093);
+	m_setButtonPositiion(1635, 550, 1094);
+	m_setButtonPositiion(1635, 620, 1096);
+
+	//주문 취소 버튼에 대한 동적 이동 로직
+	m_setButtonPositiion(1245, 130, IDC_CANC1);
+	m_setButtonPositiion(1245, 190, IDC_CANC2);
+	m_setButtonPositiion(1245, 260, IDC_CANC3);
+	m_setButtonPositiion(1245, 330, IDC_CANC4);
+	m_setButtonPositiion(1245, 400, IDC_CANC5);
+	m_setButtonPositiion(1245, 470, IDC_CANC6);
+	m_setButtonPositiion(1245, 540, IDC_CANC7);
+	m_setButtonPositiion(1245, 610, IDC_CANC8);
+
+
 	//모든 주문 전체 가격 총합 텍스트 이동 로직입니다.
 	m_setButtonPositiion(1540, 730, 1060);
 	//언어에 대한 동적 이동 로직입니다.
@@ -350,6 +428,7 @@ BOOL CMFCKIOSKDlg::OnInitDialog()
 	m_setFont_order(31, FW_BOLD);
 	m_setFont_ordersum(31, FW_BOLD);
 	m_setFont_allsum(55, FW_BOLD);
+	//m_setFont_order_amount(40, FW_HEAVY);
 
 	/////////////////////////////////////////////////////////
 	//초기 설정 false
@@ -519,6 +598,23 @@ void CMFCKIOSKDlg::m_setFont_for_m_font_order(int nID)
 
 
 }
+void CMFCKIOSKDlg::m_setFont_order_amount(int nID)
+{
+	// TODO: 여기에 구현 코드 추가.
+	// 글꼴 적용
+	CEdit* pEdit = (CEdit*)GetDlgItem(nID);
+	if (pEdit != nullptr)
+	{
+		//pEdit->SetFont(&m_font);
+
+		pEdit->SetFont(&m_font_order_amount);
+
+	}
+
+}
+
+
+
 
 void CMFCKIOSKDlg::m_setFont_for_m_font_ordersum(int nID)
 {
@@ -579,6 +675,7 @@ void CMFCKIOSKDlg::m_setFont_menu(int fontsize, int FW)
 		DEFAULT_QUALITY,           // 출력 품질
 		DEFAULT_PITCH | FF_SWISS,  // 피치 및 패밀리
 		_T("Arial"));              // 글꼴 이름
+
 	m_setFont_for_m_font_menu(IDC_TEXT1);
 	m_setFont_for_m_font_menu(IDC_TEXT2);
 	m_setFont_for_m_font_menu(IDC_TEXT3);
@@ -643,7 +740,7 @@ void CMFCKIOSKDlg::m_setFont_order(int fontsize, int FW)
 		DEFAULT_QUALITY,           // 출력 품질
 		DEFAULT_PITCH | FF_SWISS,  // 피치 및 패밀리
 		_T("Arial"));              // 글꼴 이름
-	m_setFont_for_m_font_order(IDC_TEXT_ORDER1);
+	m_setFont_for_m_font_order(IDC_TEXT_ORDER19);
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER2);
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER3);
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER4);
@@ -653,6 +750,35 @@ void CMFCKIOSKDlg::m_setFont_order(int fontsize, int FW)
 	m_setFont_for_m_font_order(IDC_TEXT_ORDER8);
 
 }
+void CMFCKIOSKDlg::m_setFont_order_amount(int fontsize, int FW)
+{
+	// TODO: 여기에 구현 코드 추가.
+	m_font_order.CreateFont(
+		fontsize,                        // 높이
+		0,                         // 폭
+		0,                         // 기울기 각도
+		0,                         // 기울기 각도
+		FW,                 // 글꼴 두께
+		FALSE,                     // 이탤릭
+		FALSE,                     // 밑줄
+		0,                         // 취소선
+		ANSI_CHARSET,              // 문자셋
+		OUT_DEFAULT_PRECIS,        // 출력 정밀도
+		CLIP_DEFAULT_PRECIS,       // 클리핑 정밀도
+		DEFAULT_QUALITY,           // 출력 품질
+		DEFAULT_PITCH | FF_SWISS,  // 피치 및 패밀리
+		_T("Arial"));              // 글꼴 이름
+	m_setFont_order_amount(1072);
+	m_setFont_order_amount(1073);
+	m_setFont_order_amount(1074);
+	m_setFont_order_amount(1075);
+	m_setFont_order_amount(1077);
+	m_setFont_order_amount(1078);
+	m_setFont_order_amount(1079);
+	m_setFont_order_amount(1080);
+
+}
+
 
 void CMFCKIOSKDlg::m_setFont_editbox(int fontsize, int FW)
 {
@@ -1265,6 +1391,8 @@ void CMFCKIOSKDlg::ClickedBreadDown()
 	//DOWN화면
 	ClearTextFields();
 	m_buttonBread = true;
+
+	
 	if (m_korean) {                                        //한국어
 		m_Text1.SetWindowTextA(_T("약과"));
 		m_Price1.SetWindowTextA(_T("2,000원"));
@@ -1544,4 +1672,1080 @@ void CMFCKIOSKDlg::OnClickedButtonTogo()
 	}
 	m_dlgPay.DoModal();
 
+
+
 }
+=========
+=======
+}
+
+
+
+
+
+
+
+
+void CMFCKIOSKDlg::OnStnClickedTextOrder13()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedTextOrder3Sum()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnLButtonDown(UINT nFlags, CPoint point)
+{
+//	//매뉴 이미지 박스에 대한 동적 이동 로직입니다.
+//	m_setButtonPositiion(108, 170, 1007); //매뉴 이미지 박스1
+//	m_setButtonPositiion(468, 170, 1008); // 2
+//	m_setButtonPositiion(808, 170, 1009);
+//	m_setButtonPositiion(108, 450, 1010);
+//	m_setButtonPositiion(458, 450, 1011);
+//	m_setButtonPositiion(808, 450, 1012);
+//	m_setButtonPositiion(108, 750, 1013);
+//	m_setButtonPositiion(468, 750, 1014);
+//	m_setButtonPositiion(808, 750, 1015); //9
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+	{
+		// 특정 범위 정의
+		
+		CRect myRect(108, 170, 300, 370); 
+		CRect myRect2(468, 170, 668, 370);
+		CRect myRect3(808, 170, 1008, 370);
+		CRect myRect4(108, 450, 300, 650);
+		CRect myRect5(458, 450, 658, 650);
+		CRect myRect6(808, 450, 1008, 650);
+		CRect myRect7(108, 750, 300, 950);
+		CRect myRect8(468, 750, 668, 950);
+		CRect myRect9(808, 750, 1008, 950);
+
+		// 클릭된 좌표가 myRect 내에 있는지 확인
+		if (TRUE) { 
+
+			//DDX_Control(pDX, 1064, m_orderlist_1); //IDC_TEXT_ORDER 첫번째 ( 주문 리스트 첫번째 )
+			//DDX_Control(pDX, IDC_TEXT_ORDER12, m_orderlist_2);
+			//DDX_Control(pDX, IDC_TEXT_ORDER13, m_orderlist_3);
+			////DDX_Control(pDX, IDC_TEXT_ORDER14, m_orderlist_4);
+			//DDX_Control(pDX, 1044, m_orderlist14_2);
+			//DDX_Control(pDX, IDC_TEXT_ORDER15, m_orderlist_5);
+			//DDX_Control(pDX, IDC_TEXT_ORDER16, m_orderlist_6);
+			//DDX_Control(pDX, IDC_TEXT_ORDER17, m_orderlist_7);
+			////DDX_Control(pDX, IDC_TEXT_ORDER18, m_orderlist_8);//
+			//bool m_buttonCoffee;//
+			//bool m_buttonBread;
+			//bool m_buttonTea;
+			//bool m_buttonCraft;
+
+			if (myRect.PtInRect(point))
+			{
+				// 1번 매뉴를 클릭했을 때
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				//m_orderlist_1.SetWindowText(_T("아메리카노 (ice)"));  // 테스트
+				Add_List(1);
+				
+			}
+			if (myRect2.PtInRect(point))
+			{
+				// 2번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인2!!!!!!!!!!!."));
+				Add_List(2);
+
+			}
+			if (myRect3.PtInRect(point))
+			{
+				// 3번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				Add_List(3);
+
+			}
+			if (myRect4.PtInRect(point))
+			{
+				// 4번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				Add_List(4);
+
+			}if (myRect5.PtInRect(point))
+			{
+				// 5번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				Add_List(5);
+
+			}if (myRect6.PtInRect(point))
+			{
+				// 6번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				Add_List(6);
+
+			}if (myRect7.PtInRect(point))
+			{
+				// 7번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				Add_List(7);
+
+			}if (myRect8.PtInRect(point))
+			{
+				// 8번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				Add_List(8);
+
+			}
+			if (myRect9.PtInRect(point))
+			{
+				// 9번 매뉴를 클릭했을 때 
+				AfxMessageBox(_T("클릭 확인!!!!!!!!!!!."));
+				Add_List(9);
+
+			}
+		}
+	}
+	CDialogEx::OnLButtonDown(nFlags, point);
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedTextOrder18()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedTextOrder12()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedTextOrder19()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::Add_List(int MENUPOS)
+{/*
+	"""""""""""""""""""""""""""""""""""""""""""
+	"	주문 리스트에 추가
+	"
+	///*""""""""""""""""""""""""""""""""""""""""*/
+	//bool m_buttonCoffee;
+	//bool m_buttonBread;
+	//bool m_buttonTea;
+	//bool m_buttonCraft;
+	//*/
+
+	if (m_buttonCoffee && ! m_buttonCoffeeDown) { // 커피의 경우
+		switch (MENUPOS) {
+		case 1:
+			if (InsertOrder(아메리카노_아이스)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 2:
+			if (InsertOrder(아메리카노_핫)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 3:
+			if (InsertOrder(카페라떼_아이스)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 4:
+			if (InsertOrder(카페라떼_핫)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 5:
+			if (InsertOrder(카라멜마끼아또_아이스)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 6:
+			if (InsertOrder(카라멜마끼아또_핫)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 7:
+			if (InsertOrder(콜드브루)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 8:
+			if (InsertOrder(바닐라라떼_아이스)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 9:
+			if (InsertOrder(바닐라라떼_핫)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+
+		}
+	}
+	else if (m_buttonCoffeeDown) {
+		switch (MENUPOS) {
+		case 1:
+			if (InsertOrder(에스프레소)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 2:
+			if (InsertOrder(카페모카)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		}
+	}
+	else if (m_buttonTea) { // 차의 경우
+		switch (MENUPOS) {
+		case 1:
+			if (InsertOrder(유자차)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 2:
+			if (InsertOrder(페퍼민트)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 3:
+			if (InsertOrder(캐모마일)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 4:
+			if (InsertOrder(얼그레이)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 5:
+			if (InsertOrder(녹차)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 6:
+			if (InsertOrder(사과유자차)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		}
+	}
+	else if (m_buttonCraft) { // 제조음료의 경우
+		switch (MENUPOS) {
+		case 1:
+			if (InsertOrder(녹차프라페)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 2:
+			if (InsertOrder(쿠키프라페)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 3:
+			if (InsertOrder(민트프라페)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 4:
+			if (InsertOrder(요거트스무디)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 5:
+			if (InsertOrder(유니콘프라페 )) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 6:
+			if (InsertOrder(유니콘프라페)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		}
+		}
+	else if (m_buttonBread && ! m_buttonBreadDown) { // 제과류의 경우
+		switch (MENUPOS) {
+		case 1:
+			if (InsertOrder(아이스크림크로플)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 2:
+			if (InsertOrder(크루아상)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 3:
+			if (InsertOrder(마들렌)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 4:
+			if (InsertOrder(스콘)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 5:
+			if (InsertOrder(마카롱)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 6:
+			if (InsertOrder(샌드위치)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 7:
+			if (InsertOrder(아이스크림슈)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 8:
+			if (InsertOrder(롤케익)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 9:
+			if (InsertOrder(초코칩쿠키)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		case 10:
+			if (InsertOrder(약과)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+		}
+	
+		}
+	else if (m_buttonBreadDown) {
+		switch (MENUPOS) {
+		case 1:
+			if (InsertOrder(약과)) {
+				showOrderList();
+				MessageBox(_T("주문 성공!"));
+			}
+			else
+				MessageBox(_T("주문 리스트가 꽉 찼습니다!"));
+			break;
+
+		}
+	}
+}
+
+int CMFCKIOSKDlg::InsertOrder(int p_Order) {
+	
+	//struct OrderList {
+	//	CString mName; //매뉴명 
+	//	int mQty; // 수량 
+	//	int mSum; // 가격 총합
+	
+	//주문 리스트에 중복이 있는지 확인
+	for (int i = 0; i < 8; i++) {
+		if (m_OrderList[i].mName == p_Order) {
+			m_OrderList[i].mQty++; // 리스트 안에 같은 매뉴가 있으면 수량 + 1
+			m_OrderList[i].mSum = getPrice(p_Order) * m_OrderList[i].mQty; // 가격 총합 계산
+			return TRUE;
+		}
+	}
+
+	//빈 자리에 넣음
+	for (int i = 0; i < 8; i++) { 
+		if (isInitial(m_OrderList[i])){ // 초기화 판단
+			m_OrderList[i].mName = p_Order; //매뉴 이름 설정
+			m_OrderList[i].mQty++; // 수량 +1
+			m_OrderList[i].mSum = getPrice(p_Order) * m_OrderList[i].mQty; // 가격 총합 계산
+			return TRUE; //주문 성공
+		}
+	}
+
+	
+	
+	return FALSE; //  주문 실패 (주문 리스트에 빈 자리가 없음 !! ) 
+}
+
+bool CMFCKIOSKDlg::isInitial(struct OrderList Orderlist)
+{
+	//구조체가 초기화 상태인지 확인하는 함수
+	if (Orderlist.mName == 0)
+		return TRUE; //빈 배열 맞음
+	else
+		return FALSE; //빈 배열 아님
+}
+
+int CMFCKIOSKDlg::getPrice(int item_number)
+{
+	// 매뉴 이름 매크로를 받으면 가격을 리턴하는 함수
+	if (item_number == 아메리카노_아이스)
+		return 1500;
+	else if (item_number == 아메리카노_핫)
+		return 2000;
+	else if (item_number == 카페라떼_아이스)
+		return 2900;
+	else if (item_number == 카페라떼_핫)
+		return 2900;
+	else if (item_number == 카라멜마끼아또_아이스)
+		return 3700;
+	else if (item_number == 카라멜마끼아또_핫)
+		return 3700;
+	else if (item_number == 콜드브루)
+		return 3500;
+	else if (item_number == 바닐라라떼_아이스)
+		return 3400;
+	else if (item_number == 바닐라라떼_핫)
+		return 3400;
+	else if (item_number == 에스프레소)
+		return 1500;
+	else if (item_number == 카페모카)
+		return 3700;
+	else if (item_number == 녹차프라페)
+		return 3900;
+	else if (item_number == 쿠키프라페)
+		return 3900;
+	else if (item_number == 민트프라페)
+		return 3900;
+	else if (item_number == 요거트스무디)
+		return 3900;
+	else if (item_number == 유니콘프라페)
+		return 4800;
+	else if (item_number == 유자차)
+		return 3000;
+	else if (item_number == 페퍼민트)
+		return 2500;
+	else if (item_number == 캐모마일)
+		return 2500;
+	else if (item_number == 얼그레이)
+		return 2500;
+	else if (item_number == 녹차)
+		return 2500;
+	else if (item_number == 사과유자차)
+		return 3500;
+	else if (item_number == 아이스크림크로플)
+		return 6500;
+	else if (item_number == 크루아상)
+		return 2800;
+	else if (item_number == 마들렌)
+		return 3000;
+	else if (item_number == 스콘)
+		return 3000;
+	else if (item_number == 마카롱)
+		return 2700;
+	else if (item_number == 샌드위치)
+		return 3000;
+	else if (item_number == 아이스크림슈)
+		return 4800;
+	else if (item_number == 롤케익)
+		return 8000;
+	else if (item_number == 초코칩쿠키)
+		return 3600;
+	else if (item_number == 약과)
+		return 2000;
+	else
+		return -1; // ERROR : 알 수 없는 매뉴
+}
+
+
+//리스트 삭제 함수
+int CMFCKIOSKDlg::deleteOrder(int listPosition) //몇 번째 리스트인지
+{/* 
+	""""""""""""""""""""""""""""""""""""""""""
+		"			1) listPosition 번째 구조체 초기화(삭제)
+					2) 구조체 순서 정렬하기
+		""""""""""""""""""""""""""""""""""""""""*/
+	//"			1) listPosition 번째 구조체 초기화
+	initOrder_one(listPosition);
+
+	//"			2) 구조체 순서 정렬하기
+	for (int i = 1; i < 8; i++) {
+		 
+		if (isInitial(m_OrderList[i - 1])) {
+			m_OrderList[i - 1] = m_OrderList[i];
+			initOrder_one(i + 1);
+		}
+		
+	}
+
+	refreshOrder();
+
+	showOrderList();
+	
+	return 0;
+}
+
+
+int CMFCKIOSKDlg::initOrder_one(int listPosition) //구조체 하나만 초기화
+{
+	int n = listPosition - 1;
+	// listPosition번째 구조체 초기화
+	m_OrderList[n].mName = 0;
+	m_OrderList[n].mQty = 0;
+	m_OrderList[n].mSum = 0;
+
+	return 0;
+}
+
+
+
+
+int CMFCKIOSKDlg::initOrder_all() //구조체 전체 초기화
+{
+	for (int i = 0; i < 8; i++) {
+		m_OrderList[i].mName = 0;
+		m_OrderList[i].mQty = 0;
+		m_OrderList[i].mSum = 0;
+
+	}
+	return 0;
+}
+
+
+int CMFCKIOSKDlg::showOrderList() // 주문 리스트 화면에 표시
+{/*
+	""""""""""""""""""""""""""""""""""""""""""
+		TO DO : 
+				주문수량, sum 표시!! 
+
+		"""""""""""""""""""""""""""""""""""""""*/
+	//CStatic m_orderlist_1;
+	//CStatic m_orderlist_2;
+	//CStatic m_orderlist_3;
+	//CStatic m_orderlist_4;
+	//CStatic m_orderlist_5;
+	//CStatic m_orderlist_6;
+	//CStatic m_orderlist_7;
+	//CStatic m_orderlist_8;
+	//CStatic m_orderlist14;
+	//CStatic m_orderlist14_2;
+	CString mQty[8];
+	CString mSum[8];
+	CString ALLSUM;
+	refreshOrder();
+	//주문 리스트 매뉴 이름 추가 
+	if (!isInitial(m_OrderList[0])) // 구조체에 내용이 있을 경우
+		m_orderlist_1.SetWindowTextA(_T(getName(m_OrderList[0].mName)));
+	
+	if (!isInitial(m_OrderList[1])) // 구조체에 내용이 있을 경우
+		m_orderlist_2.SetWindowTextA(_T(getName(m_OrderList[1].mName)));
+	if (!isInitial(m_OrderList[2])) // 구조체에 내용이 있을 경우
+		m_orderlist_3.SetWindowTextA(_T(getName(m_OrderList[2].mName)));
+	if (!isInitial(m_OrderList[3])) // 구조체에 내용이 있을 경우
+		m_orderlist14_2.SetWindowTextA(_T(getName(m_OrderList[3].mName)));
+	if (!isInitial(m_OrderList[4])) // 구조체에 내용이 있을 경우
+		m_orderlist_5.SetWindowTextA(_T(getName(m_OrderList[4].mName)));
+	if (!isInitial(m_OrderList[5])) // 구조체에 내용이 있을 경우
+		m_orderlist_6.SetWindowTextA(_T(getName(m_OrderList[5].mName)));
+	if (!isInitial(m_OrderList[6])) // 구조체에 내용이 있을 경우
+		m_orderlist_7.SetWindowTextA(_T(getName(m_OrderList[6].mName)));
+	if (!isInitial(m_OrderList[7])) // 구조체에 내용이 있을 경우
+		m_orderlist_8.SetWindowTextA(_T(getName(m_OrderList[7].mName)));
+
+	//주문 리스트 매뉴 수량 추가
+	if (!isInitial(m_OrderList[0])) { // 구조체에 내용이 있을 경우
+		mQty[0].Format(_T("%d"), m_OrderList[0].mQty);
+		m_edit1.SetWindowTextA(mQty[0]);
+	}
+	if (!isInitial(m_OrderList[1])) { // 구조체에 내용이 있을 경우
+		mQty[1].Format(_T("%d"), m_OrderList[1].mQty);
+		m_edit2.SetWindowTextA(mQty[1]);
+	}if (!isInitial(m_OrderList[2])) { // 구조체에 내용이 있을 경우
+		mQty[2].Format(_T("%d"), m_OrderList[2].mQty);
+		m_edit3.SetWindowTextA(mQty[2]);
+	}if (!isInitial(m_OrderList[3])) { // 구조체에 내용이 있을 경우
+		mQty[3].Format(_T("%d"), m_OrderList[3].mQty);
+		m_edit4.SetWindowTextA(mQty[3]);
+	}if (!isInitial(m_OrderList[4])) { // 구조체에 내용이 있을 경우
+		mQty[4].Format(_T("%d"), m_OrderList[4].mQty);
+		m_edit5.SetWindowTextA(mQty[4]);
+	}if (!isInitial(m_OrderList[5])) { // 구조체에 내용이 있을 경우
+		mQty[5].Format(_T("%d"), m_OrderList[5].mQty);
+		m_edit6.SetWindowTextA(mQty[5]);
+	}if (!isInitial(m_OrderList[6])) { // 구조체에 내용이 있을 경우
+		mQty[6].Format(_T("%d"), m_OrderList[6].mQty);
+		m_edit7.SetWindowTextA(mQty[6]);
+	}if (!isInitial(m_OrderList[7])) { // 구조체에 내용이 있을 경우
+		mQty[7].Format(_T("%d"), m_OrderList[7].mQty);
+		m_edit8.SetWindowTextA(mQty[7]);
+	}
+
+	//주문 리스트 가격합 추가
+	if (!isInitial(m_OrderList[0])) { // 구조체에 내용이 있을 경우
+		mSum[0].Format(_T("%d"), m_OrderList[0].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum1.SetWindowTextA(mSum[0]);
+	}
+	if (!isInitial(m_OrderList[1])) { // 구조체에 내용이 있을 경우
+		mSum[1].Format(_T("%d"), m_OrderList[1].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum2.SetWindowTextA(mSum[1]);
+	}if (!isInitial(m_OrderList[2])) { // 구조체에 내용이 있을 경우
+		mSum[2].Format(_T("%d"), m_OrderList[2].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum3.SetWindowTextA(mSum[2]);
+	}if (!isInitial(m_OrderList[3])) { // 구조체에 내용이 있을 경우
+		mSum[3].Format(_T("%d"), m_OrderList[3].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum4.SetWindowTextA(mSum[3]);
+	}if (!isInitial(m_OrderList[4])) { // 구조체에 내용이 있을 경우
+		mSum[4].Format(_T("%d"), m_OrderList[4].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum5.SetWindowTextA(mSum[4]);
+	}if (!isInitial(m_OrderList[5])) { // 구조체에 내용이 있을 경우
+		mSum[5].Format(_T("%d"), m_OrderList[5].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum6.SetWindowTextA(mSum[5]);
+	}if (!isInitial(m_OrderList[6])) { // 구조체에 내용이 있을 경우
+		mSum[6].Format(_T("%d"), m_OrderList[6].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum7.SetWindowTextA(mSum[6]);
+	}if (!isInitial(m_OrderList[7])) { // 구조체에 내용이 있을 경우
+		mSum[7].Format(_T("%d"), m_OrderList[7].mQty * getPrice(m_OrderList[0].mName));
+		m_textOrderSum8.SetWindowTextA(mSum[7]);
+	}
+
+	for (int i = 0,sum = 0; i < 8; i++) {
+		sum += m_OrderList[i].mSum;
+
+		if (i == 7) {
+			ALLSUM.Format(_T("%d"), sum);
+			
+			m_ALLSUM.SetWindowTextA(ALLSUM);
+		}
+	}
+	
+	return 0;
+}
+
+
+char* CMFCKIOSKDlg::getName(int name) {
+		switch (name) {
+		case 아메리카노_아이스: return "아메리카노_아이스";
+		case 아메리카노_핫: return "아메리카노_핫";
+		case 카페라떼_아이스: return "카페라떼_아이스";
+		case 카페라떼_핫: return "카페라떼_핫";
+		case 카라멜마끼아또_아이스: return "카라멜마끼아또_아이스";
+		case 카라멜마끼아또_핫: return "카라멜마끼아또_핫";
+		case 콜드브루: return "콜드브루";
+		case 바닐라라떼_아이스: return "바닐라라떼_아이스";
+		case 바닐라라떼_핫: return "바닐라라떼_핫";
+		case 에스프레소: return "에스프레소";
+		case 카페모카: return "카페모카";
+		case 녹차프라페: return "녹차프라페";
+		case 쿠키프라페: return "쿠키프라페";
+		case 민트프라페: return "민트프라페";
+		case 요거트스무디: return "요거트스무디";
+		case 유니콘프라페: return "유니콘프라페";
+		case 유자차: return "유자차";
+		case 페퍼민트: return "페퍼민트";
+		case 캐모마일: return "캐모마일";
+		case 얼그레이: return "얼그레이";
+		case 녹차: return "녹차";
+		case 사과유자차: return "사과유자차";
+		case 아이스크림크로플: return "아이스크림크로플";
+		case 크루아상: return "크루아상";
+		case 마들렌: return "마들렌";
+		case 스콘: return "스콘";
+		case 마카롱: return "마카롱";
+		case 샌드위치: return "샌드위치";
+		case 아이스크림슈: return "아이스크림슈";
+		case 롤케익: return "롤케익";
+		case 초코칩쿠키: return "초코칩쿠키";
+		case 약과: return "약과";
+		default: return "ERROR";
+		}
+	}
+
+
+
+void CMFCKIOSKDlg::OnEnChangeEdit1()
+{
+	// TODO:  RICHEDIT 컨트롤인 경우, 이 컨트롤은
+	// CDialogEx::OnInitDialog() 함수를 재지정 
+	//하고 마스크에 OR 연산하여 설정된 ENM_CHANGE 플래그를 지정하여 CRichEditCtrl().SetEventMask()를 호출하지 않으면
+	// 이 알림 메시지를 보내지 않습니다.
+
+	// TODO:  여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc1() // 주문 취소 버튼 1 
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(1);
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc2() // 주문 취소 버튼 2
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(2);
+
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc3()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(3);
+
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc4()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(4);
+
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc5()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(5);
+
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc6()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(6);
+
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc7()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(7);
+
+}
+
+
+void CMFCKIOSKDlg::OnBnClickedCanc8()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	deleteOrder(8);
+
+}
+
+
+void CMFCKIOSKDlg::refreshOrder() //주문 리스트 텍스트 전체 초기화
+{
+
+	//DDX_Control(pDX, 1064, m_orderlist_1); //IDC_TEXT_ORDER 첫번째 ( 주문 리스트 첫번째 )
+	//DDX_Control(pDX, IDC_TEXT_ORDER12, m_orderlist_2);
+	//DDX_Control(pDX, IDC_TEXT_ORDER13, m_orderlist_3);
+	////DDX_Control(pDX, IDC_TEXT_ORDER14, m_orderlist_4);
+	//DDX_Control(pDX, 1044, m_orderlist14_2);
+	//DDX_Control(pDX, IDC_TEXT_ORDER15, m_orderlist_5);
+	//DDX_Control(pDX, IDC_TEXT_ORDER16, m_orderlist_6);
+	//DDX_Control(pDX, IDC_TEXT_ORDER17, m_orderlist_7);
+	//DDX_Control(pDX, IDC_TEXT_ORDER18, m_orderlist_8);
+
+	//수량 초기화
+	SetDlgItemText(IDC_EDIT1, _T(""));
+	SetDlgItemText(IDC_EDIT2, _T(""));
+	SetDlgItemText(IDC_EDIT3, _T(""));
+	SetDlgItemText(IDC_EDIT4, _T(""));
+	SetDlgItemText(IDC_EDIT5, _T(""));
+	SetDlgItemText(IDC_EDIT6, _T(""));
+	SetDlgItemText(IDC_EDIT7, _T(""));
+	SetDlgItemText(IDC_EDIT8, _T(""));
+
+	//매뉴 초기화
+	setTextInit(1064);
+	setTextInit(IDC_TEXT_ORDER12);
+	setTextInit(IDC_TEXT_ORDER13);
+	setTextInit(IDC_TEXT_ORDER14_2);
+	setTextInit(IDC_TEXT_ORDER15);
+	setTextInit(IDC_TEXT_ORDER16);
+	setTextInit(IDC_TEXT_ORDER17);
+	setTextInit(IDC_TEXT_ORDER18);
+
+	//가격합 초기화
+	setTextInit(IDC_TEXT_ORDER1_SUM);
+	setTextInit(IDC_TEXT_ORDER2_SUM);
+	setTextInit(IDC_TEXT_ORDER3_SUM);
+	setTextInit(IDC_TEXT_ORDER4_SUM);
+	setTextInit(IDC_TEXT_ORDER5_SUM);
+	setTextInit(IDC_TEXT_ORDER6_SUM);
+	setTextInit(IDC_TEXT_ORDER7_SUM);
+	setTextInit(IDC_TEXT_ORDER8_SUM);
+
+	//총 가격 초기화
+	setTextInit(IDC_TEXT_ALLSUM);
+	
+}
+
+
+void CMFCKIOSKDlg::setTextInit(int nID)
+{
+	CRect Rect;
+	GetDlgItem(nID)->GetWindowRect(&Rect);
+	ScreenToClient(&Rect);
+	InvalidateRect(Rect);
+	SetDlgItemText(nID, _T(""));
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedTextOrder2Sum()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedTextOrder8Sum()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf1()
+{
+	minOrder(1);
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf2()
+{
+	minOrder(2);
+
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf3()
+{
+	minOrder(3);
+
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf4()
+{
+	minOrder(4);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+=======
+
+
+void CMFCKIOSKDlg::OnStnClickedletf5()
+{
+	minOrder(5);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf6()
+{
+	minOrder(6);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf7()
+{
+	minOrder(7);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedletf8()
+{
+	minOrder(8);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright1()
+{
+	addOrder(1);
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright2()
+{
+	addOrder(2);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright3()
+{
+	addOrder(3);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright4()
+{
+	addOrder(4);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright5()
+{
+	addOrder(5);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright6()
+{
+	addOrder(6);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright7()
+{
+	addOrder(7);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMFCKIOSKDlg::OnStnClickedright8()
+{
+	addOrder(8);
+
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+int CMFCKIOSKDlg::addOrder(int POS) //매뉴 수량 + 1 버튼 처리
+{
+	if (isInitial(m_OrderList[POS - 1]))
+		return 0;
+	else {
+		m_OrderList[POS - 1].mQty++;
+		m_OrderList[POS - 1].mSum = getPrice(m_OrderList[POS - 1].mName) * m_OrderList[POS - 1].mQty; // 구조체 멤버 sum 업데이트
+
+		showOrderList();
+	}
+	return 0;
+}
+
+
+int CMFCKIOSKDlg::minOrder(int POS) //매뉴 수량 -1 버튼 처리
+{
+	if (isInitial(m_OrderList[POS - 1]) || m_OrderList[POS -1].mQty == 1)
+		return 0;
+	else {
+		m_OrderList[POS - 1].mQty--;
+		m_OrderList[POS - 1].mSum = getPrice(m_OrderList[POS -1].mName) * m_OrderList[POS - 1].mQty; // 구조체 멤버 sum 업데이트
+		showOrderList();
+	}
+	return 0;
+}
+
