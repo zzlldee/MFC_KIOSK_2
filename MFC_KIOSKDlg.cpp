@@ -135,23 +135,72 @@ ON_BN_CLICKED(IDC_BUTTON_TOGO, &CMFCKIOSKDlg::OnClickedButtonTogo)
 END_MESSAGE_MAP()
 
 
-// CMFCKIOSKDlg 메시지 처리기
+typedef struct {
+	CString pname;
+	int p;
+	int q;
+}Product;
 
+Product Array_Stock[32];
+
+void initdb(void) {
+	CDatabase db;
+	CRecordset rs(&db);
+
+	CTime t = CTime::GetCurrentTime();
+	CString ymd;
+	ymd.Format(_T("%d_%d_%d"), t.GetYear(), t.GetMonth(), t.GetDay());
+
+	BOOL bret = db.OpenEx(_T("DSN=kiosk_db;"));
+
+	if (bret) // 연결 성공시
+	{
+		CString dbname = _T("db_");
+		dbname.Insert(3, ymd);
+		CString initdb = _T("CREATE DATABASE IF NOT EXISTS ;");
+		initdb.Insert(30, dbname);
+		//AfxMessageBox(dbname);
+		db.ExecuteSQL(initdb);
+
+		CString usedb = _T("USE ;");
+		usedb.Insert(4, dbname);
+		//AfxMessageBox(usedb);
+		db.ExecuteSQL(usedb);
+
+		CString t0col = _T("pcode INT, p int, q int");
+		CString maket0 = _T("CREATE TABLE IF NOT EXISTS t0_stock();");
+		maket0.Insert(36, t0col);
+		//AfxMessageBox(maket0);
+
+		CString t1col = _T("dt DATETIME, tno int, type bool, pcode int, p int, q int");
+		CString maket1 = _T("CREATE TABLE IF NOT EXISTS t1_trans_1();");
+		maket1.Insert(38, t1col);
+		//AfxMessageBox(maket1);
+
+		CString t2col = _T("dt DATETIME, tno int, type bool, sum int");
+		CString maket2 = _T("CREATE TABLE IF NOT EXISTS t2_trans_2();");
+		maket2.Insert(38, t2col);
+		//AfxMessageBox(maket2);
+
+		db.ExecuteSQL(maket0);
+		db.ExecuteSQL(maket1);
+		db.ExecuteSQL(maket2);
+
+		AfxMessageBox(_T("db inited"));
+	}
+	else
+	{
+		AfxMessageBox(_T("db error"));
+	}
+}
+
+// CMFCKIOSKDlg 메시지 처리기
 BOOL CMFCKIOSKDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-	/*
-	CDatabase db;
 
-	BOOL bret = db.OpenEx(_T("DSN=kiosk_db;uid=dbadmin;PWD=dbadmin"));
-	
-	if (bret) {
-		AfxMessageBox(_T("db연결 성공!"));
-	}
-	else {
-		AfxMessageBox(_T("db연결 실패!"));
-	}
-	*/
+	//initdb();
+
 	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
 	// IDM_ABOUTBOX는 시스템 명령 범위에 있어야 합니다.
